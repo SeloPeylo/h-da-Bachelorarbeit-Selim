@@ -1,0 +1,92 @@
+\chapter{Grundlagen}
+\label{ch:background}
+Wie die IT von Banken reguliert wird und spezifische Veröffentlichungen, aus der die Organisation ihrer IT hervorgeht. Dazu folgt ein Überblick in die IT von Banken und wie mit diesen Anforderungen umgegangen wird. Anschließend werden aktuelle Ansätze für die Softwareentwicklung beschrieben, die einen Paradigmenwechsel hervorrufen. Dieses Kapitel beinhaltet Grundlagen der Regulatorik und Organisation der IT in Finanzinstituten mit anschließenden Grundlagen der Softwareentwicklung in der Digitalen Transformation.
+
+%
+% Section: Der erste Abschnitt
+%
+
+\section{Regulatorik der IT von Banken}
+
+Banken müssen bezüglich ihrer IT-Prozesse zusätzliche Schritte für ein Risikomanagement beachten. Auch im Hinblick auf die Organisation der IT gibt es Besonderheiten. Diese zusätzlichen Schritte und Besonderheiten müssen auch bei der Implementierung einer Standardanwendung berücksichtigt werden. Insbesondere sind Anwendungen für die Softwareentwicklung eng mit IT-Prozessen verbunden.
+
+\subsection{Mindestanforderungen an das Risikomanagement}
+Die \ac{MaRisk} ist ein Rundschreiben der Bafin an alle Kredit- und Finanzdienstleistungsinstitute in der Bundesrepublik Deutschland. Sie gibt einen flexiblen und praxisnahen Rahmen für das Risikomanagement vor auf Grundlage des § 25a Abs. 1 des \ac{KWG} \cite{MaRisk:2017}. 
+\\
+Daraus folgt auch das interne Kontrollverfahren der Institute, als \ac{IKS} und interne Revision. Daher ist sie nicht nur wichtig für ein Verständnis, wie die IT in Banken organisiert ist, sondern auch für den Entwurf neuer Systeme für diese zu berücksichtigen. Hierzu werden in diesem Abschnitt die Anforderungen zusammengefasst.
+\\
+AT 7.2 stellt direkte Anforderungen an die Technisch-organisatorische Ausstattung der IT-Systeme, dessen Umfang sich an interne Erfordernissen, Geschäftsaktivitäten und der Risikosituation zu orientieren hat \cite{MaRisk:2017}.
+
+\paragraph{IT-Systeme und Prozesse}
+Zunächst werden für die Sicherstellung der Datensicherheit die IT-Systeme und Prozesse verantwortlich gemacht.
+\begin{itemize}
+    \item Integrität, Verfügbarkeit, Authentizität und Vertraulichkeit der Daten sollen durch die IT-Systeme und ihren zugehörigen Prozessen sichergestellt werden. 
+    \item Die IT-Systeme und ihre zugehörigen Prozesse sollen hinsichtlich ihrer Eignung regelmäßig überprüft werden.
+    \item Für die Sicherstellung der Schutzziele soll auf gängige Standards abgestellt werden.
+    \item Insbesondere sollen Prozesse für eine IT-Berechtigungsvergabe eingerichtet werden. Hierbei ist die Zusammenfassung von Berechtigungen in einem Rollenmodell möglich.
+\end{itemize}
+ Mit gängigen Standards wird beispielsweise der IT-Grundschutzkatalog\footnote{Frühere IT-Grundschutz-Kataloge in IT-Grundschutzkompendium überführt \cite{IT-Grundschutz:2020}} des \ac{BSI} und der internationale Sicherheitsstandard ISO/IEC 2700X der \ac{ISO} gemeint \cite{MaRiskErläuterungen:2017}.
+ In AT 4.3.1 wird bezüglich Aufbau- und Ablauforganisation bereits allgemein gefordert, dass IT-Berechtigungen und sonstige Kompetenzen regelmäßig überprüft werden.
+
+\paragraph{Testen von IT-Systemen}
+ Weiterhin wird das Testen von IT-Systemen gefordert. Daraus folgt auch die Etablierung von Regelprozessen für die IT, insbesondere für die Softwareentwicklung. 
+\begin{itemize}
+    \item IT-Systeme sollen nach wesentlichen Veränderungen und vor erstmaligem Einsatz getestet werden mit anschließender Abnahme von den fachlich sowie von den technisch zuständigen Mitarbeitern.
+    \item Ein Regelprozesse der Entwicklung, des Testens, der Freigabe und der Implementierung in die Produktionsprozesse soll etabliert werden. 
+    \item Produktions- und Testumgebungen sollen grundsätzlich voneinander getrennt werden.
+\end{itemize}
+\paragraph{Risikomanagement für die IT}
+Es wird auch speziell ein Risikomanagement für die IT gefordert, der besonders den IT-Betrieb schützen soll.
+\begin{itemize}
+    \item Für IT-Risiken sollen Überwachungs- und Steuerungsprozesse eingerichtet werden.
+    \item Diese umfassen IT-Risikokriterien, IT-Risiken, Schutzbedarf, abgeleitete Schutzmaßnahmen und Risikobehandlung sowie -minderung.
+    \item Risiken in Verbindung mit dem Bezug von Software sollen ebenfalls angemessen bewertet werden.
+\end{itemize}
+Diese Anforderungen gelten auch beim Einsatz von selbst entwickelten Anwendungen \cite{MaRisk:2017}, gekennzeichnet als \ac{IDV}. Entsprechende Maßnahmen werden jedoch nach dem Schutzbedarf der verarbeiteten Daten festgelegt.
+
+
+\paragraph{Wesentliche Veränderungen}
+AT 8.2 gibt vor, dass vor wesentlichen Veränderungen in der Aufbau- und Ablauforganisation sowie in den IT-Systemen das Institut die Auswirkung der geplanten Veränderung auf die Kontrollverfahren und -intensität zu analysieren hat. Hierfür sind die später in die Arbeitsabläufe eingebundenen Organisationseinheiten einzuschalten. Risikocontrolling, Compliance und die Interne Revision sind auch zu beteiligen \cite{MaRisk:2017}. 
+\\ % WICHTIGES ERGEBNIS
+Daraus könnte ein Hindernis für solche Veränderungen entstehen. Wesentliche Veränderungen in den IT-Systemen könnten einen Anpassungsbedarf des Kontrollverfahrens bedeuten. Vielmehr sollte das interne Kontrollverfahren von einer ständigen Veränderung in der IT ausgehen.
+
+\subsection{Bankaufsichtliche Anforderungen an die IT}
+Die \ac{BAIT} gibt seit 2018 neben der \ac{MaRisk} auf der gleichen Grundlage des \ac{KWG} einen  Rahmen, insbesondere für das Management der IT-Ressourcen und das IT-Risikomanagement. Die Anforderungen aus \ac{MaRisk} werden lediglich konkretisiert. Zudem Präzisiert es die Anforderungen des § 25b des
+\ac{KWG} zu Auslagerung von Aktivitäten und Prozessen \cite{BAIT:2018}.
+\\
+Die \ac{BAIT} ist daher besonders für die Auslagerung von IT-Ressourcen zu berücksichtigen und insbesondere aufgrund der zunehmenden Praxis von \ac{SaaS} und Cloud-Computing relevant.
+
+\paragraph{IT-Strategie} Zunächst wird gefordert, dass die Geschäftsleitung eine nachhaltige IT-Strategie festlegen soll. Diese soll konsistent mit der Geschäftsstrategie sein \cite{BAIT:2018}. 
+\\
+Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschäftsmodell und IT in einem engen Verhältnis gesehen werden. Die IT steht aus regulatorischer Sicht nicht mehr größtenteils als Risikofaktor im Fokus. Vielmehr kann sie aufgrund einer konkreten Strategie das Geschäftsmodell ergänzen.
+
+\paragraph{IT-Governance} Die IT-Governance wird als Struktur zur Steuerung und Überwachung des IT-Betriebs und der Entwicklung der IT-Systeme und Prozesse auf Basis der IT-Strategie \cite{BAIT:2018} gesehen. Für das Risikomanagement, Entwicklung und Betrieb innerhalb der IT wird eine qualitativ und quantitativ angemessene Ausstattung mit Personal gefordert.
+
+\subsection{EBA Guidelines on ICT and security risk management}
+
+\section{IT in Finanzinstituten}
+
+\subsection{Internes Kontrollsystem und Revision}
+
+\subsection{Regelprozesse}
+
+\section{Aktuelle Ansätze in der Softwareentwicklung}
+\subsection{Continuous Integration}
+\label{subsec:background:second_section:first_subsection}
+Vivamus at massa ut turpis dignissim mattis. Vivamus odio metus, venenatis vitae malesuada et, dignissim sed nunc. Mauris a nisl id massa viverra mattis in ultrices odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur quis metus ac sem venenatis dignissim nec.
+
+
+%
+% Section: Der Zweite Abschnitt
+%
+\section{Digitale Transformation}
+\label{sec:background:second_section}
+Phasellus ut ipsum nulla, vitae venenatis augue. Suspendisse potenti. Mauris suscipit justo a dolor laoreet lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam commodo commodo dui, nec auctor mi malesuada et. Aenean tortor erat, semper eu ullamcorper non, dignissim sed lectus. Praesent et pretium leo. 
+
+\subsubsection{Ein Unter-Unterabschnitt}
+\label{ssubsec:background:second_section:first_subsection:first_subsubsection}
+Sed vel ante vel quam commodo cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis non turpis eget quam rutrum scelerisque. Duis nec quam metus. Curabitur purus dui, sagittis vel mattis a, elementum vitae risus. Pellentesque a tellus lacus, id gravida lectus.
+
+\subsection{Prozesse nach ITIL}
+
+\subsection{DevOps und DevSecOps}

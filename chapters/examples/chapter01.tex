@@ -1,0 +1,68 @@
+\chapter{Einleitung}
+\label{ch:intro}
+
+Als frühe Anwender von großen IT-Systemen etablierte sich in Banken eine komplexe IT-Architektur \cite{Brockhoff2006}. Daraus formuliert Brockhoff \footnote{stellvertretender Vorsitzender der Finanz Informatik GmbH \& Co KG (Stand 2006)} das Ergebnis, dass in vielen Instituten heterogene, unflexible und eher zufällig gewachsene Architekturen dominieren \cite{Brockhoff2006}.
+\medskip
+\\
+Alle Kreditinstitute und Finanzdienstleistungsinstitute in der Bundesrepublik Deutschland müssen Vorgaben, die aus dem \ac{KWG} hervorgehen auch in ihrer IT umsetzen. Die \ac{BaFin} beaufsichtigt die Einhaltung dieser Vorgaben und stellt eine einheitliche Verwaltungspraxis \cite{BaFin:Verwaltungspraxis} durch ergänzende Anforderungen \cite{MaRisk:2017, BAIT:2018}. 
+
+In der IT-Architektur der Institute entstehen Probleme\footnote{vgl. \cite{mci/Disterer2011}} und einschränkende Faktoren, die nicht nur Auswirkungen auf den Betrieb, sondern auch auf die Entwicklung der IT-Systeme\footnote{IT-Systeme beinhalten Anwendungen, Software, Hardware} haben. 
+
+Für die Entwicklung und Betrieb von IT-Systemen sind in jedem Institut Regelprozesse\footnote{beinhaltet Entwicklung, Testen, Freigabe und Integration \cite{MaRisk:2017}} zu definieren \cite{MaRisk:2017}. 
+
+Zum Beispiel müssen Standardanwendungen von Entwicklern vor ihrem Einkauf nicht nur ausreichend getestet, sondern auch auf die jeweiligen internen Prozesse angepasst werden. Im Ansatz \ac{SaaS} ist die Auslagerung von IT-Ressourcen eine gängige Praxis zum Betreiben von Anwendungen. Ein beliebtes Kollaborationstool wie Slack, dass nach eigenen Angaben über die Cloud von \ac{AWS} zur Verfügung gestellt wird, könnte bereits eine Auslagerung nach §25b des \ac{KWG} darstellen. Dadurch werden zusätzliche Schritte im Risikomanagement der Institute angefordert.
+\medskip
+\\
+Neben den BaFin Anforderungen für ein IT-Risikomanagement und der IT-Architektur selbst ist auch das IT-Management\footnote{vgl. \cite{Alt2017}} eine mögliche Quelle von einschränkenden Faktoren für die Softwareentwicklung im Finanzwesen. Die IT-Architektur ist, bedingt durch Impulse aus neuen Technologien \cite{Bussmann2006}, ständigem Innovationsdruck ausgesetzt und muss sich \enquote{kontinuierlich justieren} \cite{Bussmann2006} können. 
+\medskip
+\\
+Gängige Standards der Softwareentwicklung befinden sich mit neuen Technologien, Ansätzen und Anwendungen im ständigen Wandel. Vor ihrem geplanten Einsatz müssen mögliche Auswirkungen auf die Kontrollverfahren der Institute analysiert werden \cite{MaRisk:2017}.
+
+Die Kredit- und Finanzdienstleistungsinstitute in Deutschland können sich Veränderungen nicht mehr entziehen. Insbesondere ist das aufgrund der Disruptivität von einigen Technologien und Ansätzen bedingt. Eine bevorstehende digitale Transformation von Banken und Finanzdienstleistern bietet für anpassungsfähige Institute einzigartige Möglichkeiten sich neu zu etablieren. Gleichzeitig besteht auch bei Nichtbeachtung von Technologietrends die Gefahr einer Verdrängung von kleineren und effizienten Betrieben, die schnell auf die Impulse reagieren.
+
+Lloyd Blankfein verkündete, als Vorsitzender und \ac{CEO} von Goldman Sachs \emph{\enquote{Wir sind ein Technologieunternehmen. Wir sind eine Plattform.}} \cite{Gupta:2017}. Tatsächlich könnte aus Sicht der Digitalen Transformation eine Bank als Plattform für Finanzdienstleistungen definiert werden und neue Wertschöpfungsketten erzeugen. 
+
+Im Finanzwesen befindet sich möglicherweise auch die deutsche Verwaltungspraxis im Wandel. Insbesondere hat die Cloud-Computing Technologie neue Impulse für das Thema \emph{Auslagerung von IT-Ressourcen\cite{MaRisk:2017, BAIT:2018}} erzeugt. Die MaRisk wird voraussichtlich 2021 erneuert und darüber hinaus sind Erleichterungen aufgrund der Umsetzung der EBA-Richtlinien zu erwarten \cite{BaFin:marisk-novelle}.
+
+Die Anpassung der Verwaltungspraxis kommt jedoch gezwungenermaßen, sodass von einer Disruption gesprochen werden kann.
+%
+% Section: Motivation
+%
+\section{Motivation}
+\label{sec:intro:motivation}
+
+Die nachfolgende Arbeit ist aus der Frage entstanden, wie man die Softwareentwicklungsumgebung eines Kreditinstituts skalierbarer und flexibler gestalten kann. Der Autor hat im Rahmen des Praxismoduls der Hochschule Darmstadt ein Praktikum in der DZ BANK AG abgeschlossen.
+\medskip
+\\
+Anfangs wurde der Fokus auf die \ac{CI} Plattform gelegt und anschließend sich in Themen wie Cloud-Computing, Container-Orchestrierung und Microservices beschäftigt. Im Praktikum wurde sich mit der Entwicklung von Docker-Images für Agenten\footnote{Slave innerhalb einer Master-Slave Konfiguration in Jenkins} der \ac{CI} Plattform Jenkins beschäftigt. Ziel war hierbei eine vielerorts einsetzbare Umgebung zum Ausführen von Builds\footnote{In diesem Zusammenhang die Erstellung von Software, beispielsweise mit dem Build-Tool Maven}. 
+Die \ac{CI} Plattform verteilt die Build-Jobs an Agenten. Die Plattform und ihre Agenten werden in der eigenen Infrastruktur mit persistenten \ac{VMs} betrieben. Die Bestellung, Freigabe und Bereitstellung von konventionellen \ac{VMs} erfolgt hierbei nach einem Regelprozess mit geringer Geschwindigkeit und Flexibilität.
+Eine daraus resultierende eingeschränkte Skalierbarkeit könnte die Verfügbarkeit der \ac{CI} Plattform beeinträchtigen. Hierfür bieten Cloud-Computing und Container-Orchestrierung mögliche Lösungsansätze.
+\medskip
+\\
+Ansätze wie Cloud-Computing, \ac{IaaS}, \ac{SaaS}, DevOps und Agilität werden zum Standard für die Softwareentwicklung. Kredinstitute benötigen hierfür umfangreiche Anpassungen ihrer Prozesse. Wenn selbst eingekaufte Standardanwendungen umfangreichen Analysen und Anpassungen unterliegen, sollte sich bezüglich der internen Kontrollverfahren die Frage gestellt werden, wie mit ständigen Veränderungen in der IT umzugehen ist. Ein angemessenes Risikomanagement sollte Veränderungen fördern. Eine mangelnde Anpassungsfähigkeit und Geschwindigkeit stellt möglicherweise ein höheres Risiko dar.
+\medskip
+\\
+%
+% Section: Ziele
+%
+\section{Ziel der Arbeit}
+\label{sec:intro:goal}
+Die Arbeit soll sich mit den Rahmenbedingungen für die IT von Kreditinstituten und ihre Auswirkungen auf die Softwareentwicklung auseinanderzusetzen. Ziel ist dabei herauszuarbeiten, wie mit ständigen Veränderungen für die Softwareentwicklung umzugehen ist.
+\medskip
+\\
+Hierfür werden Veröffentlichungen der Aufsicht und 
+
+. Es soll untersucht werden, welche Anforderungen daraus an die bisherige IT-Architektur entstehen. Hierfür werden auch die regulatorischen Vorgaben für die IT in Finanzinstituten mit neuen gängigen Standards der Softwareentwicklung gegenüber gestellt. 
+Als nächstes Ziel werden Cloud-Computing und Containervirtualisierung für eine bessere Skalierbarkeit und Flexibilität der Entwicklungs- und Testumgebungen in Banken untersucht. Daraus soll ein Beispiel für Finanzinstitute resultieren, dass zeigt wie eine skalierbare und flexible Umsetzung der Continuous Integration Plattform Jenkins in einer Bank erfolgen kann. Für diese Umsetzung wird Jenkins die Build-Jobs an Agenten delegieren, die in Containern ausgeführt werden. Für die Container werden spezifische Images anhand von Dockerfiles entwickelt und mit den jeweiligen Build-Tools bestückt. Es wird vorgesehen, dass Jenkins und ihre Agenten in einem Kubernetes Cluster betrieben werden. Kubernetes kann wiederum mit der Google Kubernetes Engine auf der Cloud betrieben werden oder auf einer eigenen Maschine. Ziel ist es das Beispiel hinsichtlich der Architektur offen zu lassen, da die Notwendigkeit der Cloud auch diskutiert werden soll. 
+%
+% Section: Struktur der Arbeit
+%
+\section{Aufbau der Arbeit}
+\label{sec:intro:structure}
+Im zweiten Kapitel fängt der Hauptteil an. Darin werden die Einschränkungen für die Softwareentwicklung in der IT von Banken und ihre Ursachen untersucht. Insbesondere werden die negativen Auswirkungen und die daraus resultierenden Risiken für das Geschäftsmodell beschrieben. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung aus aktuellen Technologien und Methoden abgeleitet. Darüber hinaus wird auf das Innovationspotenzial der IT auf das Geschäftsmodell eingegangen. Die positive Auswirkung von einem Paradigmenwechsel der IT von Banken und Finanzdienstleistern wird anhand von Fallstudien und Beispielen unterstützt.
+\medskip
+\\
+Im dritten Kapitel wird die für die IT relevante Verwaltungspraxis der Bankaufsicht untersucht. Daraus werden wesentlichen regulatorischen Anforderungen für die Entwicklung von nachvollziehbaren Systemen für die \ac{SEU} abgeleitet. Anschließend wird überprüft inwiefern die Verwaltungspraxis die in Kapitel 2 genannten Methoden zulässt und worauf es dabei ankommt. Insbesondere wird der Umgang mit Ständigen Veränderungen in der IT hinterfragt. Zudem wird in diesem Kapitel eine innovationsfördernde Rolle der internen Kontrollverfahren in der IT von Banken gefordert.
+\medskip
+\\
+In vierten Kapitel wird mithilfe der Ergebnisse aus den vorigen Kapiteln ein Ansatz entwickelt, wie eine Continuous Integration Plattform in einer Bank skalierbarer und flexibler betrieben werden kann. Es wird zumindest ein kleinster gemeinsamer Nenner definiert, der die größtmögliche Flexibilität bezüglich der IT-Architektur beibehalten soll. Dazu werden Docker-Images für die Ausführung von Builds entwickelt und mit den nötigen Build-Tools ausgestattet. Die Docker-Images sollen eine sichere und nachvollziehbare Umgebung für einen flexiblen Einsatz in einer Bank bereitstellen. Insbesondere müssen die Softwareartefakte aus dem Erstellungsprozess über ein internes Repository gesichert werden. Zudem sollen die Artefakte, die für die Erstellung des Images verwendet werden aus diesem Repository bezogen werden. 

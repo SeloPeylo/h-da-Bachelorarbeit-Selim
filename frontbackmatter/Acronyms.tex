@@ -1,0 +1,38 @@
+%*******************************************************
+% Acronyms
+%*******************************************************
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+\refstepcounter{dummy}
+\pdfbookmark[1]{Abk\"{u}rzungsverzeichnis}{abk\"{u}rzungsverzeichnis}
+\markboth{\spacedlowsmallcaps{Abk\"{u}rzungsverzeichnis}}{\spacedlowsmallcaps{Abk\"{u}rzungsverzeichnis}}
+\chapter*{Abk\"{u}rzungsverzeichnis}
+
+% Insert your acronyms here
+\begin{acronym}[UML]
+  \acro{API}{Application Programming Interface}
+  \acro{UML}{Unified Modeling Language}
+  \acro{API}{Application Programming Interface}
+  \acro{UML}{Unified Modeling Language}
+  \acro{BaFin}{Bundesanstalt für Finanzdienstleistungsaufsicht}
+  \acro{BSI}{Bundesamtes für Sicherheit in der Informationstechnik}
+  \acro{KWG}{Kreditwesengesetz}
+  \acro{MaRisk}{Mindestanforderungen an das Risikomanagement}
+  \acro{BAIT}{Bankaufsichtliche Anforderungen an die IT}
+  \acro{ISO}{International Organization for Standardization}
+  \acro{IKS}{Internes Kontrollsystem}
+  \acro{IDV}{Individuelle Datenverarbeitung}
+  \acro{CI}{Continuous Integration}
+  \acro{CD}{Continuous Delivery}
+  \acro{SaaS}{Software as a Service}
+  \acro{IaaS}{Infrastructure as a Service}
+  \acro{AWS}{Amazon Web Services}
+  \acro{CEO}{Chief Executive Officer}
+  \acro{VMs}{Virtuelle Maschinen}
+  \acro{SOA}{serviceorientierte Architektur}
+  \acro{SEU}{Softwareentwicklungsumgebung}
+  \acro{JDK11}{Java Development Kit 11}
+\end{acronym}
+
+\cleardoublepage

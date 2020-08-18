@@ -1,0 +1,77 @@
+\chapter{Grundlagen}
+
+\section{Verwandte Werke}
+Bussman et al. erklärt in \cite{Bussmann2006} Impulse, die durch neue Technologien ausgelöst werden können. Dabei wird auch auf die damit verbundene mögliche Modernisierung von Anwendungen im Finanzdienstleistungsbereich eingegangen. Diese wird durch einen Ansteig der Anforderungen in produktionsnahen, operativen Systemen \cite{Bussmann2006, Brockhoff2006} bedingt. Hierfür nennt er zwei spezifische Ansätze. Danach wird die Rolle der IT-Architektur in Verbindung mit der IT-Strategie beschrieben und eine hohe Flexibilität und Schnelligkeit gefordert. Für eine kontinuierliche Anpassung der IT-Architektur, die für den Erfolg wichtig ist \cite{Bussmann2006}, werden die damit verbundenen Schwierigkeiten genannt. Anschließend werden in einem Ausblick große Auswirkungen der IT auf die etablierten Geschäftsmodelle erwartet. 
+\medskip
+\\
+Brockhoff beschreibt in \cite{Brockhoff2006} die Hintergründe und Probleme der IT-Architektur in Banken und stellt Anforderungen an ihre IT-Architektur. Dabei fordert er die eine \ac{SOA}, um die mangelnde Flexibilität und Skalierbarkeit der alten Architektur zu beseitigen.
+\medskip
+\\
+Disterer beschreibt in \cite{mci/Disterer2011} eine problematische Inbetriebnahme von Anwendungen durch die mangelnde Beachtung von nichtfunktionalen Anforderungen bei der Entwicklung. Hierzu stellt er als Lösungsansatz eine Erweiterung eines ITILv3 Prozesses mit Quality Gates, die als Synchronisationspunkt für die Koordination zwischen Entwicklung und Betrieb dienen.
+\medskip
+\\
+Alt et al. erklärt bezogen auf das IT-Management in \cite{Alt2017} das Potenzial von DevOps zur Steigerung der Innovationsfähigkeit. Dieser ergibt sich aus Kontinuitätskonzepten und ihrer Verbindung mit einer inoovationsfokussierten IT-Strategie. Hierfür erklärt er die DevOps Prinzipien, worin er für das Kontinuitätsprinzip auf den Ansatz \emph{Continuous Delivery} eingeht.
+\medskip
+\\
+Pathania zeigt in \cite{Pathania2017} wie Jenkins mit Kubernetes, Docker und \ac{AWS} skaliert werden kann. Dabei konfiguriert er Jenkins für die Nutzung innerhalb von \ac{AWS} und Kubernetes. Er veranschaulicht einen Ansatz, um den Jenkins Master über Replikas zu skalieren. Zudem beschreibt er die Skalierung von Jenkins Agenten für die Verteilung der Builds. Für die Agenten werden Images erzeugt, woraus Jenkins mithilfe eines Docker Plugins einen Container für den Build generiert. Für die Agenten erstellt er ein Image aus Ubuntu und installiert die Build-Tools, wie in jedem anderen Ubuntu System.
+Dadurch erzeugt er die Images über einen Container, welches vorher konfiguriert wurde. Insbesondere beschreibt Pathania ausführlich die einzelnen Schritte, die für die Orchestrierung der ganzen Anwendung mit Kubernetes erforderlich sind.
+
+\section{Stand der Technik}
+
+\subsection{Methoden und Prozesse der Softwareentwicklung}
+
+\paragraph{Continuous Integration}
+
+\paragraph{DevOps}
+Alt et al. erklärt die Hintergründe von DevOps:
+
+DevOps ist eine Bezeichnung, die durch die Zusammensetzung der Wörter \enquote{Development} und \enquote{Operations} stammt und entstand aus den \emph{Problemen bei der Inbetriebnahme von Software \cite{mci/Disterer2011}}.
+Aus einer schnellen, flexiblen und nutzerzentrierten Umsetzung von funktionalen Anforderungen resultieren Benutzerakzeptanz und Kundenzufriedenheit. 
+
+Techniken, Prozesse und Tools von DevOps zielen darauf ab typische Probleme in der Zusammenarbeit zwischen Entwicklung Betrieb entgegen zu wirken. In Konsequenz soll die Kundenzufriedenheit verbessert werden. Die Automatisierung von Routineaufgaben und Wandel in der Zusammenarbeitskultur hat darin eine zentrale Bedeutung. Für die DevOps-Prinzipien existieren keine standardisierten Vorgehensbeschreibungen. Die Einführung ist sehr individuell und Unternehmen passen die Prinzipien an ihre eigene Situation an. 
+
+DevOps steht für \enquote{Culture}, \enquote{Automation}, \enquote{Measurement} und \enquote{Sharing} \cite{humble:2011}. 
+\begin{itemize}
+    \item \emph{Kulturwandel} zu einer gemeinsamen Verantwortung aller Beteiligten für die Auslieferung von Qualitätssoftware
+    \item \emph{Automatisierung} der Prozesse von Entwicklung, Test und Bereitstellung bis hin zur Produktivnahme als Schlüssel für kürzere Durchlaufzeiten, Fehlervermeidung und schnelleres Feedback
+    \item \emph{Kennzahlen}, die miteinander verknüpft als Beitrag zur geschäftlichen Wertschöpfung und Produktivitätssteigerung durch faktenbasierte Einstufung der aktuellen Leistungen und Definition von überprüfbaren Verbesserungszielen
+    \item \emph{Teilen} zum Beispiel von Wissen, Tools, Infrastruktur und die Würdigung von Erfolgen als Prinzip um die Zusammenarbeit zwischen den Beteiligten zu prägen
+\end{itemize}
+
+\cite{Alt2017}
+
+\paragraph{Continuous Delivery}
+
+\paragraph{ITIL}
+Alt et al. beschreibt ITIL im Rahmen des Innovationsdrucks vom IT-Management:
+
+Viele Organisationen haben ihre Leistungen nach dem ITIL-Service-Lebenszyklus strukturiert und den Ablauf an den ITIL-Prozessen ausgerichtet. ITIL bedingt die Kombination von Zweckmäßigkeit \enquote{Utility} und Einsatzfähigkeit \enquote{Warranty} für einen Wertbeitrag eines Services auf das Geschäft. Zweckmäßigkeit wird durch die Realisierung einer geforderten Funktion oder durch die Beseitigung einer Einschränkung erreicht. Als Qualitätsmerkmal gilt die Einsatzfähigkeit. Sie bezieht sich auf eine ausreichende Verfügbarkeit, Kapazität, Kontinuität und Sicherheit. Es ist Notwendig das bisherige Verständnis von IT-Services um das Kriterium \enquote{Innovationsbeitrag} zu ergänzen. Services müssen sich in einer Innovationskultur bezüglich ihres Beitrags zur Innovationsgenerierung messen lassen.
+
+\cite{Alt2017}
+
+
+\paragraph{Software as a Service}
+
+\paragraph{Design Thinking}
+
+
+\paragraph{IT4IT}
+
+\subsection{Methoden und Technologien der IT-Architektur}
+
+\paragraph{Serviceorientierte IT-Architektur}
+
+
+\paragraph{Infrastructure as a Service}
+
+\paragraph{Cloud-Computing}
+
+\paragraph{Public Cloud}
+
+\paragraph{On-Premise Cloud}
+
+\paragraph{Container-Virtualisierung}
+
+\paragraph{Container-Orchestrierung}
+
+\paragraph{Microservices}

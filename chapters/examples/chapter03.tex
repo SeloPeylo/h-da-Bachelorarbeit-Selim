@@ -1,0 +1,72 @@
+\chapter{Regulatorik}
+\label{ch:background}
+Der nachfolgende Kapitel beinhaltet regulatorische Anforderungen an die IT von Banken und Maßnahmen, um sie umzusetzen.
+%
+% Section: Der erste Abschnitt
+
+\section{BaFin Anforderungen}
+Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen an Kredit- und Finanzdienstleistungsinstitute, die auch auf ihre IT auswirken. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
+\medskip
+\\
+Die BaFin präzisiert für die Institute die Anforderungen des \ac{KWG} zum Risikomanagement auf Gruppenebene und zur Auslagerung mit einem flexiblen und praxisnahen Rahmen für das Risikomanagement, den \ac{MaRisk} \cite{MaRisk:2017}.
+
+\paragraph{Ermessen der Institute}
+In \cite{MaRisk:2017, BAIT:2018} fällt auf, dass viele Vorgaben durch entsprechende Wörter in ihrem Gewicht relativiert werden. Die Maßnahmen zu ihrer Umsetzung liegen hierbei im Ermessen der jeweiligen Institute. Der Ermessenspielraum in den Anforderungen wird bei ihrer sinngemäßen Aufzählung in diesem Kapitel \emph{hervorgehoben}. Im Interesse der Institute ist in erster Linie das Bestehen von Prüfungen und Kontrollen der Aufsicht. Die Ermessensfreiheit könnte in einigen Fällen für Unsicherheit sorgen. Eine Überbürokratisierung der internen Kontrollverfahren seitens der Institute zum bestehen von Prüfungen sollte vermieden werden. Hierfür gibt es Erläuterungen \cite{MaRiskErläuterungen:2017}. Speziell für die IT hat die BaFin in \cite{BAIT:2018} die \ac{MaRisk} noch einmal konkretisiert. Dazu gibt es institutspezifische Interpretationen und Werke, wie zum Beispiel vom Deutschen Sparkassen- und Giroverbund \cite{DSGV:2019}.
+%
+
+\subsection{Risikomanagement}
+Für das Risikomanagement fordert sie die Festlegung von Strategien und die Einrichtung von internen Kontrollverfahren, ein \ac{IKS} und eine interne Revision. Ein Risikomanagement für die IT soll insbesondere den Betrieb schützen. Vom IT-Risikomanagement wird gefordert: \cite{MaRisk:2017}
+\begin{enumerate}
+    \item Sie soll Überwachungs- und Steuerungsprozesse für IT-Risiken einrichten.
+    \item Ihre Prozesse umfassen: Risikokriterien, Risiken, Schutzbedarf, Schutzmaßnahmen, Risikobehandlung und -minderung
+    \item Sie soll Risiken beim Einkauf von Software \emph{angemessen} bewerten.
+\end{enumerate}
+Diese Forderungen zur Bewertung von IT-Risiken gelten auch beim Einsatz von selbst entwickelten Anwendungen, die von ihr als \ac{IDV} bezeichnet wird. Entsprechende Maßnahmen sollen jedoch nach dem Schutzbedarf der verarbeiteten Daten festgelegt werden \cite{MaRisk:2017}.
+
+\subsection{IT-Systeme und Prozesse}
+\begin{enumerate}
+    \item IT-Systeme und Prozesse sollen Integrität, Verfügbarkeit, Authentizität und Vertraulichkeit der Daten mit gängigen Standards sicherstellen.
+    \item IT-Systeme und ihre zugehörigen Prozesse sollen hinsichtlich ihrer Eignung regelmäßig überprüft werden.
+    \item IT-Systeme sollen nach \emph{wesentlichen} Veränderungen und vor erstmaligem Einsatz getestet werden.
+    \item Ein Regelprozesse der Entwicklung, des Testens, der Freigabe und der Implementierung in die Produktionsprozesse soll etabliert werden. 
+    \item Produktions- und Testumgebungen sollen grundsätzlich voneinander getrennt werden.
+\end{enumerate}
+%
+\paragraph{Verantwortung für die Datensicherheit}
+Besonders hervorzuheben ist die Verantwortung der IT-Systeme und Prozesse für die Sicherstellung der Datensicherheit.  Im Fokus stehen die verarbeiteten und gespeicherten Daten in den IT-Systemen und Prozessen.
+\medskip
+\\
+Hierzu fordert die BaFin eine Orientierung am Schutzbedarf der verarbeiteten Daten. Sie verweist mit gängigen Standards auf den IT-Grundschutzkatalog\footnote{vgl. IT-Grundschutzkompendium \cite{IT-Grundschutz:2020}} des \ac{BSI} und auf den internationalen Sicherheitsstandard ISO/IEC 2700X\footnote{vgl. Disterer \cite{Disterer2013}} der \ac{ISO} \cite{MaRisk:2017, MaRiskErläuterungen:2017}.
+
+\subsection{Wesentliche Veränderungen}
+Die BaFin fordert, dass vor wesentlichen Veränderungen in der Aufbau- und Ablauforganisation sowie in den IT-Systemen das Institut die Auswirkung der geplanten Veränderung auf die Kontrollverfahren und -intensität zu analysieren hat. Hierfür sind die später in die Arbeitsabläufe eingebundenen Organisationseinheiten einzuschalten. Risikocontrolling, Compliance und die Interne Revision sind auch zu beteiligen \cite{MaRisk:2017}. 
+%
+\paragraph{Veränderung}
+Daraus könnte ein Hindernis für solche Veränderungen entstehen. Wesentliche Veränderungen in den IT-Systemen könnten einen Anpassungsbedarf des Kontrollverfahrens bedeuten. Vielmehr sollte das interne Kontrollverfahren von einer ständigen Veränderung in der IT ausgehen.
+
+\subsection{Bankaufsichtliche Anforderungen an die IT}
+Die \ac{BAIT} gibt seit 2018 neben der \ac{MaRisk} auf der gleichen Grundlage des \ac{KWG} einen  Rahmen, insbesondere für das Management der IT-Ressourcen und das IT-Risikomanagement. Die Anforderungen aus \ac{MaRisk} werden lediglich konkretisiert. Zudem Präzisiert es die Anforderungen des § 25b des
+\ac{KWG} zu Auslagerung von Aktivitäten und Prozessen \cite{BAIT:2018}.
+\\
+Die \ac{BAIT} ist daher besonders für die Auslagerung von IT-Ressourcen zu berücksichtigen und insbesondere aufgrund der zunehmenden Praxis von \ac{SaaS} und Cloud-Computing relevant.
+\\
+Für die in dieser Arbeit durchgeführten Untersuchung zu einschränkenden Faktoren und Anforderungen daraus resultierender Anforderungen an die IT-Architektur werden einige Themen aus der \ac{BAIT} zusammengefasst.
+
+
+\paragraph{IT-Strategie} Zunächst wird angefordert, dass die Geschäftsleitung eine nachhaltige IT-Strategie festlegen soll. Diese soll konsistent mit der Geschäftsstrategie sein \cite{BAIT:2018}. 
+Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschäftsmodell und IT in einem engen Verhältnis gesehen werden. Die IT steht aus regulatorischer Sicht nicht mehr größtenteils als Risikofaktor im Fokus. Vielmehr kann sie aufgrund einer konkreten Strategie das Geschäftsmodell ergänzen. Diese Anforderung ist eine klare 
+
+\paragraph{IT-Governance} Die IT-Governance wird als Struktur zur Steuerung und Überwachung des IT-Betriebs und der Entwicklung der IT-Systeme und Prozesse auf Basis der IT-Strategie \cite{BAIT:2018} gesehen. Für das Risikomanagement, Entwicklung und Betrieb innerhalb der IT wird eine qualitativ und quantitativ angemessene Ausstattung mit Personal gefordert.
+
+
+
+\subsection{EBA Guidelines on ICT and security risk management}
+
+
+
+
+\section{IT in Finanzinstituten}
+
+\subsection{Internes Kontrollsystem und Revision}
+
+\subsection{Regelprozesse}
