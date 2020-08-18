@@ -31,35 +31,44 @@ Die Anpassung der Verwaltungspraxis kommt jedoch gezwungenermaßen, sodass von e
 \section{Motivation}
 \label{sec:intro:motivation}
 
-Die nachfolgende Arbeit ist aus der Frage entstanden, wie man die Softwareentwicklungsumgebung eines Kreditinstituts skalierbarer und flexibler gestalten kann. Der Autor hat im Rahmen des Praxismoduls der Hochschule Darmstadt ein Praktikum in der DZ BANK AG abgeschlossen.
+Die nachfolgende Arbeit ist aus der Frage entstanden, wie man die Softwareentwicklungsumgebung\footnote{Insbesondere die CI Plattform Jenkins} einer Bank skalierbarer und flexibler gestalten kann. Der Autor hat im Rahmen des Praxismoduls der Hochschule Darmstadt ein Praktikum in der DZ BANK AG abgeschlossen.
 \medskip
 \\
-Anfangs wurde der Fokus auf die \ac{CI} Plattform gelegt und anschließend sich in Themen wie Cloud-Computing, Container-Orchestrierung und Microservices beschäftigt. Im Praktikum wurde sich mit der Entwicklung von Docker-Images für Agenten\footnote{Slave innerhalb einer Master-Slave Konfiguration in Jenkins} der \ac{CI} Plattform Jenkins beschäftigt. Ziel war hierbei eine vielerorts einsetzbare Umgebung zum Ausführen von Builds\footnote{In diesem Zusammenhang die Erstellung von Software, beispielsweise mit dem Build-Tool Maven}. 
-Die \ac{CI} Plattform verteilt die Build-Jobs an Agenten. Die Plattform und ihre Agenten werden in der eigenen Infrastruktur mit persistenten \ac{VMs} betrieben. Die Bestellung, Freigabe und Bereitstellung von konventionellen \ac{VMs} erfolgt hierbei nach einem Regelprozess mit geringer Geschwindigkeit und Flexibilität.
-Eine daraus resultierende eingeschränkte Skalierbarkeit könnte die Verfügbarkeit der \ac{CI} Plattform beeinträchtigen. Hierfür bieten Cloud-Computing und Container-Orchestrierung mögliche Lösungsansätze.
+Anfangs wurde der Fokus auf die \ac{CI} Plattform gerichtet und anschließend sich mit Themen wie Cloud-Computing, Container-Orchestrierung und Microservices beschäftigt. Im Praktikum wurde sich mit der Entwicklung von Docker-Images für Jenkins Agenten\footnote{Slave innerhalb einer Master-Slave Konfiguration in Jenkins, vgl. \cite{Pathania2017}} der \ac{CI} Plattform Jenkins beschäftigt. Ziel war hierbei eine flexibel einsetzbare Umgebung zum Ausführen von verteilten Builds\footnote{In diesem Zusammenhang die Erstellung von Software mit dem Build-Tool Maven}.
+
+Jenkins Master verteilt die Build-Jobs aus der Pipeline an Agenten. Die Plattform und ihre Agenten werden in der eigenen Infrastruktur mit persistenten \ac{VMs} betrieben. Die Bestellung, Freigabe und Bereitstellung von konventionellen \ac{VMs} erfolgt hierbei nach einem Regelprozess\cite{MaRisk:2017} mit geringer Geschwindigkeit und Flexibilität. Daraus resultieren Probleme hinsichtlich der Verfügbarkeit der Umgebung, wenn die Ressourcen nicht ausreichen und mehr angefordert werden muss.
 \medskip
 \\
-Ansätze wie Cloud-Computing, \ac{IaaS}, \ac{SaaS}, DevOps und Agilität werden zum Standard für die Softwareentwicklung. Kredinstitute benötigen hierfür umfangreiche Anpassungen ihrer Prozesse. Wenn selbst eingekaufte Standardanwendungen umfangreichen Analysen und Anpassungen unterliegen, sollte sich bezüglich der internen Kontrollverfahren die Frage gestellt werden, wie mit ständigen Veränderungen in der IT umzugehen ist. Ein angemessenes Risikomanagement sollte Veränderungen fördern. Eine mangelnde Anpassungsfähigkeit und Geschwindigkeit stellt möglicherweise ein höheres Risiko dar.
-\medskip
-\\
+Ansätze wie Cloud-Computing, \ac{IaaS}, \ac{SaaS}, DevOps und Agilität werden zum Standard für die Softwareentwicklung. Banken benötigen für die Umsetzung von neuen Technologien und Methoden umfangreiche Anpassungen ihrer Prozesse. Selbst eingekaufte Standardanwendungen unterliegen nicht selten umfangreichen Analysen und Anpassungen. 
+
+Es sollte sich bezüglich der internen Kontrollverfahren die Frage gestellt werden, wie mit ständigen Veränderungen in der IT umzugehen ist. Ein angemessenes Risikomanagement sollte Veränderungen fördern. Eine mangelnde Anpassungsfähigkeit und Geschwindigkeit stellt möglicherweise ein höheres Risiko dar.
 %
 % Section: Ziele
 %
 \section{Ziel der Arbeit}
 \label{sec:intro:goal}
-Die Arbeit soll sich mit den Rahmenbedingungen für die IT von Kreditinstituten und ihre Auswirkungen auf die Softwareentwicklung auseinanderzusetzen. Ziel ist dabei herauszuarbeiten, wie mit ständigen Veränderungen für die Softwareentwicklung umzugehen ist.
+Die Arbeit soll sich mit den Rahmenbedingungen für die Softwareentwicklungsumgebung von Kredit- und Finanzinstituten auseinandersetzen. Darunter zählen unter anderem regulatorische Anforderungen und Vorgaben der \ac{BaFin}\footnote{vgl. \cite{MaRisk:2017, BAIT:2018}}. Zudem werden aus der Literatur bekannte Probleme\footnote{vgl. \cite{Brockhoff2006, Bussmann2006}} ihrer IT-Architektur untersucht. Ziel ist dabei einschränkende Faktoren für Veränderungen zu ermitteln.
 \medskip
 \\
-Hierfür werden Veröffentlichungen der Aufsicht und 
-
-. Es soll untersucht werden, welche Anforderungen daraus an die bisherige IT-Architektur entstehen. Hierfür werden auch die regulatorischen Vorgaben für die IT in Finanzinstituten mit neuen gängigen Standards der Softwareentwicklung gegenüber gestellt. 
-Als nächstes Ziel werden Cloud-Computing und Containervirtualisierung für eine bessere Skalierbarkeit und Flexibilität der Entwicklungs- und Testumgebungen in Banken untersucht. Daraus soll ein Beispiel für Finanzinstitute resultieren, dass zeigt wie eine skalierbare und flexible Umsetzung der Continuous Integration Plattform Jenkins in einer Bank erfolgen kann. Für diese Umsetzung wird Jenkins die Build-Jobs an Agenten delegieren, die in Containern ausgeführt werden. Für die Container werden spezifische Images anhand von Dockerfiles entwickelt und mit den jeweiligen Build-Tools bestückt. Es wird vorgesehen, dass Jenkins und ihre Agenten in einem Kubernetes Cluster betrieben werden. Kubernetes kann wiederum mit der Google Kubernetes Engine auf der Cloud betrieben werden oder auf einer eigenen Maschine. Ziel ist es das Beispiel hinsichtlich der Architektur offen zu lassen, da die Notwendigkeit der Cloud auch diskutiert werden soll. 
+Es soll untersucht werden, wie die Verwaltungspraxis\footnote{vgl. \cite{BaFin:Verwaltungspraxis}} mit neuen Technologien und Methoden, aus der Impulse für Innovation entstehen \cite{Bussmann2006}, zusammenpassen.
+\medskip
+\\
+Anschließend ist ein weiteres Ziel herauszuarbeiten, was für einen angemessenen Umgang \emph{mit kontinuierlichen Veränderungen der IT-Architektur \cite{Bussmann2006}} und der Softwareentwicklung hinsichtlich neuer Technologien und Methoden bedingt wird.
+\medskip
+\\
+Als nächstes Ziel werden Cloud-Computing und Containervirtualisierung für eine bessere Skalierbarkeit und Flexibilität der Softwareentwicklungsumgebung in Banken untersucht. Daraus soll ein praktischer Ansatz resultieren, dass zeigt wie eine skalierbare und flexible Umsetzung von Jenkins in einer Bank erfolgen könnte. Für dieses Beispiel werden Images für die Jenkins Agenten entwickelt. Diese sollen einen kleinsten gemeinsamen Nenner für die Skalierung der ganzen Plattform darstellen. Das Beispiel soll hinsichtlich der Architektur offen sein, da die Notwendigkeit der Cloud mitdiskutiert werden soll. 
 %
 % Section: Struktur der Arbeit
 %
 \section{Aufbau der Arbeit}
 \label{sec:intro:structure}
-Im zweiten Kapitel fängt der Hauptteil an. Darin werden die Einschränkungen für die Softwareentwicklung in der IT von Banken und ihre Ursachen untersucht. Insbesondere werden die negativen Auswirkungen und die daraus resultierenden Risiken für das Geschäftsmodell beschrieben. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung aus aktuellen Technologien und Methoden abgeleitet. Darüber hinaus wird auf das Innovationspotenzial der IT auf das Geschäftsmodell eingegangen. Die positive Auswirkung von einem Paradigmenwechsel der IT von Banken und Finanzdienstleistern wird anhand von Fallstudien und Beispielen unterstützt.
+Die Arbeit ist unter drei wesentlichen Bereichen gegliedert. 
+
+Im ersten Bereich ist ein umfangreicher Grundlagenkapitel. Diese fasst bekannte Probleme und Ansätze aus verwandten Werken zusammen und stellt den aktuellen Stand der Technik dar. 
+
+Im zweiten Bereich ist ein umfangreicher Theoriekapitel über die Rahmenbedingungen der Softwareentwicklungsumgebung in Banken. Hierin werden die Einschränkenden Faktoren ermittelt. Zusätzlich werden ihre negativen Auswirkungen und Risiken für das Geschäftsmodell untersucht. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung mit aktuellen Technologien und Methoden abgeleitet und erste Lösungsansätze. 
+
+Darüber hinaus wird auf das Innovationspotenzial der IT auf das Geschäftsmodell eingegangen. Die positive Auswirkung von einem Paradigmenwechsel der IT von Banken und Finanzdienstleistern wird anhand von Fallstudien und Beispielen unterstützt.
 \medskip
 \\
 Im dritten Kapitel wird die für die IT relevante Verwaltungspraxis der Bankaufsicht untersucht. Daraus werden wesentlichen regulatorischen Anforderungen für die Entwicklung von nachvollziehbaren Systemen für die \ac{SEU} abgeleitet. Anschließend wird überprüft inwiefern die Verwaltungspraxis die in Kapitel 2 genannten Methoden zulässt und worauf es dabei ankommt. Insbesondere wird der Umgang mit Ständigen Veränderungen in der IT hinterfragt. Zudem wird in diesem Kapitel eine innovationsfördernde Rolle der internen Kontrollverfahren in der IT von Banken gefordert.
