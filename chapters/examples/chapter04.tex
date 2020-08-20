@@ -36,25 +36,38 @@ Die von Disterer beschriebenen Probleme im Betrieb von Anwendungen durch die man
 
 
 \section{Nachvollziehbarkeit der SEU}
-Die Softwareentwicklungsumgebung in 
-Artefakte aus dem Erstellprozess von Software müssen rückverfolgbar sein bis auf den spezifischen Change-Prozess aus dem sie entstanden sind.
+
 
 
 \paragraph{Repository für Artefakte}
 Hierfür wird ein Repository zum Speichern der Artefakte angewendet. Eine Standardsoftware für ein Artefaktrepository ist die Anwendung Artifactory. Dieser speichert mit einem Snapshot die Ergebnisse aus dem Build-Job. Das Artifactory wird ebenfalls verwendet, um die Ressourcen sowie Libraries für den Build zu beziehen. Artifactory wird hierbei entweder als Proxy für den Zugriff auf ausgesuchte öffentliche Repositories verwendet oder die Ressourcen werden in der Artifactory Instanz gehostet.
 
 \section{Skalierung von Jenkins mit Kubernetes}
+Üblicherweise werden Anwendungen mit Kubernetes mit Replikas skaliert. Das heißt in der Praxis, dass eine neue Instanz der Anwendung erzeugt wird. Das bedeutet eine horizontale Skalierung von Anwendungen. Jenkins besteht bei einer Konfiguration mit verteilten Builds aus mehreren Komponenten. Ein Jenkins Master, dass die Build-Jobs triggert und ausführende Komponenten, die aus mehreren Agenten bestehen. Daher sollten die Komponenten für die Skalierung getrennt berücksichtigt werden. Die Skalierung ist vorwiegend für die ausführenden Komponenten erforderlich. 
+\medskip
+\\
+Google beschreibt einen Ansatz für eine skalierbare Architektur von Jenkins mit der \ac{GKE}:
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=1.0\textwidth]{gfx/jenkins-kubernetes-architecture.png}
+ \caption{Deployment von Jenkins in einem Kubernetes Cluster mit mehreren Knoten \cite{Google:GKEJenkins}}
+\end{figure}
+Hierin werden die Komponenten in einem Node zusammengefasst. In Node 1 befindet sich der Jenkins Master. Innerhalb dieses Nodes kann der Jenkins Master repliziert werden. Im gleichen Node oder in weiteren Nodes können die Jenkins Agenten, genannt Jenkins Executor, erzeugt werden.
 
 
 \subsection{Anlegen eines Kubernetes Clusters für Jenkins}
+Pathania beschreibt in \cite{Pathania2017}, wie Jenkins mit \ac{GCP} und Kubernetes und Docker skaliert werden kann. Hierbei geht er genau auf die Konfiguration von Kubernetes und der \ac{GCP} ein.
+
 
 \paragraph{Google Kubernetes Engine}
 
 \paragraph{Minikube}
 
-\subsection{Verteilung von Build-Jobs}
 
-\paragraph{Master-Agent Konfiguration}
+
+\paragraph{Jenkins Master-Agent Konfiguration}
+
 
 \paragraph{Sonstige Konfigurationen}
 
@@ -68,7 +81,7 @@ Hierfür wird ein Repository zum Speichern der Artefakte angewendet. Eine Standa
 
 \subsection{Layering}
 
-\section{Entwicklung von Docker-Images für Build-Jobs}
+\section{Entwicklung von Docker-Images für Jenkins Agenten}
 
 Während des Entwurfs der Architektur eines ganzen Systems für die Softwareentwicklung gibt es viele Parameter, die sich ständig Verändern können. Beispielsweise kann die Entscheidung für oder gegen eine Public-Cloud offen stehen oder es stehen Anpassungen offen, die entscheidende Auswirkungen auf die Teilsysteme haben.
 Für einen kleinsten gemeinsamen Nenner in der Entwicklung eines Systems sollte die Anwendung modularisiert werden und anhand ihrer wesentlichen Funktion kann anschließend die Entwicklung parallel durchgeführt werden. Grundlage hierfür bieten die Microservice Architekturen. Für die Build-Jobs ist die Lokalität erstmal nicht wichtig. Für sie ist die Ausstattung mit den nötigen Build-Tools wichtig und die Kommunikation mit der Versionsverwaltung, gleichzeitig auch die Kommunikation zum integrierenden System. Daher kann bereits mit der Entwicklung von Images für Container begonnen werden, während wichtige Aspekte des Gesamtsystems noch offen stehen.
@@ -102,7 +115,9 @@ Bei einer hohen Ausstattungsstufe besteht jedoch eine hohe Abhängigkeit von ein
 Für das Gesamtbild der Skalierbarkeit ist es jedoch sinnvoll das Ganze mit einer hohen Kompetenz anzugehen. Möglichst minimale und effiziente Container-Umgebungen wirken sich kumulativ auf den Ressourcenbedarf des ganzen Clusters aus. Bei einer Public-Cloud werden üblicherweise die genutzten Ressourcen mit einem Studensatz abgerechnet. Ein weiterer Vorteil entsteht durch das Prinzip des Layerings bei Container-Umgebungen. Auf einer eigenen Image können weitere Images basieren. Hierdurch muss lediglich eine Basis-Image entwickelt werden, in welchem nur die essentiellen Anpassungen vorgenommen werden, mit dem Ziel ein intern evaluiertes Betriebssystem bereitzustellen. Basierend hierauf können unabhängig voneinander Images aufbauen mit den entsprechenden Tools für die unterschiedlichen Programmiersprachen. Dadurch entsteht eine hohe Synergie und Flexibilität für die Systementwicklung und den Betrieb der Systeme.
 
 \paragraph{Minimale Images}
-Eine Best-Practice innerhalb der Entwicklung von Docker-Images ist die Größe so niedrig wie möglich zu halten. Die Linux-Image \lstinline{alpine} ist hierfür als Basis-Image besonders beliebt, da sie mit einer Größe von nur \lstinline{5 MB} eine Linux-Umgebung abbildet und eine Package-Repository besitzt \cite{docker-alpine}. Alpine benutzt jedoch nicht die C Standardlibrary \lstinline{glibc}, sondern \lstinline{musl libc} \cite{alpine-about}. Daher sollte die Nutzung gerade zum Kompilieren von Quellcode abgewägt werden.
+Eine Best-Practice innerhalb der Entwicklung von Docker-Images ist ihre Größe so niedrig wie möglich zu halten. 
+
+Die Linux-Image \lstinline{alpine} ist hierfür als Basis-Image besonders beliebt, da sie mit einer Größe von nur \lstinline{5 MB} eine Linux-Umgebung abbildet und eine Package-Repository besitzt \cite{docker-alpine}. Alpine benutzt jedoch nicht die C Standardlibrary \lstinline{glibc}, sondern \lstinline{musl libc} \cite{alpine-about}. Daher sollte die Nutzung gerade zum Kompilieren von Quellcode abgewägt werden.
 Auch mit den offiziellen Docker-Images von Ubuntu und Debian kommt man auch mit entsprechenden Praktiken auf eine niedrige Größe. Für den Anwendungsfall innerhalb der \ac{CI} Plattform ist es wichtig eine kleinstmögliche Java Installation durchzuführen. Hierfür gibt es entsprechende \lstinline{slim} Editionen der JDK. 
 
 Ein Vergleich zwischen der normalen \lstinline{openjdk:11-jdk} mit der \lstinline{-slim}\footnote{Vgl. Images aus index.docker.io}:
@@ -136,7 +151,7 @@ c8ce5e6d
 Auf die absolute Größe kommt es nicht an. Viel wichtiger ist es bei der Konfiguration der Images sich genau mit den Layers zu befassen. Jedes Befehl in der Dockerfile erzeugt einen neuen Layer. Das Löschen von Dateien wirkt sich nicht auf die vorigen Layer aus. Daher sollten Befehle verkettet als ein Befehl ausgeführt werden und möglichst wenige Daten erzeugt werden. 
 \medskip
 \\
-Aufgrund der geringen Auswirkung der absoluten Größe wird möglichst auf eine Standardumgebung als Basis-Image verwendet. Hierfür wurde \lstinline{debian:buster-slim} ausgewählt. Die Debian Image auf Dockerhub ist eine offizielle Image, die hauptsächtlich vom Debian Maintainer tianon gepflegt und veröffentlicht wird \cite{docker-debian-builds, docker-debian}. 
+Aufgrund der geringen Auswirkung der absoluten Größe wird möglichst auf eine Standardumgebung als Basis-Image verwendet. Hierfür wurde \lstinline{debian:buster-slim} ausgewählt. Die Debian Image auf Dockerhub ist eine offizielle Image, die hauptsächtlich vom Debian Maintainer tianon gepflegt und veröffentlicht wird \cite{docker-debian-builds, docker-debian}.
 
 \subsection{Konfiguration der Images}
 
