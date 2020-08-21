@@ -5,63 +5,93 @@ Der nachfolgende Kapitel untersucht regulatorische Anforderungen an die IT von B
 % Section: Der erste Abschnitt
 
 \section{Technologien im Finanzwesen}
-Zuletzt hat sich die IT vor allem durch einige Schlüsseltechnologien verändert. Für die IT-Architektur hat die Cloud-Computing Technologie zusammen mit Public Cloud Anbietern einen entscheidenden Impuls gegeben. Anwendungen können in kürzester Zeit in großem Umfang skaliert werden. Infrastruktur und Software wird als Dienstleistung bereitgestellt. Kurze Entwicklungszyklen durch agile Methoden sorgen für eine kontinuierliche Weiterentwicklung der Anwendungen, die widerrum dank DevOps und Continuous Deployment und -Delivery in kurzer Zeit bereitgestellt werden.
+Zuletzt hat sich die IT vor allem durch einige Schlüsseltechnologien verändert. Für die IT-Architektur hat die Cloud-Computing Technologie zusammen mit Public Cloud Anbietern einen entscheidenden Impuls gegeben. Anwendungen können in kürzester Zeit in großem Umfang skaliert werden. Infrastruktur und Software wird als Dienstleistung bereitgestellt. Kurze Entwicklungszyklen durch agile Methoden sorgen für eine kontinuierliche Weiterentwicklung der Anwendungen, die wiederum dank DevOps und Continuous Deployment und -Delivery in kurzer Zeit bereitgestellt werden können.
 \medskip
 \\
 Software hat eine Schlüsselrolle für digitale Innovation in allen Bereichen \cite{Alt2017}, die wichtiger denn je geworden ist. Die IT ist ständigen Veränderungen ausgesetzt. Technologietrends erzeugen immer wieder neue Impulse und Betriebe mit properietären Infrastrukturen müssen sich neu ausrichten \cite{Bussmann2006}.
 
-So entstehen gegenüber etablierten Unternehmen, Technologieunternehmen mit effizienten Geschäftsmodellen. Sie integrieren mit unterstützenden Anwendungen IT und Geschäftsmodell \cite{Bussmann2006}. Im Finanzwesen sind es die sogenannten FinTechs.
+So entstehen gegenüber etablierten Unternehmen, Technologieunternehmen mit effizienten Geschäftsmodellen. Sie integrieren mit unterstützenden Anwendungen IT und Geschäftsmodell \cite{Bussmann2006}. Im Finanzwesen sind es die sogenannten FinTechs \ref{Disruption:FinTechs}.
 
-\paragraph{FinTechs}
-Aus den FinTechs entstehen mittlerweile volllizensierte Banken mit direktem Vertrieb über das Internet, wie zum Beispiel N26. Dazu entstehen Banken, die Schnittstellen für Unternehmen anbieten und somit eine reine Plattform für Finanzdienstleistungen sind, beispielsweise die Solarisbank. Auch etablierte Banken haben veränderte Rahmenbedingungen und Impulse erkannt und passen sich dem aktuellen Stand der Technik an \cite{Gupta:2017}.
-
-\subsection{Fallstudie über Goldman Sachs}
+\subsection{Fallstudie Goldman Sachs}
 Goldman Sachs sieht sich nicht als Finanzdienstleister, sondern als ein Technologieunternehmen und als eine Plattform \cite{Gupta:2017}. Diese Transformation kann als Vorbild für Institute des deutschen Finanzwesens gesehen werden. Auf der einen Seite stehen die FinTechts, die sich Marktanteile im Privatkundenbereich sichern. Auf der anderen Seite richten sich anpassungsfähige Institute neu aus und etablieren sich mit Technologien und Plattformen in neue Geschäftsmodelle.
 \medskip
 \\
-Hierzu wurden nachfolgend wesentliche Punkte aus \cite{Gupta:2017} unter den folgenden Themen zusammengefasst:
-\paragraph{Technologien und ihre Auswirkungen} 
+Gupta und Simonds \cite{Gupta:2017} haben die Transformation von Goldman Sachs hin zu einem Technologieunternehmen beschrieben. Nachfolgend werden die wesentlichen Punkte aus dieser Studie untersucht.
+
+\paragraph{Technologien und ihre Auswirkungen}
 \begin{itemize}
-    \item Geschwindigkeit und Auswirkung von Technologien wurde nach der Finanzkrise beschleunigt
+    \item Daten und Metriken wurden wertvoller als die Instinkte der Händler.
+    \item Die Auswirkung von Technologie im Finanzwesen verstärkte sich seit der Finanzkrise 2008 umso stärker
     \item Cloud, Open-Source Software und Schnittstellen führten zu einer erheblichen Reduzierung von Zeit und Kosten in der eigenen Entwicklung von Technologien
     \item Verstärkter Wettbewerb durch FinTechs
 \end{itemize}
 
-\paragraph{Technologien von Goldman Sachs}
-\begin{itemize}
-    \item \enquote{Data Lake} für Mashine-Learning durch eine \emph{hybride Cloud}\footnote{Gemeinsamer Einsatz einer extern und einer intern betriebenen Cloud-Plattform}
-\end{itemize}
-%
-\paragraph{Wettbewerb durch FinTechs}
-Darren Cohen\footnote{Vorsitzender von Goldman Sachs' PSI Group, vgl. \cite{Gupta:2017}} sieht im Bereich Wertpapierhandel in FinTechs keine Gefahr:
+Ein interessanter Punkt ist vor allem die Reduktion der Kosten für die eigene Entwicklung von Technologien. Verwendung von Standardsoftware, die Open-Source ist, bringt die Softwareentwicklung auf einen gemeinsamen Nenner. Mit der Verwendung von Standardsoftware für die Entwicklung von Anwendungen können öffentliche Ansätze für einen spezifischen Bedarf angepasst werden. Probleme bezüglich der Skalierung von Anwendungen im Betrieb sind beispielsweise kein neues Problem. Zu gängigen Anwendungen wie Jenkins existieren öffentliche Ansätze \ref{fig:gkejenkins}, die auf den jeweiligen Bedarf angepasst werden müssen. Das Erspart sehr viel Aufwand in der Entwicklung eines eigenen Konzepts für den individuellen Bedarf. Open-Source und Standardsoftware sind somit ein antreibender Faktor für die Softwareentwicklung.
 
-Die Anforderungen für neue Marktteilnehmer schwierig und für junge FinTechs unüberwindlich. Die Abwicklung im Bereich Wertpapierhandel ist hochreguliert und erfordert hohe Bilanzsumme, hohe Infrastrukturinvestitionen und einen erheblichen, globalen Einfluss. 
+Parallel dazu sind Cloud-Plattformen ein weiterer Antreiber für die Entwicklung von eigenen Anwendungen.
 
-\cite{Gupta:2017}
+Im Finanzwesen mangelt es jedoch eher an Fachkräften. Die Verwendung von Standardsoftware, die Open-Source sind reduziert die Einstiegshürden der Fachkräfte. Properitäre Anwendungen benötigen dagegen spezialisiertes Personal.
 
 \paragraph{IT-Strategie von Goldman Sachs}
+Die Integration von neuen Technologien war für Goldman Sachs Opportunität und unvermeidbar \cite{Gupta:2017} zugleich. 
 \begin{itemize}
-    \item Die Integration von neuen Technologien eine Opportunität und unvermeidbar zugleich
     \item Kostensenkung durch eine Effizienzsteigerung des Betriebs
     \item Entwicklung von internen und externen Plattformen
     \item Unterstützung des Kerngeschäfts
     \item Wertschöpfung von neuen Geschäftsmodellen
 \end{itemize}
 
+Gerade der verstärkte Wettbewerb durch FinTechs und der finanzielle Druck nach der Finanzkrise bedingten, dass sich das Unternehmen verändert. Die Unvermeidbarkeit dieser Entscheidung zeigt auch, dass Opportunitäten nicht ausreichen, um Veränderungen umzusetzen. Goldman Sachs musste sich anpassen, um in einer digitalen Welt geschäftsfähig zu bleiben. Sie musste neue Technologien integrieren, weil das alte Modell nicht mehr tragbar ist. 
+
+Der Ansatz neue Technologien anzunehmen hat weitreichende Auswirkungen auf ein Unternehmen. Eine gewisse Risikoakzeptanz dieser Auswirkungen muss vorhanden sein, um sich für neue Technologien zu überwinden. Handlungsunfähigkeit ist oft das größere Risiko.
+
+\paragraph{Technologien und Plattformen von Goldman Sachs}
+\begin{itemize}
+    \item \enquote{Data Lake} für Mashine-Learning durch eine \emph{hybride Cloud}\footnote{Gemeinsamer Einsatz einer extern und einer intern betriebenen Cloud-Plattform}
+    \item \enquote{SIMON}, eine Plattform und Onlinemarktplatz für \enquote{Structured Notes}
+\end{itemize}
+
+\subsection{Wettbewerb durch FinTechs}
+Darren Cohen\footnote{Vorsitzender von Goldman Sachs' PSI Group, vgl. \cite{Gupta:2017}} sieht im Bereich Wertpapierhandel von FinTechs keine Gefahr für Goldman Sachs \cite{Gupta:2017}.
+Hierzu nennt Cohen einige Gründe \cite{Gupta:2017}:
+
+Die Anforderungen für neue Marktteilnehmer seien schwierig und für junge FinTechs unüberwindlich. Die Abwicklung im Bereich Wertpapierhandel sei hochreguliert und erfordere eine hohe Bilanzsumme, hohe Infrastrukturinvestitionen und einen erheblichen, globalen Einfluss.
+\medskip
+\\
+Cohens Begründung pauschalisiert jedoch die Rahmenbedingungen der FinTechs. Abwicklungen mit hohen Summen finden bereits über Plattformen von Blockchain FinTechs statt. Diese Unternehmen agieren jenseits der Rahmenbedingungen und Regulierungen von konventionellen Instituten \ref{Disruption:Blockchain}.
+%
+
 \paragraph{Effizienzsteigerung}
+Gupta und Simonds \cite{Gupta:2017} be
 Die Automatisierung von Geschäftsprozessen wurde durch die Zentralisierung von Kernelementen vorangetrieben, wodurch Redundanzen entfernt wurden. Die unterschiedlichen Geschäfte wurden bisher in \enquote{Silos} als unabhängige und eigenverantwortliche Einheiten ausgeführt. Es stellte sich die Frage, was ihre gemeinsamen Nenner sind. Ein Ansatz war in einer gemeinsamen technologischen Plattform zu arbeiten und in kleineren Teams sich darauf zu konzentrieren, was das jeweilige Geschäft ausmacht. Zu ihrer Unterstützung unterliegt ihnen ein größeres gemeinsamen Team.
 
 Dieser Ansatz beinhaltet viele Schwierigkeiten und erfordert die Zusammenarbeit aller Beteiligten. Die Geschäftseinheiten müssen kurzfristige Kompromisse eingehen und als finanziell eigenverantwortliche Einheiten die Kosten tragen. Es gibt eine gemeinsame Vision, der Fortschritt besteht jedoch darin die historischen, vertikalen Barrieren zu durchbrechen und in einer digitalen Welt zu arbeiten.
-%
+
 \paragraph{Technologieplattformen}
 Während an einer Technologieplattform für interne Zwecke gearbeitet wurde, sah Goldman Sachs eine Möglichkeit diese auch für ausgewählte Geschäftskunden verfügbar zu machen. Die Anwendungen wurden self-contained entwickelt, sodass die Integration in interne und externe Systeme mit geringem Aufwand realisierbar ist.
 
 Die Entscheidung gewisse Anwendungen für die Marktanalyse an Kunden verfügbar zu machen verbesserte den Kundendialog und sollte Goldman Sachs zum bevorzugten Partner für den Handel machen.
-
+%
 \paragraph{neue Geschäftsmodelle}
 Mit der Entwicklung von SIMON, einem Onlinemarktplatz für \enquote{Structured Notes}, erhöhte Goldman Sachs ihre Reichweite zu einer neuen Nutzergruppe. Das Wachstumspotenzial von einer Plattform mit einem einzigen Anbieter wurde erreicht, sodass die eigene Plattform an weitere konkurrierenden Emittenten geöffnet wurde. Dies erhöhte die Kundenzufriedenheit, da eine größere Auswahl und Vielfalt an Angeboten hierdurch entstand.
 
 \cite{Gupta:2017}
+
+\section{Disruption}
+
+\paragraph{FinTechs}
+\label{Disruption:FinTechs}
+Aus den FinTechs entstehen mittlerweile volllizensierte Banken mit direktem Vertrieb über das Internet, wie zum Beispiel N26. Dazu entstehen Banken, die Schnittstellen für Unternehmen anbieten und somit eine reine Plattform für Finanzdienstleistungen sind, beispielsweise die Solarisbank. Auch etablierte Banken haben veränderte Rahmenbedingungen und Impulse erkannt und passen sich dem aktuellen Stand der Technik an \cite{Gupta:2017}.
+
+\paragraph{Blockchain-Technologie}
+\label{Disruption:Blockchain}
+Im Vergleich zu Cohens Anforderungen an neue Marktteilnehmer\footnote{vgl. \cite{Gupta:2017}} gilt eine Blockchain wie Bitcoin oder Ethereum als hochgesichert, enthält hohe Bilanzsummen, das vermutlich leistungsstärkste Infrastrukturnetzwerk und ist global in jeder Hinsicht.
+
+An dieser Technologie können sich unter anderem FinTechs beteiligen und die Eintrittsbedingungen mit Leichtigkeit überwinden. Zu den bekanntesten Handelsplattformen, die aus der Blockchain-Technologie entstanden sind zählen Kraken, Poloniex, Bitfinex, Shapeshift und Coinbase.
+
+Für die Abwicklung von Schuldscheindarlehen gibt es ein Pilotprojekt von deutschen Banken. 
+
+Basierend auf der Blockchain-Technologie erschafft ein Konsortium aus deutschen Kreditinstituten die Plattform finledger. Diese soll zu einem Standard werden und nach der Pilotierung allen Instituten zugänglich sein.
 
 \section{Regulatorik der IT im Finanzwesen}
 Eine Welle von regulatorischen Veränderungen wurde durch die Auswirkungen der Finanzkrise 2008 herbeigeführt, um zukünftige systemische Krisen zu vermeiden \cite{Gupta:2017}.

@@ -37,33 +37,53 @@ Die von Disterer beschriebenen Probleme im Betrieb von Anwendungen durch die man
 
 
 \section{Nachvollziehbarkeit der SEU}
+Die \ac{SEU} sollte aus mehreren Gründen möglichst nachvollziehbar gestaltet werden. Eine flexible Umgebung setzt auch Wartbarkeit und Anpassungsfähigkeit voraus. Dies ist durch die Verwendung von gängigen Standards möglich. Systeme sollten möglichst unabhängig von einzelnen Verantwortlichen verständlich und offen sein. Eine Individualisierung von Systemen sollte möglichst vermieden werden. Sie sollten auf einen gemeinsamen Nenner gebracht werden.
 
+Dadurch kann eine schnelle Anpassung der Systeme an neue Technologien und Methoden erfolgen. Gleichzeitig können Systeme für neue Geschäftsmodelle in kurzer Zeit weiterentwickelt werden. Während einer Störung der Systeme oder in Krisensituationen kann auch schnell reagiert werden.
 
+Dies hat auch einen positiven Effekt auf interne Kontrollverfahren. Die Umgebung ist nicht nur verständlicher für den Prüfer sondern auch sicherer durch die Verwendung von bereits geprüften Standards.
+
+Nachvollziehbarkeit wird in Banken auch für die Rückverfolgung von Softwareartefakten vorausgesetzt. In der Praxis müssen Ergebnisse aus der Entwicklung rückverfolgbar sein bis auf den Quellcode, der Anforderung und dem Prozess aus der sie entstanden sind.
 
 \paragraph{Repository für Artefakte}
-Hierfür wird ein Repository zum Speichern der Artefakte angewendet. Eine Standardsoftware für ein Artefaktrepository ist die Anwendung Artifactory. Dieser speichert mit einem Snapshot die Ergebnisse aus dem Build-Job. Das Artifactory wird ebenfalls verwendet, um die Ressourcen sowie Libraries für den Build zu beziehen. Artifactory wird hierbei entweder als Proxy für den Zugriff auf ausgesuchte öffentliche Repositories verwendet oder die Ressourcen werden in der Artifactory Instanz gehostet.
+Eine Standardsoftware hierfür die Anwendung Artifactory. Diese speichert in einem Snapshot die Ergebnisartefakte aus dem Build-Job und die zum erstellen verwendeten Artefakte. Das Artifactory wird ebenfalls verwendet, um Tools und Libraries für den Build zu beziehen. Dazu wird Artifactory entweder als Proxy für den Zugriff auf ausgesuchte öffentliche Repositories verwendet oder die Ressourcen werden in der Artifactory Instanz hinterlegt.
 
 \section{Skalierung von Jenkins mit Kubernetes}
-Üblicherweise werden Anwendungen mit Kubernetes mit Replikas skaliert. Das heißt in der Praxis, dass eine neue Instanz der Anwendung erzeugt wird. Das bedeutet eine horizontale Skalierung von Anwendungen. Jenkins besteht bei einer Konfiguration mit verteilten Builds aus mehreren Komponenten. Ein Jenkins Master, dass die Build-Jobs triggert und ausführende Komponenten, die aus mehreren Agenten bestehen. Daher sollten die Komponenten für die Skalierung getrennt berücksichtigt werden. Die Skalierung ist vorwiegend für die ausführenden Komponenten erforderlich. 
+\label{jenkins:skalierung}
+Üblicherweise werden Anwendungen in Kubernetes mit Replikas skaliert. Das heißt in der Praxis, dass eine neue Instanz der Anwendung erzeugt wird und ein Load-Balancer die Anfragen unter den verschiedenen Instanzen verteilt. Das resultiert in der vorwiegend horizontalen Skalierung von Anwendungen. 
+
+Jenkins besteht bei einer Konfiguration mit verteilten Builds aus mehreren Komponenten. Ein Jenkins Master, welche die Anfragen bearbeitet und Build-Jobs triggert und ausführende Agenten für die Verteilung von Builds. Die Komponenten sollten getrennt voneinander skaliert werden, da sie vorwiegend für die ausführenden Komponenten erforderlich ist. 
+
+Hierfür gibt es in Kubernetes mehrere Abstraktionsebenen. Die größte Einheit, die die ganze Architektur zusammenfasst ist der Cluster. Dieser besteht aus mehreren Knoten, die jeweils mehrere Pods beinhalten. Die Knoten sind virtuelle Maschinen und enthalten die Hardware. Innerhalb dieser Knoten werden die Container ausgeführt. Diese sind noch einmal unter Pods zusammengefasst, die eine Arbeitseinheit oder Service darstellen. 
 \medskip
 \\
-Google beschreibt einen Ansatz für eine skalierbare Architektur von Jenkins mit der \ac{GKE}:
+Ein sinnvoller Ansatz ist die ganze Anwendung innerhalb eines Knotens aufzubauen und sie durch Replikas der Knoten zu skalieren. Dabei sollte die Anwendung modularisiert werden und in unabhängig voneinander skalierbare Microservices aufgeteilt werden. Anwendungen können komplex sein und ein Engpass entsteht in wenigen Bereichen, sodass nicht die ganze Anwendung repliziert werden muss. In der Praxis werden die Funktionen der Anwendung in mehreren Containern aufgeteilt, die miteinander kommunizieren. Die Replikation von Containern bewirkt, dass Anwendungen nur in den Komponenten skaliert werden, in der es erforderlich ist. Diese Praxis schafft Redundanzen ab und und sorgt für einen Wirkungsgrad in der Nutzung von IT-Ressourcen.
+
+
+%
+\paragraph{Google Kubernetes Engine}
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=1.0\textwidth]{gfx/jenkins-kubernetes-architecture.png}
- \caption{Deployment von Jenkins in einem Kubernetes Cluster mit mehreren Knoten \cite{Google:GKEJenkins}}
+ \caption{Deployment von Jenkins in einem Kubernetes Cluster mit mehreren Knoten \cite{Google:GKEJenkins}\label{fig:gkejenkins}}
 \end{figure}
-Hierin werden die Komponenten in einem Node zusammengefasst. In Node 1 befindet sich der Jenkins Master. Innerhalb dieses Nodes kann der Jenkins Master repliziert werden. Im gleichen Node oder in weiteren Nodes können die Jenkins Agenten, genannt Jenkins Executor, erzeugt werden.
 
+Google beschreibt in \cite{Google:GKEJenkins} einen Ansatz für eine skalierbare Architektur von Jenkins mit der \ac{GKE}.
+
+In Abb. \ref{fig:gkejenkins} werden die Komponenten in mehreren Knoten, genannt Nodes zusammengefasst. In Node 1 befindet sich der Jenkins Master. Innerhalb dieses Nodes kann der Jenkins Master repliziert werden. Im gleichen Node oder in weiteren Nodes können die Jenkins Agenten, genannt Jenkins Executor, erzeugt werden.
+
+Der Load Balancer aus der \ac{GKE} arbeitet vollautomatisch und erfordert nur wenige Parameter zur Konfiguration. Das reduziert den Aufwand in der Entwicklung dieser Architektur erheblich.
+
+So lange in einem Node genug Ressourcen frei sind können weitere Container in so genannten Pods erzeugt werden. Zudem können beliebig viele weitere Nodes aktiviert oder erzeugt werden. Ein Node ist in \ac{GKE} eine virtuelle Maschine aus der Computing Engine.
+\medskip
+\\
+Daraus resultiert eine hohe Flexibilität für die Skalierung der Anwendungen. Diese können sowohl vertikal anhand der Ressourcen von den Nodes, als auch Horizontal über die Aktivierung von weiteren Nodes oder Pods skaliert werden. Vor allem bestehen für die horizontale Skalierung mehrere Abstraktionsebenen.
+
+\paragraph{Minikube}
 
 \subsection{Anlegen eines Kubernetes Clusters für Jenkins}
 Pathania beschreibt in \cite{Pathania2017}, wie Jenkins mit \ac{GCP} und Kubernetes und Docker skaliert werden kann. Hierbei geht er genau auf die Konfiguration von Kubernetes und der \ac{GCP} ein.
-
-
-\paragraph{Google Kubernetes Engine}
-
-\paragraph{Minikube}
 
 
 
@@ -84,11 +104,32 @@ Pathania beschreibt in \cite{Pathania2017}, wie Jenkins mit \ac{GCP} und Kuberne
 
 \section{Entwicklung von Docker-Images für Jenkins Agenten}
 
-Während des Entwurfs der Architektur eines ganzen Systems für die Softwareentwicklung gibt es viele Parameter, die sich ständig Verändern können. Beispielsweise kann die Entscheidung für oder gegen eine Public-Cloud offen stehen oder es stehen Anpassungen offen, die entscheidende Auswirkungen auf die Teilsysteme haben.
-Für einen kleinsten gemeinsamen Nenner in der Entwicklung eines Systems sollte die Anwendung modularisiert werden und anhand ihrer wesentlichen Funktion kann anschließend die Entwicklung parallel durchgeführt werden. Grundlage hierfür bieten die Microservice Architekturen. Für die Build-Jobs ist die Lokalität erstmal nicht wichtig. Für sie ist die Ausstattung mit den nötigen Build-Tools wichtig und die Kommunikation mit der Versionsverwaltung, gleichzeitig auch die Kommunikation zum integrierenden System. Daher kann bereits mit der Entwicklung von Images für Container begonnen werden, während wichtige Aspekte des Gesamtsystems noch offen stehen.
+Während der Entwicklung eines Kubernetes Clusters für die \ac{SEU} gibt es viele Parameter, die sich ständig verändern können. Beispielsweise kann die Entscheidung für oder gegen eine Public-Cloud offen stehen oder es stehen Anpassungen offen. Daher kann nicht immer auf der größten Ebene angefangen werden.
+
+Ein Ansatz für das Re-Design von Anwendungen ist die Entkernung und Modularisierung von Systemen \cite{Bussmann2006}.
+Für einen gemeinsamen Nenner sollte die \ac{SEU} anhand ihrer wesentlichen Funktionen aufgeteilt werden \ref{jenkins:skalierung}. Dadurch kann anschließend die Entwicklung ihrer Komponenten parallel durchgeführt werden. 
+
+\paragraph{Kleinster gemeinsamer Nenner der SEU}
+Der kleinste gemeinsame Nenner der \ac{SEU} sind die einzelnen Stages aus den Pipelines, die nach dem Regelprozess für die Softwareentwicklung entwickelt wurden und die einzelnen Schritte aus dem Prozess darstellen.
+
+Der größte Skalierungsbedarf besteht im Build-Stage, da sie sehr Rechen- und Speicherintensiv ist. Diese Komponente sollte als erstes optimiert werden.
+Für die Build-Jobs gemäß der Pipeline ist die Plattform, in der sie sich befindet in erster Linie nicht relevant. 
+
+\paragraph{Worauf es ankommt}
+Die Build-Jobs werden in der Regel verteilt auf Agenten. Wichtig hierbei ist ihre Kommunikation zu den beteiligten Systemen. Beteiligte Systeme sind:
+\begin{itemize}
+    \item Versionsverwaltung: Sie verwaltet den Quellcode, der für den Build von ihr bezogen wird
+    \item Artefaktrepository: Sie ist die Quelle, aus der Softwareartefakte bezogen werden und sichert und verfolgt die Ergebnisartefakte
+    \item Integrationsplattform: Sie delegiert die Build-Jobs, welche die praktische Ausführung der Pipelines definieren
+\end{itemize}
+
+Agenten sind self-contained und werden in der Regel auf hierfür konfigurierten Maschinen ausgeführt. Daher kann bereits mit der Entwicklung von Images für die Agenten begonnen werden, während wichtige Aspekte des Gesamtsystems noch geklärt werden.
+
+\paragraph{Vorteile von Container}
+Container bieten klare Vorteile gegenüber klassischen VMs. 
 
 \paragraph{Use-Case}
-Die Images werden zur Erzeugung von Containern innerhalb eines Kubernetes Clusters für die Integrationsplattform Jenkins verwendet. Diese werden erzeugt, für den Einsatz als Agent innerhalb einer Master-Slave Konfiguration von Jenkins für verteilte Builds. Diese Agenten sind für die Ausführung eines Java Builds mit dem Build-Management Tool Maven zuständig.
+Die Images werden zur Erzeugung von Containern innerhalb eines Kubernetes Clusters für die Skalierung einer Komponente der Integrationsplattform Jenkins verwendet. Diese werden erzeugt, für den Einsatz als Agent innerhalb einer Master-Slave Konfiguration von Jenkins für verteilte Builds. Diese Agenten sind für die Ausführung eines Java Builds mit dem Build-Management Tool Maven zuständig.
 
 \paragraph{Anforderungen}
 \begin{itemize}
