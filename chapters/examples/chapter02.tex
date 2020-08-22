@@ -21,31 +21,54 @@ Pathania zeigt in \cite{Pathania2017} wie Jenkins mit Kubernetes, Docker und Pub
 Dadurch erzeugt er die Images über einen Container, welches vorher konfiguriert wurde. Insbesondere beschreibt Pathania ausführlich die einzelnen Schritte, die für die Orchestrierung der ganzen Anwendung mit Kubernetes erforderlich sind.
 
 \section{Stand der Technik}
-
-\subsection{Methoden und Prozesse der Softwareentwicklung}
-
-\paragraph{Continuous Integration}
-
+Zuletzt hat sich die IT vor allem durch einige Schlüsseltechnologien verändert. Für die IT-Architektur hat Cloud-Computing zusammen mit Cloud-Plattformen einen entscheidenden Impuls gegeben. Sie haben IT-Ressourcen abstrahiert. Diese können mit Befehlen aufgerufen werden und sind in kurzer Zeit bereitgestellt. Anwendungen können in kürzester Zeit und in großem Umfang skaliert werden. Software wird dadurch immer mehr als Dienstleistung bereitgestellt und findet sich immer weniger in den Festplatten von lokalen Systemen. Kurze Entwicklungszyklen durch neue und agile Methoden sorgen für eine kontinuierliche Weiterentwicklung der Anwendungen. Software wird dadurch in immer kürzeren Abständen integriert und ausgeliefert. Hierzu entstand der Bedarf einer erhöhten Zusammenarbeit zwischen Betrieb und Entwicklung, woraus der Trendbegriff DevOps entstand. Die Kontinuität wird immer relevanter, sodass Methoden wie \ac{CI} und \ac{CD} zum Standard und miteinander vereint werden. Gleichzeitig herrscht ein kontinuierlicher Anstieg der Anforderungen an die IT-Architektur \cite{Bussmann2006}, die in unflexiblen Architekturen in einem Engpass gemündet ist \cite{Brockhoff2006, Bussmann2006}. Diese Engpässe könnten aufgrund neuer Technologien und Architekturen, wie zum Beispiel Kubernetes, Docker und Microservices gelöst werden. Grundlage hierfür bieten unter anderem gemeinsame Plattformen, wie zum Beispiel eine Cloud.
 
 \paragraph{DevOps}
-Alt et al. erklärt die Hintergründe von DevOps:
-
-DevOps ist eine Bezeichnung, die durch die Zusammensetzung der Wörter \enquote{Development} und \enquote{Operations} stammt und entstand aus den \emph{Problemen bei der Inbetriebnahme von Software \cite{mci/Disterer2011}}.
-Aus einer schnellen, flexiblen und nutzerzentrierten Umsetzung von funktionalen Anforderungen resultieren Benutzerakzeptanz und Kundenzufriedenheit. 
-
-Techniken, Prozesse und Tools von DevOps zielen darauf ab typische Probleme in der Zusammenarbeit zwischen Entwicklung Betrieb entgegen zu wirken. In Konsequenz soll die Kundenzufriedenheit verbessert werden. Die Automatisierung von Routineaufgaben und Wandel in der Zusammenarbeitskultur hat darin eine zentrale Bedeutung. Für die DevOps-Prinzipien existieren keine standardisierten Vorgehensbeschreibungen. Die Einführung ist sehr individuell und Unternehmen passen die Prinzipien an ihre eigene Situation an. 
-
-DevOps steht für \enquote{Culture}, \enquote{Automation}, \enquote{Measurement} und \enquote{Sharing} \cite{humble:2011}. 
+DevOps ist eine Bezeichnung, die durch die Zusammensetzung der Wörter \enquote{Development} und \enquote{Operations} stammt und entstand aus Problemen bei der Inbetriebnahme von Software \cite{mci/Disterer2011}. Aus einer schnellen, flexiblen und nutzerzentrierten Umsetzung von funktionalen Anforderungen resultieren Benutzerakzeptanz und Kundenzufriedenheit \cite{mci/Disterer2011, Alt2017}. Daher ist es ein Ziel von DevOps die Zusammenarbeit zwischen Entwicklung und Betrieb zu verbessern. Die Automatisierung von Routineaufgaben und Wandel in der Zusammenarbeitskultur hat darin eine zentrale Bedeutung \cite{Alt2017}. 
+\medskip
+\\
+In der Praxis wird die Zusammenarbeit zwischen Entwicklung und Betrieb durch einen gemeinsamen Prozess erreicht. Hierbei werden vor allem zwei Verfahren vereint und automatisiert, Continuous Integration und Continuous Delivery. Zusammen bilden sie einen kontinuierlichen Lebenszyklus der Entwicklung von der Idee bis hin zur Inbetriebnahme.
+\medskip
+\\
+Für die DevOps Prinzipien gibt es keine festgelegten Beschreibungen, sodass Unternehmen sie nach ihrem eigenen Bedarf anpassen und individualisieren \cite{Alt2017}. DevOps ist ein loser Zusammenschluss aus mehreren Prinzipien für eine bessere Zusammenarbeit.
+Es gibt jedoch Prinzipien, die vor allem eine Kulturänderung in Organisationen fordern. Die Prinzipien von DevOps stehen nach \citet{humble:2011} für \enquote{Culture}, \enquote{Automation}, \enquote{Measurement} und \enquote{Sharing}. 
+\medskip
+\\
+Alt et al. \cite{Alt2017} eruieren diese Punkte weiter\footnote{\citet{Alt2017}, S.26-27, zusammengefasst}:
 \begin{itemize}
-    \item \emph{Kulturwandel} zu einer gemeinsamen Verantwortung aller Beteiligten für die Auslieferung von Qualitätssoftware
+    \item \emph{Kulturwandel}, zu einer gemeinsamen Verantwortung aller Beteiligten für die Auslieferung von Qualitätssoftware
     \item \emph{Automatisierung} der Prozesse von Entwicklung, Test und Bereitstellung bis hin zur Produktivnahme als Schlüssel für kürzere Durchlaufzeiten, Fehlervermeidung und schnelleres Feedback
     \item \emph{Kennzahlen}, die miteinander verknüpft als Beitrag zur geschäftlichen Wertschöpfung und Produktivitätssteigerung durch faktenbasierte Einstufung der aktuellen Leistungen und Definition von überprüfbaren Verbesserungszielen
-    \item \emph{Teilen} zum Beispiel von Wissen, Tools, Infrastruktur und die Würdigung von Erfolgen als Prinzip um die Zusammenarbeit zwischen den Beteiligten zu prägen
+    \item \emph{Teilen}, zum Beispiel von Wissen, Tools, Infrastruktur und die Würdigung von Erfolgen als Prinzip um die Zusammenarbeit zwischen den Beteiligten zu prägen
 \end{itemize}
 
-\cite{Alt2017}
+\paragraph{Continuous Integration}
+\ac{CI} ist in der Softwareentwicklung ein Verfahren für die Erstellung von Software. Sie steht für eine kontinuierliche Integration von Softwarekomponenten in die gesamte Anwendung. Als Ergebnis liefert sie getestete \emph{Builds}, welche eine spezifische Ausgabe der entwickelten Anwendung sind. Kontinuität wird hierbei durch Automatisierung erreicht. Hierfür werden Zwischenschritte, so genannte \emph{Stages} in einer \emph{Pipeline} abgearbeitet. Die Pipelines definieren den jeweiligen Ablauf für die Erstellung eines Builds.
+
+In der Praxis ist sie ein Ansatz, um den Erstellungsprozess von Software zu automatisieren. Builds werden in größeren Organisationen nicht auf den lokalen Rechnern von Entwicklern erstellt, sondern in einer gemeinsamen Plattform. Die Plattform steuert zudem den in der Pipeline enthaltenen Ablauf, wie Testen und Auslieferung. Eine weit verbreitete Plattform für \ac{CI} ist Jenkins. Für Jenkins gibt es viele Erweiterungen, wodurch die Anwendung sehr Anpassungsfähig ist. 
+\ac{CI} Plattformen werden in der Regel mit weiteren Anwendungen der Softwareentwicklung, wie zum Beispiel das \ac{SCM} kombiniert. 
 
 \paragraph{Continuous Delivery}
+\ac{CD} ist ein Verfahren für die Auslieferung von Builds an die produktive Umgebung, die sich im Rahmen von DevOps von Entwicklung hin zu Test- und Produktionsumgebung erstreckt \citet{Alt2017}. Die Produktionsumgebung ist hierbei der tatsächliche geschäftliche Betrieb von IT. Durch die Erweiterung von \ac{CI} mit \ac{CD} entsteht die eigentliche Pipeline, die auch \enquote{Delivery Pipeline} genannt wird. Das Ziel von Continuous Delivery ist die Auslieferung und Abnahme von Software und enthält Aufgaben für Qualitäts-, Risiko- und Change-Prozesse \cite{Alt2017}.
+\medskip
+\\
+Neben \ac{CD} existiert der hiervon schwierig unterscheidbare Begriff \emph{Continuous Deployment}, welcher sich im Anschluss von \ac{CI}, auf die automatisierte Inbetriebnahme in die Produktionsumgebung konzentriert \cite{Alt2017}. Continuous Deployment kann als das Konzept für die kontinuierliche Inbetriebnahme von Builds eingegrenzt werden und ist durchaus Bestandteil der technischen Umsetzung von \ac{CD}.
+
+\paragraph{Infrastructure as Code}
+
+\paragraph{Infrastructure as a Service}
+
+\paragraph{Cloud-Computing}
+
+\paragraph{Software as a Service}
+
+\paragraph{Platform as a Service}
+
+\paragraph{Microservices}
+
+\paragraph{Container-Virtualisierung}
+
+\paragraph{Container-Orchestrierung}
 
 \paragraph{ITIL}
 Alt et al. beschreibt ITIL im Rahmen des Innovationsdrucks vom IT-Management:
@@ -54,36 +77,7 @@ Viele Organisationen haben ihre Leistungen nach dem ITIL-Service-Lebenszyklus st
 
 \cite{Alt2017}
 
-
-\paragraph{Software as a Service}
-
 \paragraph{Design Thinking}
 Design Thinking ist ein Ansatz für einen Prozess für die Entwicklung von Produkten. Der Ablauf ihrer Schritte erfolgt iterativ. 
 
 \paragraph{IT4IT}
-
-\subsection{Methoden und Technologien der IT-Architektur}
-
-
-\paragraph{Serviceorientierte IT-Architektur}
-
-
-\paragraph{Infrastructure as a Service}
-
-
-\paragraph{Cloud-Computing}
-
-
-\paragraph{Public Cloud}
-
-
-\paragraph{On-Premise Cloud}
-
-
-\paragraph{Hybrid Cloud}
-
-\paragraph{Container-Virtualisierung}
-
-\paragraph{Container-Orchestrierung}
-
-\paragraph{Microservices}
