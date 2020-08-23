@@ -54,22 +54,29 @@ In der Praxis ist sie ein Ansatz, um den Erstellungsprozess von Software zu auto
 \\
 Neben \ac{CD} existiert der hiervon schwierig unterscheidbare Begriff \emph{Continuous Deployment}, welcher sich im Anschluss von \ac{CI}, auf die automatisierte Inbetriebnahme in die Produktionsumgebung konzentriert \cite{Alt2017}. Continuous Deployment kann als das Konzept für die kontinuierliche Inbetriebnahme von Builds eingegrenzt werden und ist durchaus Bestandteil der technischen Umsetzung von \ac{CD}.
 %
+\paragraph{DevOps Lebenszyklus}
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=1.0\textwidth]{gfx/devops_ueberblick.PNG}
  \caption{\citet{Alt2017}, S. 28, DevOps im Überblick\label{fig:devops}}
 \end{figure}
 \medskip
-\\
-Abb. \ref{fig:devops} stellt das DevOps Lebenszyklus mit ihren jeweiligen kontinuierlichen Verfahren dar, die das Produkt und die Beteiligten umfassen. Agile Entwicklung, \ac{CI} und \ac{CD} sind jeweils Verfahren, die vor DevOps existierten. Sie werden in diesem Zusammenhang jedoch als ein kontinuierliches Modell gesehen, die eine Schnittstelle zwischen den Beteiligten herstellt und das Produkt dadurch am Leben erhält und wachsen lässt. Das Wesentliche an diesem Modell ist ein Kontinuitätsprinzip \cite{Alt2017} der Prozesse auf allen Ebenen.
+Abb. \ref{fig:devops} stellt das DevOps Lebenszyklus mit ihren jeweiligen kontinuierlichen Verfahren dar, die das Produkt und die Beteiligten umfassen. Agile Entwicklung, \ac{CI} und \ac{CD} sind jeweils Verfahren, die vor DevOps existierten \cite{Alt2017}. Sie werden in diesem Zusammenhang jedoch als ein kontinuierliches Modell gesehen, die eine Schnittstelle zwischen den Beteiligten herstellt und das Produkt dadurch am Leben erhält und wachsen lässt. Im Gegensatz dazu stehen sequenzielle Modelle wie \emph{Plan-Build-Run \cite{Koch2016}}, in der ein Prozess am Ende als abgeschlossen gilt. Das Wesentliche an diesem Modell (Abb. \ref{fig:devops}) ist ein Kontinuitätsprinzip \cite{Alt2017} der Prozesse auf allen Ebenen.
 
 \paragraph{Infrastructure as Code}
-\ac{IaC} ist die Abstraktion von IT-Infrastrukturen und -Ressourcen auf eine Ebene analog zu Quellcode. Diese Analogie impliziert schon eine Automatisierung in der Ausführung dieser Instruktionen. Die Bereitstellung von IT-Ressourcen kann aufgrund der steigenden Anforderungen an die IT-Architektur \cite{Brockhoff2006, Bussmann2006, Alt2017} nicht manuell erfolgen und muss automatisiert werden. Daher ist dieser Ansatz für die Umsetzung von DevOps erforderlich.
+Eine wichtige Voraussetzung für DevOps ist die Automatisierung von Prozessen, die vor allem im Bereich von materiellen Ressourcen, wie Hardware bisher schwierig war. Das Prinzip der \emph{Dematerialisierung} ist auch ein wichtiger Bestandteil der digitalen Transformation.
+\ac{IaC} ist die Abstraktion von IT-Infrastrukturen und -Ressourcen auf eine Ebene analog zu einer Programmiersprache. Diese Analogie impliziert schon eine Automatisierung in der Ausführung der jeweiligen Prozesse. Über Schnittstellen kann die Infrastruktur angefordert und konfiguriert werden. Die Bereitstellung von IT-Ressourcen kann aufgrund der steigenden Anforderungen an die IT-Architektur \cite{Brockhoff2006, Bussmann2006, Alt2017} nicht mehr manuell erfolgen und muss automatisiert werden. Daher ist dieser Ansatz für die Umsetzung von DevOps erforderlich.
+
+Nach Alt et al. \cite{Alt2017} sorgt eine programmierbare Infrastruktur für Flexibilität, senkt die Fehlerrate und beschleunigt die Installation und Konfiguration von Systemen.
 
 \paragraph{Infrastructure as a Service}
-\ac{IaC} bietet eine Möglichkeit die IT-Architektur serviceorientiert aufzubauen. Daraus resultiert \ac{IaaS}, die sich darauf Konzentriert IT-Ressourcen dem Kunden nach Bedarf zur Verfügung zu stellen. Wenn der Bedarf sinkt, werden die Ressourcen an eine andere Stelle allokiert.
+\ac{IaC} bietet eine Möglichkeit die Infrastruktur programmierbar zu gestalten und ihre Prozesse dementsprechend zu automatisieren. An ihre Schnittstellen anknüpfend entsteht die Möglichkeit eine Plattform für eine serviceorientierte IT-Architektur aufzubauen. Hieraus resultiert \ac{IaaS} als Delivery-Modell \cite{Alt2017} für die IT-Ressourcen. Während sich \ac{IaC} auf das Deployment von Infrastrukturen konzentriert, ist \ac{IaaS} die Delivery-Pipeline im Bereich der IT-Infrastruktur. Ihre Aufgabe ist analog zu \ac{CD} das Nutzererlebnis der Entwickler, die Entwicklung zu verbessern. Das Produkt ist in diesem Fall die Infrastruktur, die als ein Service bereitgestellt wird.
 
 \paragraph{Cloud-Computing}
+Ansätzen wie \ac{IaC} und \ac{IaaS} entstanden aus dem Bereich Cloud-Computing \cite{Alt2017}. Sie stellen mittlerweile eine Plattform für IT-Infrastruktur und ganze IT-Architekturen zur Verfügung und bieten eine Möglichkeit die Kosten des IT-Betriebs durch Auslagerung erheblich zu senken. Beispiele für Cloud-Plattformen sind \ac{GCP}, \ac{AWS} und Microsoft Azure.
+
+Sie konzentrieren sich darauf IT-Ressourcen dem Kunden nach Bedarf extern zur Verfügung zu stellen. Wenn der Bedarf sinkt, werden die Ressourcen an eine andere Stelle allokiert. Bezahlt wird hierbei die beanspruchte Zeit der Ressourcen. 
+
 
 \paragraph{Software as a Service}
 
