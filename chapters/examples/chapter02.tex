@@ -53,10 +53,21 @@ In der Praxis ist sie ein Ansatz, um den Erstellungsprozess von Software zu auto
 \medskip
 \\
 Neben \ac{CD} existiert der hiervon schwierig unterscheidbare Begriff \emph{Continuous Deployment}, welcher sich im Anschluss von \ac{CI}, auf die automatisierte Inbetriebnahme in die Produktionsumgebung konzentriert \cite{Alt2017}. Continuous Deployment kann als das Konzept für die kontinuierliche Inbetriebnahme von Builds eingegrenzt werden und ist durchaus Bestandteil der technischen Umsetzung von \ac{CD}.
+%
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=1.0\textwidth]{gfx/devops_ueberblick.PNG}
+ \caption{\citet{Alt2017}, S. 28, DevOps im Überblick\label{fig:devops}}
+\end{figure}
+\medskip
+\\
+Abb. \ref{fig:devops} stellt das DevOps Lebenszyklus mit ihren jeweiligen kontinuierlichen Verfahren dar, die das Produkt und die Beteiligten umfassen. Agile Entwicklung, \ac{CI} und \ac{CD} sind jeweils Verfahren, die vor DevOps existierten. Sie werden in diesem Zusammenhang jedoch als ein kontinuierliches Modell gesehen, die eine Schnittstelle zwischen den Beteiligten herstellt und das Produkt dadurch am Leben erhält und wachsen lässt. Das Wesentliche an diesem Modell ist ein Kontinuitätsprinzip \cite{Alt2017} der Prozesse auf allen Ebenen.
 
 \paragraph{Infrastructure as Code}
+\ac{IaC} ist die Abstraktion von IT-Infrastrukturen und -Ressourcen auf eine Ebene analog zu Quellcode. Diese Analogie impliziert schon eine Automatisierung in der Ausführung dieser Instruktionen. Die Bereitstellung von IT-Ressourcen kann aufgrund der steigenden Anforderungen an die IT-Architektur \cite{Brockhoff2006, Bussmann2006, Alt2017} nicht manuell erfolgen und muss automatisiert werden. Daher ist dieser Ansatz für die Umsetzung von DevOps erforderlich.
 
 \paragraph{Infrastructure as a Service}
+\ac{IaC} bietet eine Möglichkeit die IT-Architektur serviceorientiert aufzubauen. Daraus resultiert \ac{IaaS}, die sich darauf Konzentriert IT-Ressourcen dem Kunden nach Bedarf zur Verfügung zu stellen. Wenn der Bedarf sinkt, werden die Ressourcen an eine andere Stelle allokiert.
 
 \paragraph{Cloud-Computing}
 
