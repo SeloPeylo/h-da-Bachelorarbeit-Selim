@@ -1,4 +1,4 @@
-\chapter{Digitale Transformation im Finanzwesen}
+\chapter{Neue Technologien und Regulatorik im Finanzwesen}
 \label{ch:background}
 Software hat eine Schlüsselrolle für digitale Innovation in allen Bereichen \cite{Alt2017}, die wichtiger denn je geworden ist. Die IT ist ständigen Veränderungen ausgesetzt. Technologietrends erzeugen immer wieder neue Impulse und Betriebe mit properietären Infrastrukturen müssen sich neu ausrichten \cite{Bussmann2006}.
 
@@ -162,21 +162,32 @@ Je nach Auslegung und Perspektive wäre diese beispielhafte Vorstellung eine Inn
 \\
 Solche Entwicklungen werden unvermeidbar sein und zeigen sich zuerst in Form von Impulsen \cite{Bussmann2006} und nehmen mit zunehmender Reife der Technologie eine disruptive Eigenschaft an. Die genannten Beispiele für disruptive und diskontinuierlichen Technologien zeigen, dass die Entwicklung keinen Halt macht und ständig fortgeführt werden kann.
 
-\section{Regulatorik der IT im Finanzwesen}
-Eine Welle von regulatorischen Veränderungen wurde durch die Auswirkungen der Finanzkrise 2008 herbeigeführt, um zukünftige systemische Krisen zu vermeiden \cite{Gupta:2017}.
+\section{Regulatorik der IT}
+Die \emph{Finanzkrise 2008} war mit einem enormen Vertrauensverlust gegenüber Banken verbunden und die Empörung der Gesellschaft war durch das Internet und der daraus folgenden Transparenz viel größer als zuvor \cite{Eismann2015}. Eine Welle von regulatorischen Veränderungen wurde durch die Auswirkungen dieser Krise herbeigeführt, um zukünftige systemische Krisen zu vermeiden \cite{Gupta:2017}. Das Ergebnis daraus ist die Steigung der regulatorischen Anforderungen mit gleichzeitiger Zunahme der technischen Anforderungen\footnote{insbesondere der \enquote{kontinuierliche Anstieg der Anforderungen an die IT-Architektur} \cite{Disterer2013}} in der IT. 
+Daraus resultiert ein zunehmender Druck auf das Finanzwesen (Abb. \ref{fig:bankdruck}), der aus zusätzlichen Kosten und wirtschaftlichem Druck besteht \cite{Smolinski2017}.
 
 \paragraph{BaFin Anforderungen}
-Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen an Kredit- und Finanzdienstleistungsinstitute, die auch auf ihre IT auswirken. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
+Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen an Kredit- und Finanzdienstleistungsinstitute, die sich auch auf die IT der Banken auswirken. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
 
-Die BaFin präzisiert für die Institute die Anforderungen des \ac{KWG} zum Risikomanagement auf Gruppenebene und zur Auslagerung mit einem flexiblen und praxisnahen Rahmen für das Risikomanagement, den \ac{MaRisk} \cite{MaRisk:2017}.
+Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Bereich Risikomanagement und Auslagerung. In \cite{BAIT:2018} werden diese Anforderungen für den Bereich der IT nochmals konkretisiert. Hierdurch sollen operationelle Risiken auch in der IT angemessen gesteuert werden. \citet{mci/Knittl2013} beschreibt die Umsetzung dieser Anforderungen anhand einer Fallstudie zu einem internationalen Finanzkonzern, worauf am Ende dieses Abschnitts eingegangen wird (\ref{section:regulatorik-umgang}).
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.8\textwidth]{gfx/bankdruck.PNG}
+ \caption{\citet{Smolinski2017}, S. 44, Finanzbranche unter Druck}\label{fig:bankdruck}
+\end{figure}
+
+\medskip
+Abb. \ref{fig:bankdruck} verbildlicht, wie Banken von allen Seiten unter Druck stehen. Die Darstellung könnte fortgeführt werden mit der Annahme, dass die äußeren Kräfte sich auch gegenseitig befeuern. Die Technologien und Trends aus den \enquote{GAFAs} können mit Sicherheit als ein Antreiber für die FinTechs gesehen werden. Die Antreibendenden Faktoren auf der vertikalen Achse der Abbildung werden von einschränkenden Faktoren auf der horizontalen Achse durchkreuzt. Die Aufsichten evaluieren ebenfalls neue Technologien und berücksichtigen sie jeweils bei der Novellierung ihrer Rahmenwerke. Bis diese angepasst werden vergeht Zeit und bis sich die etablierten Institute hierauf auch anpassen vergeht ebenfalls wertvolle Zeit. In FinTechs ist dieses Problem aufgrund ihrer Agilität und Effizienz geringer. Etablierte Institute müssen daher einen Weg finden das Zusammenspiel zwischen neuen Technologien und regulatorischen Anforderungen zu antizipieren und eigene Initiativen als Pilotprojekte schon zu starten. Hierzu passt ebenfalls der Ansatz der Vorwegnahme durch die Gestaltung von Zukunftszuständen \cite{Alt2017}.
+
 
 \paragraph{Ermessen der Institute}
-In \cite{MaRisk:2017, BAIT:2018} fällt auf, dass viele Vorgaben durch entsprechende Wörter in ihrem Gewicht relativiert werden. Die Maßnahmen zu ihrer Umsetzung liegen hierbei im Ermessen der jeweiligen Institute. Im Interesse der Institute ist in erster Linie das Bestehen von Prüfungen und Kontrollen der Aufsicht. Die Ermessensfreiheit könnte in einigen Fällen für Unklarheit sorgen. Eine Überbürokratisierung der internen Kontrollverfahren seitens der Institute zum bestehen von Prüfungen sollte als Folge vermieden werden. 
+In \cite{MaRisk:2017, BAIT:2018} fällt auf, dass viele Vorgaben durch entsprechende Wörter in ihrem Gewicht relativiert werden. Die Maßnahmen zu ihrer Umsetzung liegen hierbei im Ermessen der jeweiligen Institute. Im Interesse der Institute ist in erster Linie das Bestehen von Prüfungen der Aufsicht. Die Ermessensfreiheit könnte in einigen Bereichen für Unklarheit sorgen, da die \ac{MaRisk} sehr abstrakt formuliert ist.
+Eine bürokratisierte Kultur innerhalb der internen Kontrollverfahren in Kredit- und Finanzdienstleistungsinstituten zum bestehen von Prüfungen sollte als Folge vermieden werden. Die Flexibilität, die die BaFin in ihren Rahmenwerken vorsieht \cite{MaRisk:2017} sollte als stärke wahrgenommen werden und auf die interne Kultur übertragen werden. Die internen Kontrollverfahren und das Risikomanagement müssen in erster Linie praxisnah und flexibel bezüglich der IT vorgehen und ihren Ermessensspielraum zu Nutze machen, um mit neuen Technologien umgehen zu können.
 
-Für die \ac{MaRisk} gibt es Erläuterungen \cite{MaRiskErläuterungen:2017}. Speziell für die IT hat die BaFin in \cite{BAIT:2018} die \ac{MaRisk} noch einmal konkretisiert. Daneben gibt es institutspezifische Interpretationen und Werke, wie zum Beispiel vom Deutschen Sparkassen- und Giroverbund \cite{DSGV:2019}.
-%
+Für die \ac{MaRisk} gibt es auch zusätzliche Erläuterungen der BaFin \cite{MaRiskErläuterungen:2017}. Speziell für die IT hat die BaFin in \cite{BAIT:2018} die \ac{MaRisk} noch einmal konkretisiert. Daneben gibt es institutspezifische Interpretationen und Werke, wie zum Beispiel vom Deutschen Sparkassen- und Giroverbund \cite{DSGV:2019}. Diese sollten jedoch als Best-Practice für eine begrenzte Zeit gesehen werden, da die Rahmenbedingungen sich ständig ändern.
 
-\subsection{Risikomanagement}
+\paragraph{Risikomanagement}
 Für das Risikomanagement fordert die \ac{BaFin} die Festlegung von Strategien und die Einrichtung von internen Kontrollverfahren, ein \ac{IKS} und eine interne Revision. Ein Risikomanagement für die IT soll insbesondere den Betrieb schützen. \cite{MaRisk:2017}
 
 Hierfür fordert sie vom IT-Risikomanagement:
@@ -189,7 +200,7 @@ Diese Forderungen zur Bewertung von IT-Risiken gelten auch beim Einsatz von selb
 
 \cite{MaRisk:2017}.
 
-\subsection{IT-Systeme und Prozesse}
+\paragraph{IT-Systeme und Prozesse}
 \begin{enumerate}
     \item IT-Systeme und Prozesse sollen Integrität, Verfügbarkeit, Authentizität und Vertraulichkeit der Daten mit gängigen Standards sicherstellen.
     \item IT-Systeme und ihre zugehörigen Prozesse sollen hinsichtlich ihrer Eignung regelmäßig überprüft werden.
@@ -204,13 +215,13 @@ Besonders hervorzuheben ist die Verantwortung der IT-Systeme und Prozesse für d
 \\
 Hierzu fordert die BaFin eine Orientierung am Schutzbedarf der verarbeiteten Daten. Sie verweist mit gängigen Standards auf den IT-Grundschutzkatalog\footnote{vgl. IT-Grundschutzkompendium \cite{IT-Grundschutz:2020}} des \ac{BSI} und auf den internationalen Sicherheitsstandard ISO/IEC 2700X\footnote{vgl. Disterer \cite{Disterer2013}} der \ac{ISO} \cite{MaRisk:2017, MaRiskErläuterungen:2017}.
 
-\subsection{Wesentliche Veränderungen}
+\paragraph{Wesentliche Veränderungen}
 Die BaFin fordert, dass vor wesentlichen Veränderungen in der Aufbau- und Ablauforganisation sowie in den IT-Systemen das Institut die Auswirkung der geplanten Veränderung auf die Kontrollverfahren und -intensität zu analysieren hat. Hierfür sind die später in die Arbeitsabläufe eingebundenen Organisationseinheiten einzuschalten. Risikocontrolling, Compliance und die Interne Revision sind auch zu beteiligen \cite{MaRisk:2017}. 
 %
 \paragraph{Veränderung}
 Daraus könnte ein Hindernis für solche Veränderungen entstehen. Wesentliche Veränderungen in den IT-Systemen könnten einen Anpassungsbedarf des Kontrollverfahrens bedeuten. Vielmehr sollte das interne Kontrollverfahren von einer ständigen Veränderung in der IT ausgehen.
 
-\subsection{Bankaufsichtliche Anforderungen an die IT}
+\paragraph{Bankaufsichtliche Anforderungen an die IT}
 Die \ac{BAIT} gibt seit 2018 neben der \ac{MaRisk} auf der gleichen Grundlage des \ac{KWG} einen  Rahmen, insbesondere für das Management der IT-Ressourcen und das IT-Risikomanagement. Die Anforderungen aus \ac{MaRisk} werden lediglich konkretisiert. Zudem Präzisiert es die Anforderungen des § 25b des
 \ac{KWG} zu Auslagerung von Aktivitäten und Prozessen \cite{BAIT:2018}.
 \\
@@ -226,5 +237,7 @@ Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschä
 
 
 
-\subsection{EBA Guidelines on ICT and security risk management}
+\paragraph{EBA Guidelines on ICT and security risk management}
 
+\subsection{Umgang mit der Regulatorik}
+\label{section:regulatorik-umgang}
