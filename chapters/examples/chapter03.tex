@@ -188,19 +188,20 @@ Eine bürokratisierte Kultur innerhalb der internen Kontrollverfahren in Kredit-
 Für die \ac{MaRisk} gibt es auch zusätzliche Erläuterungen der BaFin \cite{MaRiskErläuterungen:2017}. Speziell für die IT hat die BaFin in \cite{BAIT:2018} die \ac{MaRisk} noch einmal konkretisiert. Daneben gibt es institutspezifische Interpretationen und Werke, wie zum Beispiel vom Deutschen Sparkassen- und Giroverbund \cite{DSGV:2019}. Diese sollten jedoch als Best-Practice für eine begrenzte Zeit gesehen werden, da die Rahmenbedingungen sich ständig ändern.
 
 \paragraph{Risikomanagement}
-Für das Risikomanagement fordert die \ac{BaFin} die Festlegung von Strategien und die Einrichtung von internen Kontrollverfahren, ein \ac{IKS} und eine interne Revision. Ein Risikomanagement für die IT soll insbesondere den Betrieb schützen. \cite{MaRisk:2017}
+Für das Risikomanagement fordert die \ac{BaFin} die Festlegung von Strategien und die Einrichtung von internen Kontrollverfahren, bestehend aus einem \ac{IKS} und einer interne Revision. Ein Risikomanagement für die IT soll insbesondere den Betrieb schützen \cite{MaRisk:2017}, da hierin die operationellen Risiken liegen. Ein Ausfall der IT-Systeme in Banken hätte mit Sicherheit Auswirkungen auf kritische Geschäftsprozesse, die bis hin zu einer systemischen Krise führen könnten.
 
-Hierfür fordert sie vom IT-Risikomanagement:
+Daher fordert die \ac{BaFin} \cite{MaRisk:2017} vom IT-Risikomanagement:
 \begin{enumerate}
     \item Sie soll Überwachungs- und Steuerungsprozesse für IT-Risiken einrichten.
     \item Ihre Prozesse umfassen: Risikokriterien, Risiken, Schutzbedarf, Schutzmaßnahmen, Risikobehandlung und -minderung
     \item Sie soll Risiken beim Einkauf von Software \emph{angemessen} bewerten.
 \end{enumerate}
-Diese Forderungen zur Bewertung von IT-Risiken gelten auch beim Einsatz von selbst entwickelten Anwendungen, die von ihr als \ac{IDV} bezeichnet wird. Entsprechende Maßnahmen sollen jedoch nach dem Schutzbedarf der verarbeiteten Daten festgelegt werden.
+Diese Forderungen \cite{MaRisk:2017} zur Bewertung von IT-Risiken gelten auch beim Einsatz von selbst entwickelten Anwendungen, die von ihr als \ac{IDV} bezeichnet wird. Entsprechende Maßnahmen sollen jedoch nach dem Schutzbedarf der unterstützten Prozesse und verarbeiteten Daten festgelegt werden \cite{MaRisk:2017}.
 
-\cite{MaRisk:2017}.
+Die Ermessensfreiheit zu den Maßnahmen des Risikomanagements begrenzt sich in diesem Fall auf den Schutzbedarf der Geschäftsprozesse und Daten. Die Überwachungs- und Steuerungsprozesse für IT-Risiken sollten daher klare Grenzen für die Verarbeitung von Daten definieren. Eine klare Unterscheidung zwischen \ac{IDV} Anwendungen und Anwendungen die keine \ac{IDV} darstellen ist nötig, um angemessene Maßnahmen festzulegen.
 
 \paragraph{IT-Systeme und Prozesse}
+Die \ac{BaFin} \cite{MaRisk:2017} fordert zu IT-Systemen und Prozessen:
 \begin{enumerate}
     \item IT-Systeme und Prozesse sollen Integrität, Verfügbarkeit, Authentizität und Vertraulichkeit der Daten mit gängigen Standards sicherstellen.
     \item IT-Systeme und ihre zugehörigen Prozesse sollen hinsichtlich ihrer Eignung regelmäßig überprüft werden.
@@ -209,11 +210,22 @@ Diese Forderungen zur Bewertung von IT-Risiken gelten auch beim Einsatz von selb
     \item Produktions- und Testumgebungen sollen grundsätzlich voneinander getrennt werden.
 \end{enumerate}
 %
-\paragraph{Verantwortung für die Datensicherheit}
-Besonders hervorzuheben ist die Verantwortung der IT-Systeme und Prozesse für die Sicherstellung der Datensicherheit.  Im Fokus stehen die verarbeiteten und gespeicherten Daten in den IT-Systemen und Prozessen.
-\medskip
-\\
-Hierzu fordert die BaFin eine Orientierung am Schutzbedarf der verarbeiteten Daten. Sie verweist mit gängigen Standards auf den IT-Grundschutzkatalog\footnote{vgl. IT-Grundschutzkompendium \cite{IT-Grundschutz:2020}} des \ac{BSI} und auf den internationalen Sicherheitsstandard ISO/IEC 2700X\footnote{vgl. Disterer \cite{Disterer2013}} der \ac{ISO} \cite{MaRisk:2017, MaRiskErläuterungen:2017}.
+Besonders hervorzuheben ist die Verantwortung der IT-Systeme und Prozesse für die Sicherstellung der Datensicherheit. Im Fokus stehen die verarbeiteten und gespeicherten Daten in den IT-Systemen und Prozessen. 
+
+Hierzu fordert die BaFin \cite{MaRisk:2017} eine Orientierung am Schutzbedarf der verarbeiteten Daten. Sie verweist mit gängigen Standards auf den IT-Grundschutzkatalog\footnote{vgl. IT-Grundschutzkompendium \cite{IT-Grundschutz:2020}} des \ac{BSI} und auf den internationalen Sicherheitsstandard ISO/IEC 2700X\footnote{vgl. Disterer \cite{Disterer2013}} der \ac{ISO}.
+
+Die Auslagerung von IT-Ressourcen wäre beispielsweise bei der Entwicklung von Modellen für Mashinelles-Lernen nötig und dürfte aufgrund der Datensicherheit nicht ohne weiteres auf einer externe Cloud-Plattform durchgeführt werden. 
+
+Auch im Bereich der Automatisierung von Prozessen ist es wichtig zu erkennen, welche unterstützten Prozesse schutzbedürftig sind und welche nicht. Prozesse können zwischen \emph{Change} und \emph{Run} unterteilt werden. Die Run-Prozesse regeln den Betrieb und die Change-Prozesse erzeugen üblicherweise als Projekte Veränderungen im Aufbau oder Ablauf der Organisation.
+
+Die Softwareentwicklung selbst enthält innerhalb einer getrennten Testumgebung auf dem ersten Blick keine operationellen Risiken für den Geschäftsbetrieb einer Bank und könnte als Change-Prozess klassifiziert werden können. Für die Implementierung von Ergebnissen aus diesen Change-Prozessen ist eine vorherige Freigabe vorgesehen, beispielsweise in Form von \enquote{Quality-Gates} \cite{mci/Disterer2011}.
+
+Für ihre Unterstützung existiert jedoch innerhalb der IT ein umfangreicher Betrieb für Plattformen und Anwendungen der Softwareentwicklung. Ein hoher Schutzbedarf der Entwicklung entsteht in Prozessen für die Inbetriebnahme von Software. Besonders ist in der Anwendung von DevOps die Delivery-Pipeline, womit die Komponenten in die Produktionsumgebung integriert werden ein kritischer Prozess. Nach DevOps sind die Abläufe zwischen \ac{CI} und \ac{CD} für einen automatisierten und hochfrequenten Ablauf eng miteinander verbunden. Es stellt sich die Frage wie Anwendungen zur Ausführung der Delivery Pipeline einzuordnen sind. Für die Einhaltung der Funktionstrennung \cite{MaRisk:2017} zwischen Entwicklung und Betrieb müssen klare Grenzen gesetzt werden. 
+
+\paragraph{Einschränkungen in der SEU}
+Diese Grenzen sind nötig, um eine klare Nachvollziehbarkeit der Ergebnisse aus den Change-Prozessen zu bewahren. Besonders schwierig wird es im Rahmen der Regulatorik, wenn innerhalb der \ac{SEU} die Rollen schwierig voneinander zu unterscheiden sind. Konfiguration, Administration, Wartung und Weiterentwicklung von Anwendungen für den Betrieb der \ac{SEU} sind Tätigkeiten in denen Kunde, Entwickler und Betrieb (Abb. \ref{fig:devops}) teilweise miteinander verschmelzen. Auch die Überwachungsprozesse werden meist von den gleichen Entwicklern in der \ac{SEU} technisch umgesetzt. Die Auslagerung der \ac{SEU} auf externe Infrastrukturen gestaltet sich aufgrund dieser engen Kopplung sehr schwierig, weil hierdurch sensible Daten extern ausgetauscht werden und eine zu hohe Abhängigkeit für den Betrieb der Softwareentwicklung entsteht. Realistischer ist es nur einzelne Services auszulagern.
+Monolithische Systeme sind für die \ac{SEU} keine skalierbare Lösung. Für automatisierte Prozesse und skalierbare, flexible Umgebungen können die Anwendungen aus der \ac{SEU} in noch kleinere Module aufgeteilt werden. Insbesondere ist es wichtig, dass einzelne Komponenten der Integrationsplattform trennbar sind und unabhängig voneinander laufen. Komponenten, die \enquote{self-contained} sind flexibler können auch unabhängig voneinander skaliert werden. Das würde Engpässe erheblich reduzieren. Die Eliminierung von Abhängigkeiten sorgt auch für eine bessere Nachvollziehbarkeit, da hierbei gängige Standards angewendet werden können.
+Selbst wenn die Funktionstrennung mit neuen Technologien wie Container-Virtualisierung realisierbar ist, entstehen für die Verwendung von externen Cloud-Plattformen Probleme bezüglich der Datensicherheit. Die 
 
 \paragraph{Wesentliche Veränderungen}
 Die BaFin fordert, dass vor wesentlichen Veränderungen in der Aufbau- und Ablauforganisation sowie in den IT-Systemen das Institut die Auswirkung der geplanten Veränderung auf die Kontrollverfahren und -intensität zu analysieren hat. Hierfür sind die später in die Arbeitsabläufe eingebundenen Organisationseinheiten einzuschalten. Risikocontrolling, Compliance und die Interne Revision sind auch zu beteiligen \cite{MaRisk:2017}. 
@@ -235,7 +247,7 @@ Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschä
 
 \paragraph{IT-Governance} Die IT-Governance wird als Struktur zur Steuerung und Überwachung des IT-Betriebs und der Entwicklung der IT-Systeme und Prozesse auf Basis der IT-Strategie \cite{BAIT:2018} gesehen. Für das Risikomanagement, Entwicklung und Betrieb innerhalb der IT wird eine qualitativ und quantitativ angemessene Ausstattung mit Personal gefordert.
 
-
+    
 
 \paragraph{EBA Guidelines on ICT and security risk management}
 
