@@ -35,6 +35,9 @@ Dies hat auch einen positiven Effekt auf interne Kontrollverfahren. Die Umgebung
 
 Nachvollziehbarkeit wird in Banken auch für die Rückverfolgung von Softwareartefakten vorausgesetzt. In der Praxis müssen Ergebnisse aus der Entwicklung rückverfolgbar sein bis auf den Quellcode, der Anforderung und dem Prozess aus der sie entstanden sind.
 
+\section{DevOps mit Mircroservices}
+Daraus folgt, dass einzelne umfangreiche Systeme für die \ac{SEU} keine Flexibilität bieten. Für automatisierte Prozesse und skalierbare, flexible Umgebungen können die Anwendungen aus der \ac{SEU} in noch kleinere Module aufgeteilt werden. Insbesondere ist es wichtig, dass einzelne Komponenten der Integrationsplattform trennbar sind und unabhängig voneinander laufen. Komponenten sollten \enquote{self-contained} aufgebaut werden. In folge dessen sind sie flexibler können auch unabhängig voneinander skaliert werden. Das würde Engpässe erheblich reduzieren. Die Eliminierung von Abhängigkeiten sorgt für eine bessere Nachvollziehbarkeit, da hierbei gängige Standards angewendet werden können.
+
 \paragraph{Repository für Artefakte}
 Eine Standardsoftware hierfür die Anwendung Artifactory. Diese speichert in einem Snapshot die Ergebnisartefakte aus dem Build-Job und die zum erstellen verwendeten Artefakte. Das Artifactory wird ebenfalls verwendet, um Tools und Libraries für den Build zu beziehen. Dazu wird Artifactory entweder als Proxy für den Zugriff auf ausgesuchte öffentliche Repositories verwendet oder die Ressourcen werden in der Artifactory Instanz hinterlegt.
 
