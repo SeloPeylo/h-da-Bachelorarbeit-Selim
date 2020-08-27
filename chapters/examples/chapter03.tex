@@ -1,4 +1,4 @@
-\chapter{Finanzwesen, Neue Technologien und Regulatorik}
+\chapter{Finanzwesen, Technologietrends und Regulatorik}
 \label{ch:background}
 Der nachfolgende Kapitel untersucht mithilfe einer Fallstudie innovative Technologien aus verschiedenen Perspektiven. Die Auswirkungen von neuen Technologien werden nach der Fallstudie weiter ausgeführt und ihre Eigenschaften hervorgehoben. Durch die zusätzliche Perspektive der Regulatorik auf neue Technologien werden Einschränkende und antreibende Faktoren für Innovation, insbesondere im Rahmen der \ac{SEU} im Finanzwesen werden identifiziert.
 
@@ -10,7 +10,7 @@ Goldman Sachs sieht sich nicht als Finanzdienstleister, sondern als ein Technolo
 
 Gupta und Simonds \cite{Gupta:2017} haben die Transformation von Goldman Sachs hin zu einem Technologieunternehmen beschrieben. Nachfolgend werden die wesentlichen Punkte aus dieser Studie untersucht.
 %
-\paragraph{Technologien und ihre Auswirkung im Finanzwesen}
+\paragraph{Auswirkung von Technologien auf Goldman Sachs}
 Folgende Auswirkungen ergaben sich durch neue Technologien für Goldman Sachs und waren ein Impuls für Veränderung \cite{Gupta:2017}:
 \begin{itemize}
     \item Daten und Metriken wurden wertvoller als die Instinkte der Händler.
@@ -55,7 +55,6 @@ Verallgemeinert kann dieser Ansatz auch für die Effizienzsteigerung in anderen 
 Übertragen auf die Anwendungsentwicklung können diese \enquote{Silos}\footnote{\citet{Gupta:2017} zitiert Ezra Nahum, S.5} auch als Metapher für die monolithischen Systeme \cite{Bussmann2006} aus dem Finanzwesen gesehen werden. Eine \ac{SOA} alleine reicht daher nicht aus, um mit kontinuierlichen Veränderungen der IT umzugehen. Unterstützende Funktionen könnten unter gemeinsamen Plattformen zusammengefasst werden. Ein Beispiel wäre eine gemeinsame Datenbank. Goldman Sachs konnte mit einem gemeinsamen \enquote{Data Lake} und Mashine-Learning die Marktdaten effektiver bewerten \cite{Gupta:2017}.
 
 Die Anwendungen selbst müssten in kleinere funktionale Komponenten aufgeteilt werden \cite{Bussmann2006}. Microservice Architekturen bieten hierfür einen möglichen Ansatz. Die wesentlichen Funktionen für die Kernaufgabe einer Anwendung machen nur einen kleinen Teil der ganzen Anwendung aus.
-
 \medskip
 \\
 \citet{Gupta:2017} beschreibt, dass die Umsetzung dieser Strategie sich als schwierig gestaltet. Sie erfordert die Zusammenarbeit aller Beteiligten. Die verschiedenen Abteilungen müssen für die Umsetzung dieser Strategie kurzfristige Kompromisse eingehen und als finanziell eigenverantwortliche Einheiten die Kosten vorerst tragen. 
@@ -173,9 +172,9 @@ Die \emph{Finanzkrise 2008} war mit einem enormen Vertrauensverlust gegenüber B
 Daraus resultiert ein zunehmender Druck auf das Finanzwesen (Abb. \ref{fig:bankdruck}), der aus zusätzlichen Kosten und wirtschaftlichem Druck besteht \cite{Smolinski2017}.
 
 \paragraph{BaFin Anforderungen}
-Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen an Kredit- und Finanzdienstleistungsinstitute, die sich auch auf die IT der Banken auswirken. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
+Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen \cite{MaRisk:2017} an Kredit- und Finanzdienstleistungsinstitute, die sich auch auf die IT der Banken auswirken. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert \cite{recht/Bornemann2018}. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
 
-Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Bereich Risikomanagement und Auslagerung. In \cite{BAIT:2018} werden diese Anforderungen für den Bereich der IT nochmals konkretisiert. Hierdurch sollen operationelle Risiken auch in der IT angemessen gesteuert werden. \citet{mci/Knittl2013} beschreibt die Umsetzung dieser Anforderungen anhand einer Fallstudie zu einem internationalen Finanzkonzern, worauf am Ende dieses Abschnitts eingegangen wird (\ref{section:regulatorik-umgang}).
+Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Bereich Risikomanagement und Auslagerung. In \cite{BAIT:2018} werden diese Anforderungen für den Bereich der IT nochmals konkretisiert. Hierdurch sollen operationelle Risiken auch in der IT angemessen gesteuert werden. \citet{mci/Knittl2013} beschreibt die Umsetzung dieser Anforderungen anhand einer Fallstudie zu einem internationalen Finanzkonzern.
 
 \begin{figure}[htbp]
  \centering
@@ -184,7 +183,7 @@ Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Be
 \end{figure}
 
 \medskip
-Abb. \ref{fig:bankdruck} verbildlicht, wie Banken von allen Seiten unter Druck stehen. Die Darstellung könnte fortgeführt werden mit der Annahme, dass die äußeren Kräfte sich auch gegenseitig befeuern. Die Technologien und Trends aus den \enquote{GAFAs} können mit Sicherheit als ein Antreiber für die FinTechs gesehen werden. Die Antreibendenden Faktoren auf der vertikalen Achse der Abbildung werden von einschränkenden Faktoren auf der horizontalen Achse durchkreuzt. Die Aufsichten evaluieren ebenfalls neue Technologien und berücksichtigen sie jeweils bei der Novellierung ihrer Rahmenwerke. Bis diese angepasst werden vergeht Zeit und bis sich die etablierten Institute hierauf auch anpassen vergeht ebenfalls wertvolle Zeit. In FinTechs ist dieses Problem aufgrund ihrer Agilität und Effizienz geringer. Etablierte Institute müssen daher einen Weg finden das Zusammenspiel zwischen neuen Technologien und regulatorischen Anforderungen zu antizipieren und eigene Initiativen als Pilotprojekte schon zu starten. Hierzu passt ebenfalls der Ansatz der Vorwegnahme durch die Gestaltung von Zukunftszuständen \cite{Alt2017}.
+Abb. \ref{fig:bankdruck} verbildlicht, wie Banken von allen Seiten unter Druck stehen. Die Darstellung könnte fortgeführt werden mit der Annahme, dass die äußeren Kräfte sich auch gegenseitig beeinflussen. Die Technologien und Trends aus den \enquote{GAFAs} können mit Sicherheit als ein Antreiber für die FinTechs gesehen werden. Die Antreiber von Veränderung auf der vertikalen Achse der Abbildung werden von Einschränkenden Instituten auf der horizontalen Achse durchkreuzt. Die Aufsichten evaluieren ebenfalls neue Technologien und berücksichtigen sie jeweils bei der Novellierung ihrer Rahmenwerke. Bis diese angepasst werden vergeht Zeit und bis sich die etablierten Institute hierauf auch anpassen vergeht ebenfalls wertvolle Zeit. In FinTechs ist dieses Problem aufgrund ihrer Agilität und Effizienz geringer. Etablierte Institute müssen daher einen Weg finden das Zusammenspiel zwischen neuen Technologien und regulatorischen Anforderungen zu antizipieren und eigene Initiativen als Pilotprojekte schon zu starten. Hierzu passt ebenfalls der Ansatz der Vorwegnahme durch die Gestaltung von Zukunftszuständen \cite{Alt2017}.
 
 
 \paragraph{Ermessen der Institute}
@@ -206,7 +205,9 @@ Daher fordert die \ac{BaFin} \cite{MaRisk:2017} vom IT-Risikomanagement:
 \end{enumerate}
 Diese Forderungen \cite{MaRisk:2017} zur Bewertung von IT-Risiken gelten auch beim Einsatz von selbst entwickelten Anwendungen, die von ihr als \ac{IDV} bezeichnet wird. Entsprechende Maßnahmen sollen jedoch nach dem Schutzbedarf der unterstützten Prozesse und verarbeiteten Daten festgelegt werden \cite{MaRisk:2017}.
 
-Die Ermessensfreiheit zu den Maßnahmen des Risikomanagements begrenzt sich in diesem Fall auf den Schutzbedarf der Geschäftsprozesse und Daten. Die Überwachungs- und Steuerungsprozesse für IT-Risiken sollten daher klare Grenzen für die Verarbeitung von Daten definieren. Eine klare Unterscheidung zwischen \ac{IDV} Anwendungen und Anwendungen die keine \ac{IDV} darstellen ist nötig, um angemessene Maßnahmen festzulegen.
+Die Überwachungs- und Steuerungsprozesse für IT-Risiken sollten daher klare Grenzen für die Verarbeitung von Daten definieren. Eine klare Unterscheidung zwischen \ac{IDV} Anwendungen und Anwendungen die keine \ac{IDV} darstellen ist nötig, um angemessene Maßnahmen festzulegen. Da \ac{IDV} Anwendungen jedoch hierbei pauschalisiert gesehen werden und aufgrund der darauf folgenden aufwendigen Maßnahmen negativ behaftet sind wird ihre Katalogisierung entmutig. Somit entsteht oft eine \enquote{Schatten-IT} in Banken \cite{Dorschel2018}.
+
+Die Ermessensfreiheit zu den Maßnahmen des Risikomanagements begrenzt sich in diesem Fall auf den Schutzbedarf der Geschäftsprozesse und Daten. Daher muss die Katalogisierung von Anwendungen bezüglich ihres Schutzbedarfs in einem Spektrum ausgeweitet. Es kommt darauf an welche Daten von der Anwendung verarbeitet werden. Dieser Punkt sollte nachvollziehbar zu den Anwendungen dokumentiert werden.
 
 \paragraph{IT-Systeme und Prozesse}
 Die \ac{BaFin} \cite{MaRisk:2017} fordert zu IT-Systemen und Prozessen:
@@ -225,14 +226,14 @@ Hierzu fordert die BaFin \cite{MaRisk:2017} eine Orientierung am Schutzbedarf de
 Die Auslagerung von IT-Ressourcen wäre beispielsweise bei der Entwicklung von Modellen für Mashinelles-Lernen nötig und dürfte aufgrund der Datensicherheit nicht ohne weiteres auf einer externe Cloud-Plattform durchgeführt werden. 
 \medskip
 \\
-Auch im Bereich der Automatisierung von Prozessen ist es wichtig zu erkennen, welche unterstützten Prozesse schutzbedürftig sind und welche nicht. Prozesse können zwischen \emph{Change} und \emph{Run} unterteilt werden \cite{}. Die Run-Prozesse regeln den Betrieb und die Change-Prozesse erzeugen üblicherweise als Projekte Veränderungen im Aufbau oder Ablauf der Organisation.
+Auch im Bereich der Automatisierung von Prozessen ist es wichtig zu erkennen, welche unterstützten Prozesse schutzbedürftig sind und welche nicht. IT-Prozesse können grob zwischen \emph{Change} und \emph{Run} unterteilt werden \cite{Dorschel2018}. Die Run-Prozesse regeln den Betrieb und die Change-Prozesse erzeugen üblicherweise als Projektform Veränderungen im Aufbau oder Ablauf der Organisation.
 
-Die Softwareentwicklung selbst enthält innerhalb einer getrennten Testumgebung auf dem ersten Blick keine operationellen Risiken für den Geschäftsbetrieb der Bank und könnte als Change-Prozess klassifiziert werden. Für die Integrierung von Ergebnissen aus diesen Change-Prozessen in den Betrieb ist eine vorherige Freigabe vorgesehen, beispielsweise in Form von \enquote{Quality-Gates} \cite{mci/Disterer2011}.
+Die Softwareentwicklung selbst enthält innerhalb einer getrennten Testumgebung auf dem ersten Blick keine operationellen Risiken für den Geschäftsbetrieb der Bank. Für die Integrierung von Ergebnissen aus diesen Change-Prozessen in den Betrieb ist eine vorherige Freigabe vorgesehen, beispielsweise in Form von \enquote{Quality-Gates} \cite{mci/Disterer2011}.
 
-Für ihre Unterstützung existiert innerhalb der IT ein eigener Betrieb für Plattformen und Anwendungen der Softwareentwicklung. Ein hoher Schutzbedarf der Entwicklung entsteht in Folge von Schnittstellen bedingt durch Prozesse für die Inbetriebnahme von Software. Besonders ist in der Anwendung von DevOps die Delivery-Pipeline, womit die Komponenten in die Produktionsumgebung integriert werden ein kritischer Prozess. Nach DevOps sind die Abläufe zwischen \ac{CI} und \ac{CD} für einen automatisierten und hochfrequenten Ablauf eng miteinander verbunden. 
-Es stellt sich die Frage wie Anwendungen zur Ausführung der Delivery Pipeline einzuordnen sind. Für die Einhaltung der Funktionstrennung \cite{MaRisk:2017} zwischen Entwicklung und Betrieb müssen klare Grenzen gesetzt werden. 
+Für ihre Unterstützung existiert innerhalb der IT ein eigener Betrieb für Plattformen und Anwendungen der Softwareentwicklung. Ein hoher Schutzbedarf der Entwicklung entsteht in Folge von Schnittstellen bedingt durch Prozesse für die Inbetriebnahme von Software. Besonders ist in der Anwendung von DevOps die Delivery-Pipeline, womit die Komponenten in die Produktionsumgebung integriert werden ein kritischer Prozess. Nach DevOps sind die Abläufe zwischen \ac{CI} und \ac{CD} für einen automatisierten und hochfrequenten Ablauf eng miteinander verbunden. In \ac{CD} liegt auch die Verantwortung über Risiken und Qualitätssicherung \cite{Alt2017}.
+Es stellt sich die Frage wie Anwendungen zur Ausführung der Delivery Pipeline bezüglich ihres Schutzbedarfs einzuordnen sind. 
 
-\paragraph{Einschränkungen in der SEU}
+\paragraph{Konsequenzen für die SEU}
 Grenzen zeigen sich zum Beispiel in Form von unterschiedlichen Zonen innerhalb der IT-Architektur. 
 Diese Grenzen sind nötig, um die Risiken für den Betrieb kontrollieren zu können. Hierfür wird eine klare Nachvollziehbarkeit der Ergebnisse aus den Change-Prozessen bedingt.
 
@@ -241,7 +242,7 @@ Die enge Kopplung zwischen Entwicklung und Betrieb ist in DevOps vorgesehen \cit
 
 Die Auslagerung der \ac{SEU} auf externe Infrastrukturen ist aufgrund dieser engen Kopplung der Abläufe in DevOps beschränkt, weil hierdurch sensible Daten ausgetauscht werden könnten. Zudem könnte eine zu hohe Abhängigkeit zu einer Cloud-Plattform für den Betrieb der \ac{SEU} entstehen. Realistischer wäre es bei Bedarf nur einzelne rechenintensive Services auszulagern mit Ansätzen für eine hybride Cloud \cite{Gupta:2017}. 
 
-Selbst wenn die Funktionstrennung mit neuen Technologien wie Container-Virtualisierung realisierbar ist, bestehen für die Verwendung von externen Cloud-Plattformen Probleme bezüglich der Datensicherheit. Die Modularisierung der \ac{SEU} begünstigt hierfür eine bessere Kontrolle der Schnittstellen. 
+Selbst wenn diese Modularisierung mit neuen Technologien wie Container-Virtualisierung realisierbar ist, bestehen für die Verwendung von externen Cloud-Plattformen Probleme bezüglich der Datensicherheit. 
 
 \paragraph{Wesentliche Veränderungen}
 Bei wesentlichen Veränderungen (\emph{Change-Prozesse}) bedingt die \ac{BaFin} \cite{MaRisk:2017} vom Risikomanagement die Auswirkung der Veränderung auf die Kontrollverfahren zu analysieren. Hierfür sind die später in die Arbeitsabläufe eingebundenen Organisationseinheiten, Risikocontrolling, Compliance und die Interne Revision zu beteiligen. 
@@ -254,20 +255,12 @@ Die \ac{BAIT} gibt seit 2018 neben der \ac{MaRisk} auf der gleichen Grundlage de
 \ac{KWG} zu Auslagerung von Aktivitäten und Prozessen \cite{BAIT:2018}.
 \\
 Die \ac{BAIT} ist daher besonders für die Auslagerung von IT-Ressourcen zu berücksichtigen und insbesondere aufgrund der zunehmenden Praxis von \ac{SaaS} und Cloud-Computing relevant.
-\\
-Für die in dieser Arbeit durchgeführten Untersuchung zu einschränkenden Faktoren und Anforderungen daraus resultierender Anforderungen an die IT-Architektur werden einige Themen aus der \ac{BAIT} zusammengefasst.
-
 
 \paragraph{IT-Strategie} Die Geschäftsleitung soll eine nachhaltige IT-Strategie festlegen, die konsistent mit der Geschäftsstrategie ist \cite{BAIT:2018}. 
 
-Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschäftsmodell und IT in einem engen Verhältnis gesehen werden. Die IT steht aus regulatorischer Sicht nicht mehr größtenteils als Risikofaktor im Fokus. Vielmehr kann sie aufgrund einer konkreten Strategie das Geschäftsmodell ergänzen. Diese Anforderung ist eine klare 
+Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschäftsmodell und IT in einem engen Verhältnis gesehen werden. Die IT steht aus regulatorischer Sicht nicht mehr größtenteils als Risikofaktor im Fokus. Vielmehr kann sie aufgrund einer konkreten Strategie das Geschäftsmodell ergänzen. Diese Anforderung ist eine klare Förderung der Rolle der IT. 
 
 \paragraph{IT-Governance} Die IT-Governance wird als Struktur zur Steuerung und Überwachung des IT-Betriebs und der Entwicklung der IT-Systeme und Prozesse auf Basis der IT-Strategie \cite{BAIT:2018} gesehen. Für das Risikomanagement, Entwicklung und Betrieb innerhalb der IT wird eine qualitativ und quantitativ angemessene Ausstattung mit Personal gefordert.
 
-    
-
-\paragraph{EBA Guidelines on ICT and security risk management}
-
-\section{Einschränkende und Antreibende Faktoren}
-\label{section:regulatorik-umgang}
-
+\paragraph{EBA Guidelines}
+Bedeutende Institute werden zusätzlich von der \ac{EBA} beaufsichtigt \cite{recht/Bornemann2018}
