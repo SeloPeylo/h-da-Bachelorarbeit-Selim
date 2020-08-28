@@ -264,3 +264,46 @@ Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschä
 
 \paragraph{EBA Guidelines}
 Bedeutende Institute werden zusätzlich von der \ac{EBA} beaufsichtigt \cite{recht/Bornemann2018}
+
+\section{Rahmenbedingungen und Faktoren für Veränderung}
+
+Die Entwicklung eines flexiblen und skalierbaren Systems und Umgebung für die Softwareentwicklung innerhalb von Banken erfordert wesentliche Veränderungen in den Strukturen der IT-Bereiche der Institute und in ihrem Ablauf. Wesentlicher Faktor ist hierfür die Tatsache, dass die Anwendungen und Systeme für die Softwareentwicklung ständigen Veränderungen ausgesetzt sind. Standards in der Softwareentwicklung sind mittlerweile agil und verändern sich kontinuierlich und dynamisch. Eine flexible IT-Architektur ist erforderlich, um sich diesen Veränderungen anzupassen.
+\medskip
+\\
+Bussmann et al. nennt zwei Wege für den Ersatz und grundlegenden Re-Design von Kernsystemen: \cite{Bussmann2006}
+\begin{itemize}
+    \item Anwendungen schrittweise entkernen, erneuern und modularisieren und funktionale Anforderungen konsolidieren
+    \item Kernsysteme durch völlig neue, selbst entwickelte Applikationen austauschen oder einsetzen von Standardsoftware
+\end{itemize}
+%
+
+\paragraph{Relevanz der BaFin Anforderungen für Entwickler}
+Die BaFin Anforderungen \cite{MaRisk:2017, BAIT:2018}, Gängige Sicherheitsstandards \cite{IT-Grundschutz:2020, Disterer2013} und weitere Rahmen sind für Entwickler wichtig, um ihre Verantwortung über die IT-Risiken in Banken und anderen systemrelevanten Betrieben zu verstehen. Insbesondere sind sie für die nachvollziehbarer Entwicklung von Anwendungen und Systemen und für ihren nachhaltigen Betrieb, Überwachung und Überprüfung zu berücksichtigen. Um verwachsene und unflexible Architekturen zu vermeiden sollten Entwickler, im Bereich der Anwendungen, die interne Prozesse unterstützen \cite{Bussmann2006}, sich mit diesem Thema auseinandersetzen.
+
+Aus Sicht der Entwicklung im Bereich der Change-Prozesse wird bezüglich der Einschränkungen gerne der Finger auf die regulatorischen Anforderungen und Betrieb gezeigt und die größtmögliche Freiheit beansprucht. Beim Durchleuchten der Einschränkungen für Veränderungen aus verschiedenen Perspektiven fällt auf, dass die konservative Haltung des IT-Betriebs und der Regulatorik eine valide Berechtigung, gerade im Finanzwesen hat. Die Anforderungen selbst sind trotzdem flexibel gestaltet und bieten einen Ermessensspielraum. Neben den externen Auslöser, die Unternehmen aufgrund von Disruption und Diskontinuität zu Veränderungen zwingen \cite{Gupta:2017, Fernandez:2020} existiert die IT-Strategie als interner Auslöser \cite{BAIT:2018, Alt2017}, dessen Verantwortung in erster Linie die Geschäftsleitung unterliegt \cite{BAIT:2018}.
+
+Neben den Leistungsansprüchen sollten die Sicherheitsansprüche für Veränderungen im Vordergrund stehen. Die Implementierung von neuen Technologien wirft bei wesentlichen Veränderungen viele Compliancefragen auf \cite{MaRisk:2017}. Diese hängen mit den Sicherheitsansprüchen zusammen und sind unvermeidbar, können aber durch eine Effizienzsteigerung zu einer Stärke werden.
+
+Wegen befürchteten aufwändigen Maßnahmen sollte die Durchführung von wesentlichen Veränderungen nicht entmutigt werden. Die Maßnahmen haben sich dem Schutzbedarf von kritischen Prozessen und Daten zu richten \cite{MaRisk:2017, BAIT:2018}. Es wäre daher eine Selbstbeschränkung die Maßnahmen aufgrund eines mangelnden Verständnisses der Regulatorik zu pauschalisieren. Ein \enquote{Schwarz-Weiß} Denken als Folge zum Bestehen von Prüfungen oder die Umsetzung des Trugschlusses \enquote{Security through Obscurity} sind zu vermeiden. Eine Pauschalisierung der Maßnahmen des Risikomanagement könnte eine \enquote{Schatten-IT} \cite[S. 104]{Dorschel2018} erzeugen, weil beispielsweise die Katalogisierung der \ac{IDV} Anwendungen \cite{BAIT:2018} befürchtet und in Folge vermieden werden.
+
+Die Change-Prozesse haben sich zuerst selbst zu optimieren, bevor sie den ohnehin konservativen Betrieb optimieren. Möglich wäre eine zweigleisige Strategie, in der Entwickler und Geschäftsleitung eng zusammenarbeiten.
+
+\paragraph{IT als Kernkompetenz} 
+
+\citet{Bussmann2006} sieht die IT als Kernkompetenz. IT-Anwendungen unterscheiden sich in zwei Bereiche, in welcher Technologietrends zu innovativen Lösungen führen. Neben den Anwendungen für den Dialog mit Kunden sind es Anwendungen zur Steuerung und Unterstützung von internen Prozessen, die gerade im Finanzwesen mit steigenden Anforderungen nicht mithalten können.
+
+\paragraph{Idee für ein innovatives Risikomanagement}
+Die von Disterer beschriebenen Probleme im Betrieb von Anwendungen durch die mangelnde Beachtung von nichtfunktionalen Anforderungen und die Einführung von Quality Gates \cite{mci/Disterer2011} kann hierbei auf Probleme für die internen Kontrollverfahren ausgeweitet werden. Eine Koordination zwischen Entwicklung und Betrieb sollte das IT-Risikomanagement miteinbeziehen. Dabei darf die Geschwindigkeit des Entwicklungs- oder Integrationsprozesses nicht beeinträchtigt werden. Die Schnelligkeit hat bei der Beantwortung von Compliancefragen eine wichtige Rolle. Entwickler könnten zuerst die Prozesse des IT-Risikomanagements optimieren und automatisieren, um sich Handlungsfreiheit für Innovation und wesentlichen Veränderungen innerhalb der Organisation zu schaffen. Sie sollten in das Risikomanagement integriert werden. Ein Entwickler aus einem anderen Projekt könnte als Compliance- und Risikoverantwortlicher parallel wichtige Compliancefragen auf technischer Ebene schnell überprüfen und vorab beantworten. Dadurch könnte unter Vorbehalt schon mit neuen Technologien und Methoden an Lösungen gearbeitet werden oder Veränderungen in Gang gesetzt werden. Um einer Disruption zu begegnen ist das Risiko von verschwendetem Aufwand in Kauf zu nehmen, um sich eine Anpassungs- und Reaktionsfähigkeit zu schaffen, die geschäftskritisch ist.
+
+
+\subsection{Digitale Transformation: Ein kontinuierlicher Veränderungsprozess}
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=1.0\textwidth]{gfx/digital-transformation-lifecycle-by-selim2.PNG}
+ \caption{Lebenszyklus der digitalen Transformation (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})
+ }
+\end{figure}
+
+\paragraph{Lebenszyklus Digitale Transformation}
+
+Abb, \ref
