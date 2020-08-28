@@ -49,7 +49,7 @@ Es sollte sich bezüglich der internen Kontrollverfahren die Frage gestellt werd
 \label{sec:intro:goal}
 
 Die nachfolgende Arbeit soll sich mit den Hintergründen der bereits länger bekannten Einschränkungen für den \emph{Betrieb} der IT von Banken beschäftigen \cite{Brockhoff2006},  \cite{Bussmann2006}, \cite{Gupta:2017}.
-Diese Einschränkungen haben Auswirkungen auf die Softwareentwicklungsumgebung in der IT von Banken und es stellt sich die Frage:
+Diese Einschränkungen haben Auswirkungen auf die \ac{SEU} in der IT von Banken und es stellt sich die Frage:
 \begin{quote}
     \enquote{Welche Ansätze eignen sich für eine skalierbare und flexible Softwareentwicklungsumgebung in Banken?}
 \end{quote}
@@ -66,7 +66,7 @@ Dazu werden die Rahmenbedingungen für Veränderungen aus verschiedenen Perspekt
 \begin{itemize}
     \item \emph{Finanzwesen}, anhand einer Fallstudie \cite{Gupta:2017} über Goldman Sachs' Transformation
     \item \emph{Technologietrends}, die Impulse geben und später Disruptivität oder Diskontinuität erzeugen könnten
-    \item \emph{Bankaufsicht}, die mit ihren Vorgaben \cite{MaRisk:2017}, \cite{BAIT:2018} einen Rahmen für das Finanzwesen festlegt, mit Auswirkung auf ihre IT
+    \item \emph{Bankaufsicht}, die mit ihren Vorgaben \cite{MaRisk:2017}, \cite{BAIT:2018} einen Rahmen für das Finanzwesen festlegt, mit Auswirkung auf die IT
 \end{itemize}
  
 Aus dem genannten Zusammenhang werden die gegenseitigen Einflüsse identifiziert und zwischen einschränkende und antreibende Faktoren für Veränderungsprozesse unterschieden und gegenüber gestellt. 
@@ -79,13 +79,17 @@ Aus dem genannten Zusammenhang werden die gegenseitigen Einflüsse identifiziert
 
 Die Arbeit soll sich auch mit einem Paradigmawechsel der IT im Finanzwesen beschäftigen. Mithilfe der antreibenden Faktoren werden die Einschränkungen in einem Deduktionsschritt entkräftigt. Die übrig bleibenden Mindesteinschränkungen für Veränderungsprozesse dienen als Grundlage für die Evaluation der Ansätze aus der ursprünglichen Forschungsfrage. Somit finden sich möglicherweise geeignete Ansätze, für eine skalierbare und flexible Softwareentwicklungsumgebung in Banken.
 
+
 %
 % Section: Struktur der Arbeit
 %
 \section{Aufbau der Arbeit}
 \label{sec:intro:structure}
-Die Arbeit ist unter drei wesentlichen Bereichen gegliedert. 
+Das Problem wird zuerst aus der Sicht der \ac{SEU} definiert und von unten aus auf die allgemeinen Ursachen verfolgt. Von oben aus werden die Hintergründe aus unterschiedlichen Perspektiven durchleuchtet und wesentliche Punkte deduktiv ausgearbeitet und bewertet.
 
+Die Arbeit verwendet gleichzeitig die meisten Schritte aus dem \emph{Design-Thinking} Prozess. Daher werden schon früh einfache Ansätze für erste Lösungen induktiv auf der Stelle vorgeschlagen und beschrieben. Dieses frühzeitige Prototyping in Kap. \ref{ch:background} bezweckt, dass Ansätze und Anforderungen von der angenommenen Perspektive heraus vorgeschlagen werden. Diese können sich somit gegenseitig ausschließen, sodass bereits eine Filterung vor der eigentlichen Evaluation in \ref{chapter:evaluation} stattfindet. In diese fließen anschließend die festgehaltenen Ergebnisse.
+
+Die Arbeit ist unter drei wesentlichen Bereichen gegliedert. 
 Im ersten Bereich ist ein umfangreicher Grundlagenkapitel. Diese fasst bekannte Probleme und Ansätze aus verwandten Werken zusammen und stellt den aktuellen Stand der Technik dar. 
 
 Im zweiten Bereich ist ein umfangreicher Theoriekapitel über die Rahmenbedingungen der Softwareentwicklungsumgebung in Banken. Hierin werden die Einschränkenden Faktoren ermittelt. Zusätzlich werden ihre negativen Auswirkungen und Risiken für das Geschäftsmodell untersucht. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung mit aktuellen Technologien und Methoden abgeleitet und erste Lösungsansätze. 
