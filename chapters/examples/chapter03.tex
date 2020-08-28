@@ -1,309 +1,74 @@
-\chapter{Finanzwesen, Technologietrends und Regulatorik}
-\label{ch:background}
-Der nachfolgende Kapitel untersucht mithilfe einer Fallstudie innovative Technologien aus verschiedenen Perspektiven. Die Auswirkungen von neuen Technologien werden nach der Fallstudie weiter ausgeführt und ihre Eigenschaften hervorgehoben. Durch die zusätzliche Perspektive der Regulatorik auf neue Technologien werden Einschränkende und antreibende Faktoren für Innovation, insbesondere im Rahmen der \ac{SEU} im Finanzwesen werden identifiziert.
+\chapter{Softwareentwicklungsumgebung}
+\label{ch:chapter04}
 
-Mithilfe diesem werden Bereiche hervorgehoben, in denen ein Paradigmenwechsel erfolgen muss, um die Rahmenbedingungen innovationsfördernd zu verändern.
+\section{Veränderung der Rahmenbedingungen}
 
-\section{Fallstudie Goldman Sachs}
-\label{section:Goldman}
-Goldman Sachs sieht sich nicht als Finanzdienstleister, sondern als ein Technologieunternehmen und als eine Plattform \cite{Gupta:2017}. Diese Transformation kann als Vorbild für Institute des deutschen Finanzwesens gesehen werden. Auf der einen Seite stehen die FinTechts, die sich Marktanteile im Privatkundenbereich sichern und zunehmenden Druck auf die etablierten Institute ausüben. Auf der anderen Seite richten sich anpassungsfähige Institute neu aus und etablieren sich mit Technologien und Plattformen in neue Geschäftsmodelle. 
 
-Gupta und Simonds \cite{Gupta:2017} haben die Transformation von Goldman Sachs hin zu einem Technologieunternehmen beschrieben. Nachfolgend werden die wesentlichen Punkte aus dieser Studie untersucht.
-%
-\paragraph{Auswirkung von Technologien auf Goldman Sachs}
-Folgende Auswirkungen ergaben sich durch neue Technologien für Goldman Sachs und waren ein Impuls für Veränderung \cite{Gupta:2017}:
-\begin{itemize}
-    \item Daten und Metriken wurden wertvoller als die Instinkte der Händler.
-    \item Die Auswirkung von Technologie im Finanzwesen verstärkte sich seit der Finanzkrise 2008 umso stärker
-    \item Cloud, Open-Source Software und Schnittstellen führten zu einer erheblichen Reduzierung von Zeit und Kosten in der eigenen Entwicklung von Technologien
-    \item Verstärkter Wettbewerb durch FinTechs
-\end{itemize}
+\section{Nachvollziehbarkeit der SEU}
+Die \ac{SEU} sollte aus mehreren Gründen möglichst nachvollziehbar gestaltet werden. Eine flexible Umgebung setzt auch Wartbarkeit und Anpassungsfähigkeit voraus. Dies ist durch die Verwendung von gängigen Standards möglich. Systeme sollten möglichst unabhängig von einzelnen Verantwortlichen verständlich und offen sein. Eine Individualisierung von Systemen sollte möglichst vermieden werden. Sie sollten auf einen gemeinsamen Nenner gebracht werden.
 
-Ein wichtiger Punkt für Goldman Sachs ist hierbei die Reduktion der Kosten für die eigene Entwicklung von Technologien. Verwendung von Open-Source oder Standardsoftware reduziert die Komplexität der IT-Architektur \cite{Bussmann2006}. Sie bringt die \ac{SEU} auf einen gemeinsamen Nenner und reduziert die Kosten. 
+Dadurch kann eine schnelle Anpassung der Systeme an neue Technologien und Methoden erfolgen. Gleichzeitig können Systeme für neue Geschäftsmodelle in kurzer Zeit weiterentwickelt werden. Während einer Störung der Systeme oder in Krisensituationen kann auch schnell reagiert werden.
 
-Mit der Verwendung von Open-Source Software für die Entwicklung von Anwendungen können gängige Lösungen einem individuellen Bedarf angepasst und verwendet werden. Hierdurch könnte sehr viel Aufwand in der Entwicklung eines eigenen Konzepts für einen Anwendungsfall erspart bleiben.
+Dies hat auch einen positiven Effekt auf interne Kontrollverfahren. Die Umgebung ist nicht nur verständlicher für den Prüfer sondern auch sicherer durch die Verwendung von bereits geprüften Standards.
 
-Gängige Lösungen sind einfacher zu verstehen und würden auch die Einstiegshürden für Fachkräfte reduzieren, wohingegen properitäre Anwendungen spezialisiertes Personal benötigen. Open-Source und Standardsoftware könnten somit als ein antreibender Faktor für die Softwareentwicklung gesehen werden.
+Nachvollziehbarkeit wird in Banken auch für die Rückverfolgung von Softwareartefakten vorausgesetzt. In der Praxis müssen Ergebnisse aus der Entwicklung rückverfolgbar sein bis auf den Quellcode, der Anforderung und dem Prozess aus der sie entstanden sind.
+
+\section{DevOps mit Mircroservices}
+Daraus folgt, dass einzelne umfangreiche Systeme für die \ac{SEU} keine Flexibilität bieten. Für automatisierte Prozesse und skalierbare, flexible Umgebungen können die Anwendungen aus der \ac{SEU} in noch kleinere Module aufgeteilt werden. Insbesondere ist es wichtig, dass einzelne Komponenten der Integrationsplattform trennbar sind und unabhängig voneinander laufen. Komponenten sollten \enquote{self-contained} aufgebaut werden. In folge dessen sind sie flexibler können auch unabhängig voneinander skaliert werden. Das würde Engpässe erheblich reduzieren. Die Eliminierung von Abhängigkeiten sorgt für eine bessere Nachvollziehbarkeit, da hierbei gängige Standards angewendet werden können.
+
+\paragraph{Repository für Artefakte}
+Eine Standardsoftware hierfür die Anwendung Artifactory. Diese speichert in einem Snapshot die Ergebnisartefakte aus dem Build-Job und die zum erstellen verwendeten Artefakte. Das Artifactory wird ebenfalls verwendet, um Tools und Libraries für den Build zu beziehen. Dazu wird Artifactory entweder als Proxy für den Zugriff auf ausgesuchte öffentliche Repositories verwendet oder die Ressourcen werden in der Artifactory Instanz hinterlegt.
+
+\section{Skalierung von Jenkins mit Kubernetes}
+\label{jenkins:skalierung}
+Üblicherweise werden Anwendungen in Kubernetes mit Replikas skaliert. Das heißt in der Praxis, dass eine neue Instanz der Anwendung erzeugt wird und ein Load-Balancer die Anfragen unter den verschiedenen Instanzen verteilt. Das resultiert in der vorwiegend horizontalen Skalierung von Anwendungen. 
+
+Jenkins besteht bei einer Konfiguration mit verteilten Builds aus mehreren Komponenten. Ein Jenkins Master, welche die Anfragen bearbeitet und Build-Jobs triggert und ausführende Agenten für die Verteilung von Builds. Die Komponenten sollten getrennt voneinander skaliert werden, da sie vorwiegend für die ausführenden Komponenten erforderlich ist. 
+
+Hierfür gibt es in Kubernetes mehrere Abstraktionsebenen. Die größte Einheit, die die ganze Architektur zusammenfasst ist der Cluster. Dieser besteht aus mehreren Knoten, die jeweils mehrere Pods beinhalten. Die Knoten sind virtuelle Maschinen und enthalten die Hardware. Innerhalb dieser Knoten werden die Container ausgeführt. Diese sind noch einmal unter Pods zusammengefasst, die eine Arbeitseinheit oder Service darstellen. 
 \medskip
 \\
-Parallel dazu sind Cloud-Plattformen ein weiterer möglicher Antreiber für die Softwareentwicklung. Sie bieten eine automatisierte Plattform für IT-Ressourcen, sodass eine Infrastruktur in kürzester Zeit umgesetzt werden kann. Es gibt eine ganze Reihe an Konzepten, die durch Cloud-Plattformen ermöglicht werden. Diese beinhalten \ac{IaaS}, \ac{IaC}, \ac{SaaS} und \ac{PaaS}.
-Cloud-Plattformen bieten möglicherweise einen flexiblen und skalierbaren Standard für die seit langem angeforderte \ac{SOA} \cite{Brockhoff2006} in Banken. Möglicherweise sind sie auch ein Anstoß für die digitale Transformation ganzer Unternehmen. Für Goldman Sachs ist sie definitiv einer der Antreiber für die eigene Entwicklung von offenen und flexiblen Plattformen \cite{Gupta:2017}.
-%
-\paragraph{IT-Strategie von Goldman Sachs}
-Die Integration von neuen Technologien war für Goldman Sachs Opportunität und unvermeidbar \cite{Gupta:2017} zugleich:
-\begin{itemize}
-    \item Kostensenkung durch eine Effizienzsteigerung des Betriebs
-    \item Entwicklung von internen und externen Plattformen
-    \item Unterstützung des Kerngeschäfts
-    \item Wertschöpfung von neuen Geschäftsmodellen
-\end{itemize}
+Ein sinnvoller Ansatz ist die ganze Anwendung innerhalb eines Knotens aufzubauen und sie durch Replikas der Knoten zu skalieren. Dabei sollte die Anwendung modularisiert werden und in unabhängig voneinander skalierbare Microservices aufgeteilt werden. Anwendungen können komplex sein und ein Engpass entsteht in wenigen Bereichen, sodass nicht die ganze Anwendung repliziert werden muss. In der Praxis werden die Funktionen der Anwendung in mehreren Containern aufgeteilt, die miteinander kommunizieren. Die Replikation von Containern bewirkt, dass Anwendungen nur in den Komponenten skaliert werden, in der es erforderlich ist. Diese Praxis schafft Redundanzen ab und und sorgt für einen Wirkungsgrad in der Nutzung von IT-Ressourcen.
 
-Gerade der verstärkte Wettbewerb durch FinTechs und der finanzielle Druck nach der Finanzkrise bedingten, dass sich das Unternehmen verändert. Die Unvermeidbarkeit dieser Entscheidung zeigt auch, dass Opportunitäten nicht ausreichen, um Veränderungen umzusetzen. Goldman Sachs musste sich anpassen, um in einer digitalen Welt geschäftsfähig zu bleiben. Sie musste neue Technologien integrieren, weil das alte Modell nicht mehr tragbar war. 
-
-Der Ansatz neue Technologien anzunehmen hat weitreichende Auswirkungen für die Zukunft von Goldman Sachs \cite{Gupta:2017}. Eine gewisse Risikoakzeptanz von oft unvorhersehbaren Auswirkungen sollte vorhanden sein, um sich für neue Technologien zu überwinden. Handlungsunfähigkeit könnte mit der Zeit ein größeres Risiko erzeugen. 
-
-\paragraph{Effizienzsteigerung}
-Wie \citet{Gupta:2017} erkennt, hat Goldman Sachs die Automatisierung von Geschäftsprozessen durch die Zentralisierung von Kernelementen vorangetrieben, wodurch Redundanzen entfernt wurden. 
-\medskip
-\\
-Ezra Nahum\footnote{\citet{Gupta:2017} zitiert Ezra Nahum, S.5} betont, dass die unterschiedlichen Geschäfte von Goldman Sachs bisher in \enquote{Silos} als unabhängige und eigenverantwortliche Einheiten ausgeführt wurden. Es stellte sich die Frage, was ihre gemeinsamen Nenner sind. Ein Ansatz war in einer gemeinsamen technologischen Plattform zu arbeiten und in kleineren Teams sich darauf zu konzentrieren, was das jeweilige Geschäft ausmacht. Zu ihrer Unterstützung unterliegt ihnen ein größeres gemeinsamen Team \cite{Gupta:2017}.
-\bigskip
-\\
-Verallgemeinert kann dieser Ansatz auch für die Effizienzsteigerung in anderen Bereichen genutzt werden. Zuerst werden Gemeinsamkeiten identifiziert. Als nächstes werden sie ausgelagert. Das ermöglicht die Einrichtung von gemeinsamen Plattformen, die Synergie erzeugen. Die Einheiten oder Komponenten können sich so auf ihre eigentliche Kernaufgabe konzentrieren. Es könnte hierbei nach der konstruktiven Frage \enquote{Welche Gemeinsamkeiten haben wir?} statt nach der Frage \enquote{Was unterscheidet uns?} aufgebaut werden. Ersteres impliziert schon die Identifizierung von Gemeinsamkeiten, wodurch Redundanzen nicht unentdeckt bleiben und Synergie erzeugt wird. Die zweite Frage impliziert eine Abgrenzung der Einheiten voneinander, wodurch die \enquote{Silos} immer höher werden. Unterschiedliche Bedürfnisse müssen nicht zu unterschiedlichen Technologien führen. 
-\medskip
-\\
-Übertragen auf die Anwendungsentwicklung können diese \enquote{Silos}\footnote{\citet{Gupta:2017} zitiert Ezra Nahum, S.5} auch als Metapher für die monolithischen Systeme \cite{Bussmann2006} aus dem Finanzwesen gesehen werden. Eine \ac{SOA} alleine reicht daher nicht aus, um mit kontinuierlichen Veränderungen der IT umzugehen. Unterstützende Funktionen könnten unter gemeinsamen Plattformen zusammengefasst werden. Ein Beispiel wäre eine gemeinsame Datenbank. Goldman Sachs konnte mit einem gemeinsamen \enquote{Data Lake} und Mashine-Learning die Marktdaten effektiver bewerten \cite{Gupta:2017}.
-
-Die Anwendungen selbst müssten in kleinere funktionale Komponenten aufgeteilt werden \cite{Bussmann2006}. Microservice Architekturen bieten hierfür einen möglichen Ansatz. Die wesentlichen Funktionen für die Kernaufgabe einer Anwendung machen nur einen kleinen Teil der ganzen Anwendung aus.
-\medskip
-\\
-\citet{Gupta:2017} beschreibt, dass die Umsetzung dieser Strategie sich als schwierig gestaltet. Sie erfordert die Zusammenarbeit aller Beteiligten. Die verschiedenen Abteilungen müssen für die Umsetzung dieser Strategie kurzfristige Kompromisse eingehen und als finanziell eigenverantwortliche Einheiten die Kosten vorerst tragen. 
-
-Cohen\footnote{\citet{Gupta:2017} zitiert Darren Cohen, S.5, aus dem Englischen übersetzt} betont hierzu das wesentliche Problem:
-\begin{quote}\label{quote:goldman-vision}
-    Die Vision ist eine Sache, aber der wirkliche Fortschritt besteht darin, die Organisation dazu zu bringen, die Barrieren abzubauen, um in einer digitalen Welt zu agieren und die traditionell tiefen vertikalen Barrieren zu überwinden
-\end{quote}
-\medskip
-Ähnliche Probleme gibt es auch innerhalb der IT, insbesondere in der Zusammenarbeit zwischen Entwicklung und Betrieb \citet{Disterer2013}. Ansätze aus DevOps \cite{Alt2017} können hierbei die Zusammenarbeit innerhalb der IT verstärken. Im Finanzwesen wird für unvereinbare Verantwortungsbereiche eine strenge Funktionstrennng gefordert \cite{MaRisk:2017}.
-Dies wirkt sich auch auf eine strikte Trennung zwischen Test- und Produktivumgebung aus \citet{MaRisk:2017} und könnte die Zusammenarbeit erschweren. Die Umsetzung der Funktionstrennung auch auf personeller Ebene für die IT begünstigt möglicherweise die Vertiefung von Barrieren und erschwert die Umsetzung von DevOps. Möglicherweise ist dies ein einschränkender Faktor für die Softwareentwicklung.
-
-\paragraph{Technologieplattformen}
-Goldman Sachs sah eine Opportunität darin, die internen Plattformen auch für ihre Kunden zugänglich zu machen. Darunter zählt die Plattform Marquee, die für interne Zwecke der Marktanalyse entwickelt wurde \cite{Gupta:2017}.
-Die Anwendungen darin wurden self-contained entwickelt, sodass die Integration in interne und externe Systeme mit geringem Aufwand realisierbar war \cite{Gupta:2017}. Dadurch konnten die internen Plattformen schnell angepasst werden für neue Geschäftsmodelle. Die in der Plattform enthaltenen Anwendungen für die Marktanalyse konnten dadurch Geschäftskunden zugänglich gemacht werden, um den Kundendialog zu verbessern und Goldman Sachs zum bevorzugten Partner für Handel zu machen \cite{Gupta:2017}.
-\medskip
-\\
-Was als interne Plattform angefangen hat konnte schnell umfunktioniert werden. Dies war durch ein offenes Design und geringen Abhängigkeiten der Plattform von Goldman Sachs möglich. Sie ist dabei den Kompromiss eingegangen eine wertvolle Anwendung unentgeldlich verfügbar zu machen, was kontrovers war. Im Gegenzug dafür war Goldman Sachs auf den lokalen Rechnern der Händler ihrer Geschäftskunden allgegenwärtig \cite{Gupta:2017}.
 
 %
-\paragraph{Technologien und Plattformen von Goldman Sachs}
-\label{goldman:plattform}
-\begin{itemize}
-    \item \enquote{Data Lake} für Mashine-Learning durch eine \emph{hybride Cloud}\footnote{Gemeinsamer Einsatz einer extern und einer intern betriebenen Cloud-Plattform}
-    \item \enquote{Marquee}, eine Bewertungsplattform für Marktanalysen
-    \item \enquote{SIMON}, eine Plattform und Onlinemarktplatz für \enquote{Structured Notes}
-\end{itemize}
-
-\paragraph{neue Geschäftsmodelle}
-Mit der Entwicklung von SIMON, einem Onlinemarktplatz für \enquote{Structured Notes}, erhöhte Goldman Sachs ihre Reichweite zu einer neuen Nutzergruppe. Das Wachstumspotenzial von einer Plattform mit einem einzigen Anbieter wurde erreicht, sodass die eigene Plattform an weitere konkurrierenden Emittenten geöffnet wurde. Dies erhöhte die Kundenzufriedenheit, da eine größere Auswahl und Vielfalt an Angeboten hierdurch entstand \cite{Gupta:2017}.
-
-\paragraph{Ausblick}
-\citet{Gupta:2017} fasst zusammen, dass die Realität nach 2008 Goldman Sachs und ihre Konkurrenz gezwungen hat sich neu auszurichten und wirft einige Fragen auf: \footnote{\citet{Gupta:2017}, S. 10, aus dem Englischen übersetzt}
-\begin{quote}
-\enquote{Einblicke in die Strategie von Goldman Sachs wurden durch Initiativen wie Marquee und Marcus deutlich, aber wie passten diese und andere Initiativen der letzten Zeit in das allgemeine Geschäftsmodell des Unternehmens? Hat sich das Kerngeschäft von Goldman Sachs verändert, oder waren Produkte wie SIMON und Marcus an der Peripherie angesiedelt? Was trieb das Unternehmen dazu, den Zugang zu internen Tools zu öffnen, die lange Zeit als proprietärer Wettbewerbsvorteil angesehen worden waren, und wie konnte es rechtfertigen, Wettbewerber zum Verkauf an seine Kunden einzuladen?
-    }
-\end{quote}
-Die Realität nach 2008 könnte diese Fragen von sich aus beantworten. Hierzu sollten die veränderten Rahmenbedingungen der IT im Finanzwesen verstanden werden. Zudem ist die Realität zu erkennen, dass neue Technologien immer schneller entstehen und ihre Auswirkungen immer stärker werden. 
-\medskip
-\\
-\citet{Eismann2015} beschreibt, dass aus den Plattformansätzen von Apple und Google einiges gelernt werden kann. Beide Unternehmen bieten Plattformen für Apps an und verdienen an ihrem Vertrieb deutlich mit. Dabei müssen sie die Apps nicht selbst entwickeln. Durch Plattformen findet eine \emph{Auslagerung von Innovation \cite{Eismann2015}} statt.
-
-Daher ergibt es Sinn, dass Goldman Sachs sich die Plattformansätze von führenden Technologieunternehmen aneignet und selbst ein Ökosystem mit Plattformen aufbauen will. 
-
-Vielen Banken scheint diese Idee jedoch fremd \cite{Eismann2015}.
-\citet{Eismann2015} begründet, dass Kernbankensysteme niemals dafür ausgelegt wurden externe Software zu integrieren, was aus Sicherheitsgründen vertretbar ist, jedoch eine starke Limitation für Innovation aufgrund kostspieligen Anpassungen darstellt.
-\medskip
-\\
-Alt et al. \cite{Alt2017} definieren, dass der aktuelle Innovationsverlauf auf \emph{Diskontinuitäten} beruht und disruptiv stattfindet und haben hierzu einen entscheidenden Vorschlag: \footnote{\citet{Alt2017}, S. 14}
-\begin{quote}
-\enquote{Für die Vorwegnahme künftiger Innovationen ist die Gestaltung künftiger
-Zukunftszustände bzw. Verwendungszusammenhänge durch die zeitnahe Realisierung von Prototypen von besonderer Bedeutung.}
-\end{quote}
-Besonders sollte hierbei die Gestaltung \emph{künftiger Zukunftszustände \cite{Alt2017}} hervorgehoben werden. Das IT-Management muss in der Lage sein Technologietrends zu verstehen und ihre Auswirkungen auf ihr Geschäft zu transferieren. Dabei gibt es Unterschiede zwischen Diskontinuität und Disruption von Technologien \cite{Fernandez:2020}.  Die \emph{künftigen Verwendungszusammenhänge} sind hierbei für die Wertschöpfung von neuen Opportunitäten wichtig. Opportunitäten können jedoch verpasst werden, wenn sie nur eine Erweiterung von Geschäftsmodellen darstellen. Um die Kontinuität des Kerngeschäfts aufrecht zu erhalten sind die \emph{künftigen Zukunftszustände \cite{Alt2017}} essenziell. Für die zeitnahe Realisierung von Prototypen erfordert es kreative \cite{Alt2017} und schnelle Ansätze, wie zum Beispiel der \emph{Design Thinking} Prozess.
-
-\section{Diskontinuität und Disruption}
-Die unflexible IT-Architektur in Banken ist keine neue Erkenntnis und wird seit langer Zeit gefordert \cite{Brockhoff2006}, \cite{Bussmann2006}. Mittlerweile sollte herbei nicht mehr von Bedarf oder Forderung gesprochen werden. Die Opportunität für eine flexible \ac{SOA} ist bereits durch Cloud-Plattformen vergangen. Die geforderte \ac{SOA} wurde zuletzt durch Mircroservice-Architekturen ersetzt. Diese Beobachtung ist Beispiel für eine \emph{Diskontinuität} durch die Cloud-Computing Technologie.
-\medskip
-\\
-Veränderungen werden nicht nur durch ein Wertschöpfungspotenzial hervorgerufen. Viel mehr wird die IT in Betrieben mit alten Strukturen durch äußere Kräfte gezwungen sich anzupassen \cite{Alt2017}, \cite{Gupta:2017}. Grundlage hierfür sind neue Technologietrends \cite{Bussmann2006}, die mittlerweile in ihrer Auswirkung jedoch gravierender sind. Eine entsprechende Verdrängung im Wettbewerb kann viel schneller erfolgen als bisher. Neben Impulse für Innovation mit gefolgter Diskontinuität \cite{Alt2017} kann zunehmend eine Disruption durch neue Technologietrends beobachtet werden. Fernández et al. \cite{Fernandez:2020} definieren die voneinander schwierig zu unterscheidenden Konzepte der \enquote{diskontinuierlichen} und \enquote{disruptiven} Technologien.
-\medskip
-\\
-Verdrängungen im Wettbewerb finden nicht mehr durch eine Konkurrenz auf gleicher Augenhöhe statt. Eine Verdrängung kann auch unerwartet von kleinen Betrieben mit effizienten Abläufen kommen, die durch Schnelligkeit, Verfügbarkeit, Skalierbarkeit und Qualität ihrer Leistungen überzeugen kann.  Gerade im Bankwesen könnten Verdrängungen stattfinden, die jenseits der bisherigen Rahmenbedingungen agieren. Der hierfürige Technologietrend könnte im Finanzwesen beispielsweise die Blockchain-Technologie sein. Analog zum genossenschaftlichen Prinzip der Selbsthilfe, Selbstverantwortung und Selbstverwaltung könnten unabhängige Organisationen entstehen, nach dem historischen Muster, aus denen die Genossenschaftsbanken entstanden sind.
-\medskip
-\\
-Die Vorwegnahme künftiger Innovation durch die Gestaltung von Zukunftszuständen \cite{Alt2017} ist ein Ansatz, um insbesondere Diskontinuitäten entgegen zu wirken. 
-Für Disruptivität kann hierzu ein zusätzlicher Fokus ergänzt werden. Während der Gestaltung von Zukunftszuständen könnten Risiken für das Kerngeschäft mit kreativen Ausblicken auf disruptive Technologien antizipiert werden. Eine realistische Bedrohung auf den künftigen Zustand des Unternehmens könnte den nötigen Katalysator für einen Paradigmenwechsel liefern.
-
-Nach einem erfolgreichen Paradigmenwechsel, durch die Erkennung der Bedrohungslage sollten disruptive Technologien mit den aktuellen Rahmenbedingungen abgeglichen werden. Dadurch könnten die Einschränkungen für Innovation identifiziert werden und es könnte definiert werden in welchen Bereichen ein Paradigmenwechsel erforderlich ist.
-
-\paragraph{FinTechs}
-\label{Disruption:FinTechs}
-Aus den FinTechs entstehen mittlerweile volllizensierte Banken mit direktem Vertrieb über das Internet, wie zum Beispiel N26. Dazu entstehen Banken, die Schnittstellen für Unternehmen anbieten und somit eine reine Plattform für Finanzdienstleistungen sind, beispielsweise die Solarisbank. Auch etablierte Banken haben veränderte Rahmenbedingungen und Impulse erkannt und passen sich dem aktuellen Stand der Technik an \cite{Gupta:2017}, \cite{Eismann2015}.
-\medskip
-\\
-Darren Cohen\footnote{Vorsitzender von Goldman Sachs' PSI Group, vgl. \cite{Gupta:2017}} sieht im Bereich Wertpapierhandel von FinTechs keine Gefahr für Goldman Sachs \cite{Gupta:2017}.
-Hierzu wird in \cite{Gupta:2017} aufgeführt, dass laut Cohen die Anforderungen für neue Marktteilnehmer schwierig sind und für junge FinTechs unüberwindlich. In \cite{Gupta:2017} ist nach Cohen die Abwicklung im Bereich Wertpapierhandel hochreguliert und erfordert eine hohe Bilanzsumme, hohe Infrastrukturinvestitionen und einen erheblichen, globalen Einfluss.
-
-Cohens Begründung pauschalisiert jedoch die Rahmenbedingungen der FinTechs. Abwicklungen mit hohen Summen finden bereits über Plattformen von Blockchain FinTechs statt. Diese Unternehmen agieren jenseits der Rahmenbedingungen und Regulierungen von konventionellen Instituten \ref{Disruption:Blockchain}.
-
-\paragraph{Blockchain}
-\label{Disruption:Blockchain}
-Im Gegenzug zu Cohens Anforderungen für neue Marktteilnehmer \ref{section:Goldman} gelten einige Blockchains als hochgesichert, enthalten hohe Bilanzsummen, besitzen einer der vermutlich leistungsstärksten Infrastrukturnetzwerke weltweit und sind dadurch global in jeder Hinsicht.
-
-An der \ac{DLT} können sich unter anderem FinTechs beteiligen und die Eintrittsbedingungen mit Leichtigkeit überwinden. Zu den bekanntesten Handelsplattformen, die aus der Blockchain-Technologie entstanden sind zählen Kraken, Poloniex, Bitfinex, Shapeshift und Coinbase. Abwicklungen in diesen Handelsplätzen finden nach \citet{Foundation2019Deconstructing} unter anderem dezentral mithilfe von Smart-Contracts und Reserven statt.
-
-Die \ac{DLT} wird auch von etablierten Instituten im Finanzwesen genau verfolgt.
-Für die Abwicklung von Schuldscheindarlehen existiert jüngst das deutsche Pilotprojekt finledger \cite{finledger}. 
-Basierend auf der \ac{DLT} erschafft ein Konsortium aus deutschen Kreditinstituten die Plattform finledger, die zu einem Standard werden und nach der Pilotierung allen Instituten zugänglich sein soll \cite{finledger}.
+\paragraph{Google Kubernetes Engine}
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[width=1.0\textwidth]{gfx/blockchainanwendung.PNG}
- \caption{Korschinowski et al. \cite{Korschinowski2018}, S. 283, \enquote{Anwendungsfelder der Blockchain-Technologie. (Quelle: KPMG)}\label{fig:blockchain}}
+ \includegraphics[width=1.0\textwidth]{gfx/jenkins-kubernetes-architecture.png}
+ \caption{Deployment von Jenkins in einem Kubernetes Cluster mit mehreren Knoten \cite{Google:GKEJenkins}\label{fig:gkejenkins}}
 \end{figure}
 
-In Abb. \ref{fig:blockchain}, die Korschinowski et al. \cite{Korschinowski2018} übernommen haben wird ein Überblick der Anwendungsgebiete der \ac{DLT} gezeigt. In einigen Anwendungsbereichen hieraus könnten Ideen für zukünftige Plattformen nach der Vision von Goldman Sachs \ref{quote:goldman-vision} entstehen. Besonders in bankfachlichen Anwendungsgebieten müssen neue Technologien mit der Regulatorik abgewägt werden.
+Google beschreibt in \cite{Google:GKEJenkins} einen Ansatz für eine skalierbare Architektur von Jenkins mit der \ac{GKE}.
 
-\paragraph{Software Development \enquote{as a Service}}
-Eine künftige Disruption würde möglicherweise als Folge auf die Auslagerung und Dematerialisierung fast aller Komponenten in der IT entstehen.
-Es stellt sich die Frage ob der Entwickler oder die Entwicklungsarbeit selbst als eine vollautomatisierte Dienstleistung bereitgestellt werden kann. Dieses zukünftige Konzept könnte als Trend \enquote{Software Development as Code} oder sogar \enquote{Software Development as a Service} genannt werden, als Folge auf die neuen Rahmenbedingungen durch Cloud-Architekturen. Gemeint ist hierbei eine mögliche Abstraktion und Vollautomatisierung der Entwicklungsarbeit.
-Der Begriff \enquote{Software Development as a Service} existiert bereits im Rahmen einer Serviceorientierung der Entwicklung durch agile Methoden \cite{Lehman:2011}.
+In Abb. \ref{fig:gkejenkins} werden die Komponenten in mehreren Knoten, genannt Nodes zusammengefasst. In Node 1 befindet sich der Jenkins Master. Innerhalb dieses Nodes kann der Jenkins Master repliziert werden. Im gleichen Node oder in weiteren Nodes können die Jenkins Agenten, genannt Jenkins Executor, erzeugt werden.
 
-\emph{Freelancing} und \emph{Consulting} ist verbreitet in der IT und kann insbesondere aufgrund der zunehmenden Möglichkeiten und Akzeptanz für Remote-Arbeit sich immer weiter entwickeln. Möglicherweise könnte nach einer Transformation der gesamten IT-Architektur hin zu einer Cloud-Architektur eine Disruption oder Diskontinuität entstehen mit unvorsehbaren Auswirkungen auf die IT. Cloud-Plattformen bieten eine Architektur, die allgegenwärtig und fortschrittlicher sein wird. Entwicklungs- und Produktivumgebungen werden weiterhin streng getrennt sein müssen \cite{MaRisk:2017}. Das ist jedoch kein Hindernis für neue Geschäftsmodelle in der Softwareentwicklung, so lange eine kontinuierliche Zusammenarbeit zwischen diesen Bereichen besteht.
+Der Load Balancer aus der \ac{GKE} arbeitet vollautomatisch und erfordert nur wenige Parameter zur Konfiguration. Das reduziert den Aufwand in der Entwicklung dieser Architektur erheblich.
 
-Zukünftig könnten Plattformen entstehen, die Entwicklungsarbeit abstrahieren und durch sichere Zugänge auf die Cloud-Architektur dem Kunden zur Verfügung stellen. Ihre Bedingung ist die Rückverfolgbarkeit von Ergebnisartefakten im Softwareentwicklungsprozss, mithilfe von Automatisierung und Nachvollziehbarkeit der Delivery Pipeline. Durch den Zugang einer Instanz der Entwicklungsumgebung gegenüber diesen Plattformen könnten Dienstleistungen für Entwicklungsarbeit analog zum Cloud-Computing gebucht werden.
-
-Je nach Auslegung und Perspektive wäre diese beispielhafte Vorstellung eine Innovation oder Gefahr. Um ihr zu entgegnen sollte das Szenario durchgegangen werden. Für Entwickler entstehen möglicherweise Opportunitäten oder auch Risiken. 
+So lange in einem Node genug Ressourcen frei sind können weitere Container in so genannten Pods erzeugt werden. Zudem können beliebig viele weitere Nodes aktiviert oder erzeugt werden. Ein Node ist in \ac{GKE} eine virtuelle Maschine aus der Computing Engine.
 \medskip
 \\
-Solche Entwicklungen werden unvermeidbar sein und zeigen sich zuerst in Form von Impulsen \cite{Bussmann2006} und nehmen mit zunehmender Reife der Technologie eine disruptive Eigenschaft an. Die genannten Beispiele für disruptive und diskontinuierlichen Technologien zeigen, dass die Entwicklung keinen Halt macht und ständig fortgeführt werden kann.
+Daraus resultiert eine hohe Flexibilität für die Skalierung der Anwendungen. Diese können sowohl vertikal anhand der Ressourcen von den Nodes, als auch Horizontal über die Aktivierung von weiteren Nodes oder Pods skaliert werden. Vor allem bestehen für die horizontale Skalierung mehrere Abstraktionsebenen.
 
-\section{Regulatorik der IT}
-Die \emph{Finanzkrise 2008} war mit einem enormen Vertrauensverlust gegenüber Banken verbunden und die Empörung der Gesellschaft war durch das Internet und der daraus folgenden Transparenz viel größer als zuvor \cite{Eismann2015}. Eine Welle von regulatorischen Veränderungen wurde durch die Auswirkungen dieser Krise herbeigeführt, um zukünftige systemische Krisen zu vermeiden \cite{Gupta:2017}. Das Ergebnis daraus ist die Steigung der regulatorischen Anforderungen mit gleichzeitiger Zunahme der technischen Anforderungen\footnote{insbesondere der \enquote{kontinuierliche Anstieg der Anforderungen an die IT-Architektur} \cite{Disterer2013}} in der IT. 
-Daraus resultiert ein zunehmender Druck auf das Finanzwesen (Abb. \ref{fig:bankdruck}), der aus zusätzlichen Kosten und wirtschaftlichem Druck besteht \cite{Smolinski2017}.
+\paragraph{Minikube}
 
-\paragraph{BaFin Anforderungen}
-Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen \cite{MaRisk:2017} an Kredit- und Finanzdienstleistungsinstitute, die sich auch auf die IT der Banken auswirken. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert \cite{recht/Bornemann2018}. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
-
-Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Bereich Risikomanagement und Auslagerung. In \cite{BAIT:2018} werden diese Anforderungen für den Bereich der IT nochmals konkretisiert. Hierdurch sollen operationelle Risiken auch in der IT angemessen gesteuert werden. \citet{mci/Knittl2013} beschreibt die Umsetzung dieser Anforderungen anhand einer Fallstudie zu einem internationalen Finanzkonzern.
-
-\begin{figure}[htbp]
- \centering
- \includegraphics[width=0.8\textwidth]{gfx/bankdruck.PNG}
- \caption{\citet{Smolinski2017}, S. 44, Finanzbranche unter Druck}\label{fig:bankdruck}
-\end{figure}
-
-\medskip
-Abb. \ref{fig:bankdruck} verbildlicht, wie Banken von allen Seiten unter Druck stehen. Die Darstellung könnte fortgeführt werden mit der Annahme, dass die äußeren Kräfte sich auch gegenseitig beeinflussen. Die Technologien und Trends aus den \enquote{GAFAs} können mit Sicherheit als ein Antreiber für die FinTechs gesehen werden. Die Antreiber von Veränderung auf der vertikalen Achse der Abbildung werden von Einschränkenden Instituten auf der horizontalen Achse durchkreuzt. Die Aufsichten evaluieren ebenfalls neue Technologien und berücksichtigen sie jeweils bei der Novellierung ihrer Rahmenwerke. Bis diese angepasst werden vergeht Zeit und bis sich die etablierten Institute hierauf auch anpassen vergeht ebenfalls wertvolle Zeit. In FinTechs ist dieses Problem aufgrund ihrer Agilität und Effizienz geringer. Etablierte Institute müssen daher einen Weg finden das Zusammenspiel zwischen neuen Technologien und regulatorischen Anforderungen zu antizipieren und eigene Initiativen als Pilotprojekte schon zu starten. Hierzu passt ebenfalls der Ansatz der Vorwegnahme durch die Gestaltung von Zukunftszuständen \cite{Alt2017}.
+\subsection{Anlegen eines Kubernetes Clusters für Jenkins}
+Pathania beschreibt in \cite{Pathania2017}, wie Jenkins mit \ac{GCP} und Kubernetes und Docker skaliert werden kann. Hierbei geht er genau auf die Konfiguration von Kubernetes und der \ac{GCP} ein.
 
 
-\paragraph{Ermessen der Institute}
-In \cite{MaRisk:2017, BAIT:2018} fällt auf, dass viele Vorgaben durch entsprechende Wörter in ihrem Gewicht relativiert werden. Die Maßnahmen zu ihrer Umsetzung liegen hierbei im Ermessen der jeweiligen Institute. Im Interesse der Institute ist in erster Linie das Bestehen von Prüfungen der Aufsicht. Die Ermessensfreiheit könnte in einigen Bereichen für Unklarheit sorgen, da die \ac{MaRisk} sehr abstrakt formuliert ist.
-Eine bürokratisierte Kultur innerhalb der internen Kontrollverfahren in Kredit- und Finanzdienstleistungsinstituten zum bestehen von Prüfungen sollte als Folge vermieden werden. Die Flexibilität, die die BaFin in ihren Rahmenwerken vorsieht \cite{MaRisk:2017} sollte als stärke wahrgenommen werden und auf die interne Kultur übertragen werden. Die internen Kontrollverfahren und das Risikomanagement müssen in erster Linie praxisnah und flexibel bezüglich der IT vorgehen und ihren Ermessensspielraum zu Nutze machen, um mit neuen Technologien umgehen zu können.
 
-Für die \ac{MaRisk} gibt es auch zusätzliche Erläuterungen der BaFin \cite{MaRiskErläuterungen:2017}. Speziell für die IT hat die BaFin in \cite{BAIT:2018} die \ac{MaRisk} noch einmal konkretisiert. Daneben gibt es institutspezifische Interpretationen und Werke \cite{DSGV:2019}.
-
-\paragraph{Risikomanagement}
-Für das Risikomanagement fordert die \ac{BaFin} die Festlegung von Strategien und die Einrichtung von internen Kontrollverfahren, bestehend aus einem \ac{IKS} und einer interne Revision. Ein Risikomanagement für die IT soll insbesondere den Betrieb schützen \cite{MaRisk:2017}, da hierin die operationellen Risiken liegen. 
-
-Ein Ausfall der IT-Systeme in Banken hätte mit Sicherheit Auswirkungen auf kritische Geschäftsprozesse, die bis hin zu einer systemischen Krise führen könnten.
-
-Daher fordert die \ac{BaFin} \cite{MaRisk:2017} vom IT-Risikomanagement:
-\begin{enumerate}
-    \item Sie soll Überwachungs- und Steuerungsprozesse für IT-Risiken einrichten.
-    \item Ihre Prozesse umfassen: Risikokriterien, Risiken, Schutzbedarf, Schutzmaßnahmen, Risikobehandlung und -minderung
-    \item Sie soll Risiken beim Einkauf von Software \emph{angemessen} bewerten.
-\end{enumerate}
-Diese Forderungen \cite{MaRisk:2017} zur Bewertung von IT-Risiken gelten auch beim Einsatz von selbst entwickelten Anwendungen, die von ihr als \ac{IDV} bezeichnet wird. Entsprechende Maßnahmen sollen jedoch nach dem Schutzbedarf der unterstützten Prozesse und verarbeiteten Daten festgelegt werden \cite{MaRisk:2017}.
-
-Die Überwachungs- und Steuerungsprozesse für IT-Risiken sollten daher klare Grenzen für die Verarbeitung von Daten definieren. Eine klare Unterscheidung zwischen \ac{IDV} Anwendungen und Anwendungen die keine \ac{IDV} darstellen ist nötig, um angemessene Maßnahmen festzulegen. Da \ac{IDV} Anwendungen jedoch hierbei pauschalisiert gesehen werden und aufgrund der darauf folgenden aufwendigen Maßnahmen negativ behaftet sind wird ihre Katalogisierung entmutig. Somit entsteht oft eine \enquote{Schatten-IT} in Banken \cite{Dorschel2018}.
-
-Die Ermessensfreiheit zu den Maßnahmen des Risikomanagements begrenzt sich in diesem Fall auf den Schutzbedarf der Geschäftsprozesse und Daten. Daher muss die Katalogisierung von Anwendungen bezüglich ihres Schutzbedarfs in einem Spektrum ausgeweitet. Es kommt darauf an welche Daten von der Anwendung verarbeitet werden. Dieser Punkt sollte nachvollziehbar zu den Anwendungen dokumentiert werden.
-
-\paragraph{IT-Systeme und Prozesse}
-Die \ac{BaFin} \cite{MaRisk:2017} fordert zu IT-Systemen und Prozessen:
-\begin{enumerate}
-    \item IT-Systeme und Prozesse sollen Integrität, Verfügbarkeit, Authentizität und Vertraulichkeit der Daten mit gängigen Standards sicherstellen.
-    \item IT-Systeme und ihre zugehörigen Prozesse sollen hinsichtlich ihrer Eignung regelmäßig überprüft werden.
-    \item IT-Systeme sollen nach \emph{wesentlichen} Veränderungen und vor erstmaligem Einsatz getestet werden.
-    \item Ein Regelprozesse der Entwicklung, des Testens, der Freigabe und der Implementierung in die Produktionsprozesse soll etabliert werden. 
-    \item Produktions- und Testumgebungen sollen grundsätzlich voneinander getrennt werden.
-\end{enumerate}
-%
-Besonders hervorzuheben ist die Verantwortung der IT-Systeme und Prozesse für die Sicherstellung der Datensicherheit. Im Fokus stehen die verarbeiteten und gespeicherten Daten in den IT-Systemen und Prozessen. 
-
-Hierzu fordert die BaFin \cite{MaRisk:2017} eine Orientierung am Schutzbedarf der verarbeiteten Daten. Sie verweist mit gängigen Standards auf den IT-Grundschutzkatalog\footnote{vgl. IT-Grundschutzkompendium \cite{IT-Grundschutz:2020}} des \ac{BSI} und auf den internationalen Sicherheitsstandard ISO/IEC 2700X\footnote{vgl. Disterer \cite{Disterer2013}} der \ac{ISO}.
-
-Die Auslagerung von IT-Ressourcen wäre beispielsweise bei der Entwicklung von Modellen für Mashinelles-Lernen nötig und dürfte aufgrund der Datensicherheit nicht ohne weiteres auf einer externe Cloud-Plattform durchgeführt werden. 
-\medskip
-\\
-Auch im Bereich der Automatisierung von Prozessen ist es wichtig zu erkennen, welche unterstützten Prozesse schutzbedürftig sind und welche nicht. IT-Prozesse können grob zwischen \emph{Change} und \emph{Run} unterteilt werden \cite{Dorschel2018}. Die Run-Prozesse regeln den Betrieb und die Change-Prozesse erzeugen üblicherweise als Projektform Veränderungen im Aufbau oder Ablauf der Organisation.
-
-Die Softwareentwicklung selbst enthält innerhalb einer getrennten Testumgebung auf dem ersten Blick keine operationellen Risiken für den Geschäftsbetrieb der Bank. Für die Integrierung von Ergebnissen aus diesen Change-Prozessen in den Betrieb ist eine vorherige Freigabe vorgesehen, beispielsweise in Form von \enquote{Quality-Gates} \cite{mci/Disterer2011}.
-
-Für ihre Unterstützung existiert innerhalb der IT ein eigener Betrieb für Plattformen und Anwendungen der Softwareentwicklung. Ein hoher Schutzbedarf der Entwicklung entsteht in Folge von Schnittstellen bedingt durch Prozesse für die Inbetriebnahme von Software. Besonders ist in der Anwendung von DevOps die Delivery-Pipeline, womit die Komponenten in die Produktionsumgebung integriert werden ein kritischer Prozess. Nach DevOps sind die Abläufe zwischen \ac{CI} und \ac{CD} für einen automatisierten und hochfrequenten Ablauf eng miteinander verbunden. In \ac{CD} liegt auch die Verantwortung über Risiken und Qualitätssicherung \cite{Alt2017}.
-Es stellt sich die Frage wie Anwendungen zur Ausführung der Delivery Pipeline bezüglich ihres Schutzbedarfs einzuordnen sind. 
-
-\paragraph{Konsequenzen für die SEU}
-Grenzen zeigen sich zum Beispiel in Form von unterschiedlichen Zonen innerhalb der IT-Architektur. 
-Diese Grenzen sind nötig, um die Risiken für den Betrieb kontrollieren zu können. Hierfür wird eine klare Nachvollziehbarkeit der Ergebnisse aus den Change-Prozessen bedingt.
-
-Innerhalb der \ac{SEU} sind die Rollen schwierig voneinander zu unterscheiden. Konfiguration, Administration, Wartung und Weiterentwicklung von Anwendungen für die \ac{SEU} sind Tätigkeiten in denen Kunde, Entwickler und Betrieb (Abb. \ref{fig:devops}) teilweise ineinander verschmelzen. Auch die technische Umsetzung der Überwachungsprozesse erfolgt meist von den gleichen Entwicklern der \ac{SEU}. 
-Die enge Kopplung zwischen Entwicklung und Betrieb ist in DevOps vorgesehen \cite{} und setzt agile und kontinuierliche Prinzipien voraus, die aus Sicht des Risikomanagements schwierig zu kontrollieren sein könnten. 
-
-Die Auslagerung der \ac{SEU} auf externe Infrastrukturen ist aufgrund dieser engen Kopplung der Abläufe in DevOps beschränkt, weil hierdurch sensible Daten ausgetauscht werden könnten. Zudem könnte eine zu hohe Abhängigkeit zu einer Cloud-Plattform für den Betrieb der \ac{SEU} entstehen. Realistischer wäre es bei Bedarf nur einzelne rechenintensive Services auszulagern mit Ansätzen für eine hybride Cloud \cite{Gupta:2017}. 
-
-Selbst wenn diese Modularisierung mit neuen Technologien wie Container-Virtualisierung realisierbar ist, bestehen für die Verwendung von externen Cloud-Plattformen Probleme bezüglich der Datensicherheit. 
-
-\paragraph{Wesentliche Veränderungen}
-Bei wesentlichen Veränderungen (\emph{Change-Prozesse}) bedingt die \ac{BaFin} \cite{MaRisk:2017} vom Risikomanagement die Auswirkung der Veränderung auf die Kontrollverfahren zu analysieren. Hierfür sind die später in die Arbeitsabläufe eingebundenen Organisationseinheiten, Risikocontrolling, Compliance und die Interne Revision zu beteiligen. 
-\medskip
-\\
-Daraus könnte ein Hindernis für solche Veränderungen entstehen. Wesentliche Veränderungen in den IT-Systemen könnten einen Anpassungsbedarf des Kontrollverfahrens bedeuten. Vielmehr sollte das interne Kontrollverfahren von einer ständigen Veränderung in der IT ausgehen und sich auf Auswirkungen vorbereiten.
-
-\paragraph{Bankaufsichtliche Anforderungen an die IT}
-Die \ac{BAIT} gibt seit 2018 neben der \ac{MaRisk} auf der gleichen Grundlage des \ac{KWG} einen  Rahmen, insbesondere für das Management der IT-Ressourcen und das IT-Risikomanagement. Die Anforderungen aus \ac{MaRisk} werden lediglich konkretisiert. Zudem Präzisiert es die Anforderungen des § 25b des
-\ac{KWG} zu Auslagerung von Aktivitäten und Prozessen \cite{BAIT:2018}.
-\\
-Die \ac{BAIT} ist daher besonders für die Auslagerung von IT-Ressourcen zu berücksichtigen und insbesondere aufgrund der zunehmenden Praxis von \ac{SaaS} und Cloud-Computing relevant.
-
-\paragraph{IT-Strategie} Die Geschäftsleitung soll eine nachhaltige IT-Strategie festlegen, die konsistent mit der Geschäftsstrategie ist \cite{BAIT:2018}. 
-
-Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschäftsmodell und IT in einem engen Verhältnis gesehen werden. Die IT steht aus regulatorischer Sicht nicht mehr größtenteils als Risikofaktor im Fokus. Vielmehr kann sie aufgrund einer konkreten Strategie das Geschäftsmodell ergänzen. Diese Anforderung ist eine klare Förderung der Rolle der IT. 
-
-\paragraph{IT-Governance} Die IT-Governance wird als Struktur zur Steuerung und Überwachung des IT-Betriebs und der Entwicklung der IT-Systeme und Prozesse auf Basis der IT-Strategie \cite{BAIT:2018} gesehen. Für das Risikomanagement, Entwicklung und Betrieb innerhalb der IT wird eine qualitativ und quantitativ angemessene Ausstattung mit Personal gefordert.
-
-\paragraph{EBA Guidelines}
-Bedeutende Institute werden zusätzlich von der \ac{EBA} beaufsichtigt \cite{recht/Bornemann2018}
-
-\section{Rahmenbedingungen und Faktoren für Veränderung}
-
-Die Entwicklung eines flexiblen und skalierbaren Systems und Umgebung für die Softwareentwicklung innerhalb von Banken erfordert wesentliche Veränderungen in den Strukturen der IT-Bereiche der Institute und in ihrem Ablauf. Wesentlicher Faktor ist hierfür die Tatsache, dass die Anwendungen und Systeme für die Softwareentwicklung ständigen Veränderungen ausgesetzt sind. Standards in der Softwareentwicklung sind mittlerweile agil und verändern sich kontinuierlich und dynamisch. Eine flexible IT-Architektur ist erforderlich, um sich diesen Veränderungen anzupassen.
-\medskip
-\\
-Bussmann et al. nennt zwei Wege für den Ersatz und grundlegenden Re-Design von Kernsystemen: \cite{Bussmann2006}
-\begin{itemize}
-    \item Anwendungen schrittweise entkernen, erneuern und modularisieren und funktionale Anforderungen konsolidieren
-    \item Kernsysteme durch völlig neue, selbst entwickelte Applikationen austauschen oder einsetzen von Standardsoftware
-\end{itemize}
-%
-
-\paragraph{Relevanz der BaFin Anforderungen für Entwickler}
-Die BaFin Anforderungen \cite{MaRisk:2017, BAIT:2018}, Gängige Sicherheitsstandards \cite{IT-Grundschutz:2020, Disterer2013} und weitere Rahmen sind für Entwickler wichtig, um ihre Verantwortung über die IT-Risiken in Banken und anderen systemrelevanten Betrieben zu verstehen. Insbesondere sind sie für die nachvollziehbarer Entwicklung von Anwendungen und Systemen und für ihren nachhaltigen Betrieb, Überwachung und Überprüfung zu berücksichtigen. Um verwachsene und unflexible Architekturen zu vermeiden sollten Entwickler, im Bereich der Anwendungen, die interne Prozesse unterstützen \cite{Bussmann2006}, sich mit diesem Thema auseinandersetzen.
-
-Aus Sicht der Entwicklung im Bereich der Change-Prozesse wird bezüglich der Einschränkungen gerne der Finger auf die regulatorischen Anforderungen und Betrieb gezeigt und die größtmögliche Freiheit beansprucht. Beim Durchleuchten der Einschränkungen für Veränderungen aus verschiedenen Perspektiven fällt auf, dass die konservative Haltung des IT-Betriebs und der Regulatorik eine valide Berechtigung, gerade im Finanzwesen hat. Die Anforderungen selbst sind trotzdem flexibel gestaltet und bieten einen Ermessensspielraum. Neben den externen Auslöser, die Unternehmen aufgrund von Disruption und Diskontinuität zu Veränderungen zwingen \cite{Gupta:2017, Fernandez:2020} existiert die IT-Strategie als interner Auslöser \cite{BAIT:2018, Alt2017}, dessen Verantwortung in erster Linie die Geschäftsleitung unterliegt \cite{BAIT:2018}.
-
-Neben den Leistungsansprüchen sollten die Sicherheitsansprüche für Veränderungen im Vordergrund stehen. Die Implementierung von neuen Technologien wirft bei wesentlichen Veränderungen viele Compliancefragen auf \cite{MaRisk:2017}. Diese hängen mit den Sicherheitsansprüchen zusammen und sind unvermeidbar, können aber durch eine Effizienzsteigerung zu einer Stärke werden.
-
-Wegen befürchteten aufwändigen Maßnahmen sollte die Durchführung von wesentlichen Veränderungen nicht entmutigt werden. Die Maßnahmen haben sich dem Schutzbedarf von kritischen Prozessen und Daten zu richten \cite{MaRisk:2017, BAIT:2018}. Es wäre daher eine Selbstbeschränkung die Maßnahmen aufgrund eines mangelnden Verständnisses der Regulatorik zu pauschalisieren. Ein \enquote{Schwarz-Weiß} Denken als Folge zum Bestehen von Prüfungen oder die Umsetzung des Trugschlusses \enquote{Security through Obscurity} sind zu vermeiden. Eine Pauschalisierung der Maßnahmen des Risikomanagement könnte eine \enquote{Schatten-IT} \cite[S. 104]{Dorschel2018} erzeugen, weil beispielsweise die Katalogisierung der \ac{IDV} Anwendungen \cite{BAIT:2018} befürchtet und in Folge vermieden werden.
-
-Die Change-Prozesse haben sich zuerst selbst zu optimieren, bevor sie den ohnehin konservativen Betrieb optimieren. Möglich wäre eine zweigleisige Strategie, in der Entwickler und Geschäftsleitung eng zusammenarbeiten.
-
-\paragraph{IT als Kernkompetenz} 
-
-\citet{Bussmann2006} sieht die IT als Kernkompetenz. IT-Anwendungen unterscheiden sich in zwei Bereiche, in welcher Technologietrends zu innovativen Lösungen führen. Neben den Anwendungen für den Dialog mit Kunden sind es Anwendungen zur Steuerung und Unterstützung von internen Prozessen, die gerade im Finanzwesen mit steigenden Anforderungen nicht mithalten können.
-
-\paragraph{Idee für ein innovatives Risikomanagement}
-Die von Disterer beschriebenen Probleme im Betrieb von Anwendungen durch die mangelnde Beachtung von nichtfunktionalen Anforderungen und die Einführung von Quality Gates \cite{mci/Disterer2011} kann hierbei auf Probleme für die internen Kontrollverfahren ausgeweitet werden. Eine Koordination zwischen Entwicklung und Betrieb sollte das IT-Risikomanagement miteinbeziehen. Dabei darf die Geschwindigkeit des Entwicklungs- oder Integrationsprozesses nicht beeinträchtigt werden. Die Schnelligkeit hat bei der Beantwortung von Compliancefragen eine wichtige Rolle. Entwickler könnten zuerst die Prozesse des IT-Risikomanagements optimieren und automatisieren, um sich Handlungsfreiheit für Innovation und wesentlichen Veränderungen innerhalb der Organisation zu schaffen. Sie sollten in das Risikomanagement integriert werden. Ein Entwickler aus einem anderen Projekt könnte als Compliance- und Risikoverantwortlicher parallel wichtige Compliancefragen auf technischer Ebene schnell überprüfen und vorab beantworten. Dadurch könnte unter Vorbehalt schon mit neuen Technologien und Methoden an Lösungen gearbeitet werden oder Veränderungen in Gang gesetzt werden. Um einer Disruption zu begegnen ist das Risiko von verschwendetem Aufwand in Kauf zu nehmen, um sich eine Anpassungs- und Reaktionsfähigkeit zu schaffen, die geschäftskritisch ist.
+\paragraph{Jenkins Master-Agent Konfiguration}
 
 
-\subsection{Digitale Transformation: Ein kontinuierlicher Veränderungsprozess}
-\begin{figure}[htbp]
- \centering
- \includegraphics[width=1.0\textwidth]{gfx/digital-transformation-lifecycle-by-selim2.PNG}
- \caption{Lebenszyklus der digitalen Transformation (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})
- }
-\end{figure}
+\paragraph{Sonstige Konfigurationen}
 
-\paragraph{Lebenszyklus Digitale Transformation}
+\subsection{Jenkins Agents}
 
-Abb, \ref
+\paragraph{Virtuelle Maschinen}
+
+\paragraph{Docker}
+
+\paragraph{Minimale Images}
+
+\subsection{Layering}
