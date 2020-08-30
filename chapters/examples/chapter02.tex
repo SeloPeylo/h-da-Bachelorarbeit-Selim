@@ -128,12 +128,37 @@ Daraus resultiert eine hohe Flexibilität für die Skalierung der Anwendungen. D
 %
 %
 %
-\section{SEU der Banken}
+\section{Ausgangssituation: CI in Banken}
+\label{grundlagen:ci-in-banken}
+\medskip
+\\
+In diesem Abschnitt wird die Ausgangssituation beschrieben, aus der die Problemstellung definiert wurde. Sie gibt einen kleinen Einblick wie die Rahmenbedingungen für Entwickler in der IT einer Bank mit modernen Methoden wie DevOps aussehen könnten und wo die Grenzen für Veränderungen liegen. Von diesem Standpunkt aus wird ein erster Lösungsweg vorgeschlagen gängigen Standards aus dem Stand der Technik. 
 
 \paragraph{Softwareentwicklungsumgebung}
+Die \ac{SEU} bezeichnet in dieser Arbeit ein zentrales Netzwerk für die eigene Softwareentwicklung in einer Bank. Unter anderem müssen in Banken Test-, Integrations- und Produktionsumgebungen getrennt werden \cite{MaRisk:2017}.
+\medskip
+\\
+Die \ac{SEU} ist eine Umgebung innerhalb welcher die Integration von Quellcode aus dem \ac{SCM} durchgeführt und anschließend mithilfe einer Delivery Pipeline an die \ac{CD} Gruppe ausgeliefert wird. \ac{CD} hat anschließend die Aufgabe die Anwendung abzunehmen und in die Produktionsumgebung bereitzustellen.
 
-\paragraph{}{Nachvollziehbarkeit der SEU}
-Die \ac{SEU} sollte aus mehreren Gründen möglichst nachvollziehbar gestaltet werden. Eine flexible Umgebung setzt auch Wartbarkeit und Anpassungsfähigkeit voraus. Dies ist durch die Verwendung von gängigen Standards möglich. Systeme sollten möglichst unabhängig von einzelnen Verantwortlichen verständlich und offen sein. Eine Individualisierung von Systemen sollte möglichst vermieden werden. Sie sollten auf einen gemeinsamen Nenner gebracht werden.
+Die Integrationsumgebung ist einer \ac{CI} Gruppe zugehörig. Ihre Aufgabe besteht in der Weiterentwicklung der Systeme und Anwendungen für die \ac{SEU}. Sie kann als eine Plattform für die unterschiedlichen Projektgruppen für Anwendungsentwicklung gesehen werden.
+Die Zusammenarbeit der \ac{SEU} ist nach \emph{DevOps} Methoden ausgerichtet (Abb. \ref{fig:devops}), mit der Besonderheit, dass die Kunden von \ac{CI} die Entwickler aus den Projektgruppen sind. Die \ac{CI} Gruppe ist aus Sicht der Gesamtorganisation in Wahrheit ein kleiner Betrieb für die Entwicklung. Sie ist auf den tatsächlichen IT-Betrieb der Organisation bezüglich der Infrastruktur angewiesen. Wie bereits erwähnt sind die Umgebungen streng voneinander getrennt \cite{MaRisk:2017}, woraus die hohen Laufzeiten für die Bereitstellung von angeforderten \ac{VMs} stammen. 
+\medskip
+\\
+Aus diesem Grund könnte die Verfügbarkeit der \ac{SEU} Systeme gefährdet werden. Der IT-Betrieb ist hierbei Service- aber auch Prozessorientiert. Daher könnte die Skalierbarkeit durch externe Infrastrukturen mit effizienteren Prozessen möglicherweise erreicht werden. Die Anbindung der \ac{SEU} an eine externe Cloud stellt eine wesentliche Veränderung und Auslagerung nach \cite{MaRisk:2017, BAIT:2018} dar. Eine Entscheidung für oder gegen eine externe Cloud ist daher eine strategische Entscheidung mit tiefgreifenden Auswirkungen, die analysiert werden müssen \cite{recht/Bornemann2018, MaRisk:2017, BAIT:2018}.
+\medskip
+\\
+Die \ac{SEU} könnte jedoch innerhalb des eigenen Netzwerks über Container-Technologie flexibel und skalierbar implementiert werden. Die gängigen Lösungen \cite{Pathania2017, Google:GKEJenkins} unterliegen jedoch aufgrund diverser Besonderheiten der Legacy-IT in einigen Finanzinstituten \cite{Brockhoff2006, Bussmann2006} aufwändigen Anpassung, die gegebenenfalls die Effizienzsteigerung der neuen Technologie negieren könnte. Im kleinen Umfang könnten jedoch einzelne Komponenten modularisiert und mit Containern leichtgewichtig und skalierbar umgesetzt werden \cite{Bussmann2006}, (Par. 2 \ref{ansatz:modularisieren}.
+
+\paragraph{Anwendungen für die Build-Pipeline}
+\begin{itemize}
+    \item \textbf{Gitlab}, als \ac{SCM}
+    \item \textbf{Jenkins}, als \ac{CI} Plattform für die Build-/ Delivery-Pipeline
+    \item \textbf{Artifactory}, als Repository für verwendete Artefakte
+\end{itemize}
+
+
+\paragraph{Nachvollziehbarkeit der SEU}
+Die \ac{SEU} sollte ist aus mehreren Gründen möglichst nachvollziehbar zu gestaltet. Eine flexible Umgebung setzt auch Wartbarkeit und Anpassungsfähigkeit voraus. Dies ist durch die Verwendung von gängigen Standards möglich. Systeme sollten möglichst unabhängig von einzelnen Verantwortlichen verständlich und offen sein. Eine Individualisierung von Systemen sollte möglichst vermieden werden. Sie sollten auf einen gemeinsamen Nenner gebracht werden.
 
 Dadurch kann eine schnelle Anpassung der Systeme an neue Technologien und Methoden erfolgen. Gleichzeitig können Systeme für neue Geschäftsmodelle in kurzer Zeit weiterentwickelt werden. Während einer Störung der Systeme oder in Krisensituationen kann auch schnell reagiert werden.
 
@@ -159,22 +184,4 @@ Hierfür gibt es in Kubernetes mehrere Abstraktionsebenen. Die größte Einheit,
 Ein sinnvoller Ansatz ist die ganze Anwendung innerhalb eines Knotens aufzubauen und sie durch Replikas der Knoten zu skalieren. Dabei sollte die Anwendung modularisiert werden und in unabhängig voneinander skalierbare Microservices aufgeteilt werden. Anwendungen können komplex sein und ein Engpass entsteht in wenigen Bereichen, sodass nicht die ganze Anwendung repliziert werden muss. In der Praxis werden die Funktionen der Anwendung in mehreren Containern aufgeteilt, die miteinander kommunizieren. Die Replikation von Containern bewirkt, dass Anwendungen nur in den Komponenten skaliert werden, in der es erforderlich ist. Diese Praxis schafft Redundanzen ab und und sorgt für einen Wirkungsgrad in der Nutzung von IT-Ressourcen.
 
 \paragraph{Anlegen eines Kubernetes Clusters für Jenkins}
-Pathania beschreibt in \cite{Pathania2017}, wie Jenkins mit \ac{GCP} und Kubernetes und Docker skaliert werden kann. Hierbei geht er genau auf die Konfiguration von Kubernetes und der \ac{GCP} ein.
-
-
-
-\paragraph{Jenkins Master-Agent Konfiguration}
-
-
-\paragraph{Sonstige Konfigurationen}
-
-\paragraph{}{Jenkins Agents}
-
-\paragraph{Virtuelle Maschinen}
-
-\paragraph{Docker}
-
-\paragraph{Minimale Images}
-
-\paragraph{Layering}
-
+Pathania beschreibt in \cite{Pathania2017}, wie Jenkins mit \ac{GCP} und Kubernetes und Docker skaliert werden kann. Hierbei geht er genau auf die technische Konfiguration von Kubernetes und der \ac{GCP} ein.

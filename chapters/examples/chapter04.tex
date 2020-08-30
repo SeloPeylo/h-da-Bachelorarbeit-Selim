@@ -275,18 +275,46 @@ Aus den Mindestinhalten der geforderten IT-Strategie wird deutlich, dass Geschä
 \paragraph{IT-Governance} Die IT-Governance wird als Struktur zur Steuerung und Überwachung des IT-Betriebs und der Entwicklung der IT-Systeme und Prozesse auf Basis der IT-Strategie \cite{BAIT:2018} gesehen. Für das Risikomanagement, Entwicklung und Betrieb innerhalb der IT wird eine qualitativ und quantitativ angemessene Ausstattung mit Personal gefordert.
 
 \paragraph{EBA Guidelines}
-Bedeutende Institute werden zusätzlich von der \ac{EBA} beaufsichtigt \cite{recht/Bornemann2018}
+Bedeutende Institute werden zusätzlich von der \ac{EBA} beaufsichtigt \cite{recht/Bornemann2018}. Die \ac{EBA} veröffentlicht für sie eine Richtlinie \cite{eba:2019}, die sich auf die \ac{MaRisk} bezieht und für die systemrelevanteren Institute wichtig sind.
 %
 %
 %
 %
-\section{Paradigmenwechsel für Veränderung}
-Die Entwicklung von skalierbaren und flexiblen Systemen für die \ac{SEU} von Banken setzt wesentliche Veränderungen in der IT-Architektur, Prozesse und Organisation eines Instituts voraus. Erfolgen diese nicht werden umfangreiche Anpassungen der verwendeter Standardsoftware und Abänderungen von gängigen Lösungen bedingt.
 
-In folge dessen sind die Veränderungsprozesse selbst zu optimieren und die Einschränkungen hierfür zu eliminieren. Kontinuierliche Veränderungen setzen kontinuierliche Prozesse voraus. Standards in der Softwareentwicklung sind agil und verändern sich ständig. Eine flexible IT-Architektur ist erforderlich, um sich diesen Veränderungen anzupassen. Die Umsetzung einer flexiblen IT-Architektur setzt widerum ein flexibles Risikomanagement voraus.
+\section{Paradigmenwechsel für Veränderung}
+Dieser Abschnitt analysiert den Rahmen und trägt iterativ zur Findung der Ursache und Ansätze für ihre Lösung bei. Der \emph{Design-Thinking} Prozess wird hierbei als iterative und innovative Methode für Ideen, Prototypen und anschließender Evaluation verwendet. Daher bauen die nachfolgenden Unterabschnitte aufeinander auf und tragen somit zu einer kontinuierlichen Verbesserung bei.
+\medskip
+\\
+Nachfolgend werden die Rahmenbedingungen für eine kontinuierliche Anpassung der IT-Architektur in Banken analysiert.
+
+\paragraph{Paradigmenwechsel der Aufsicht}
+Bezüglich des Finanzwesens befindet sich möglicherweise auch die deutsche Verwaltungspraxis im Wandel. Insbesondere hat die Cloud-Technologie neue Impulse für das Thema \emph{Auslagerung von IT-Ressourcen \cite{MaRisk:2017, BAIT:2018}} erzeugt. Die \ac{MaRisk} wird voraussichtlich 2021 erneuert und darüber hinaus sind Erleichterungen aufgrund der Umsetzung der EBA-Richtlinien \cite{eba:2019}\footnote{seit 30. Juni 2020 in kraft getreten} zu erwarten \cite{BaFin:marisk-novelle}. 
+\medskip
+\\
+Die Anpassung der Verwaltungspraxis kommt jedoch gezwungenermaßen und konnte dem Veränderungsdruck der Institute (Abb. \ref{fig:bankdruck}) nicht standhalten. Die Aufsicht und ihre beaufsichtigten Institute sollten sich einen Weg überlegen, wie Veränderungen kontinuierlich stattfinden können, wie sie \citet{Bussmann2006} fordern.
+\medskip
+\\
+Im Gegensatz zur \ac{MaRisk} nimmt die \ac{EBA} im Anhang ihrer Richtlinie \cite{eba:2019} Stellung zum Thema Innovation, Transformation und IT-Strategie und geht dabei auf Kommentare und Fragen zu ihrer Richtlinie zusammen.
+\medskip
+\\
+Die \ac{EBA} fasst den Vorschlag eines Korespondenten zusammen \cite[S. 50]{eba:2019}:
+\begin{quote}
+    \enquote{
+Der Text
+\footnote{Bezogen auf \emph{Guidelines on ICT and security risk
+management
+} \cite[S. 14ff]{eba:2019}} 
+sollte auch die Ausrichtung der IKT-Strategie\footnote{\ac{IKT} -Strategie übersetzt von \enquote{ICT-Strategy}} nach Innovation enthalten, zur Vermeidung von Disruption und zur Unterstützung schlanker digitaler Transformation, die auf \ac{IKT}-Architektur basiert. Es\footnote{Die Richtlinie} sollte auch das richtige Portfolio von Änderungen enthalten, zur Ausrichtung der \ac{IKT}-Transformation in Einklang mit Geschäftstransformation.
+    }\footnote{Übersetzt aus dem Englischen, Respondent unbekannt}
+\end{quote}
+
+\paragraph{Voraussetzungen}
+Die Entwicklung von skalierbaren und flexiblen Systemen für die \ac{SEU} von Banken setzt wesentliche Veränderungen in der IT-Architektur, Prozesse und Organisation eines Instituts voraus. Erfolgen diese nicht werden umfangreiche Anpassungen der verwendeter Standardsoftware und Abänderungen von gängigen Lösungen bedingt \ref{grundlagen:ci-in-banken}.
+\medskip
+\\
+In folge dessen sind die Veränderungsprozesse selbst zu optimieren und die Einschränkungen hierfür zu eliminieren. Kontinuierliche Veränderungen setzen kontinuierliche Prozesse voraus (Abb. \ref{ fig:devops}). Standards in der Softwareentwicklung sind agil und verändern sich ständig. Eine flexible IT-Architektur ist erforderlich, um sich diesen Veränderungen anzupassen \cite{Bussmann2006}.
 
 \paragraph{einschränkende Faktoren}
-Die Einschränkungen können bezüglich ihrer Lokalität zusammengefasst werden:
 \begin{itemize}
     \item \textbf{Organisation:} tiefe Silos \cite{Gupta:2017}, Schatten-IT \cite{recht/Bornemann2018}, Abhängigkeiten, Handlungsunfähigkeit, Redundanzen
     \item \textbf{IT-Architektur:} Komplexität \cite{Brockhoff2006}, steigende Anforderungen \cite{Brockhoff2006}, Kosten für Eigenentwicklung \cite{Gupta:2017}, Proprietäre Anwendungen \cite{Bussmann2006}
@@ -295,29 +323,42 @@ Die Einschränkungen können bezüglich ihrer Lokalität zusammengefasst werden:
     
 \end{itemize}
 
-\paragraph{antreibende Faktoren}
+\subsection{Innovation und Transformation}
+\citet[Kap. 2.2]{Alt2017} erklären die Abläufe in Folge einer Innovation. Die Abbildung \cite[Abb. 2.1]{Alt2017} beschreibt einen Innovationsverlauf als eine \emph{S-Kurve}, die in Folge mehrerer Innovationen gesamtheitlich betrachtet einen disruptiven Verlauf zeigen.
+
+Darunter liegt die Adaptionskurve, die als die Ableitung der Innovationskurve erscheint.
+\medskip
+\\
+Einschränkenden Faktoren, die in Banken beobachtet werden, könnten als Faktor der Adaptionskurve \cite[Abb. 2.1]{Alt2017} zugeordnet werden. Demgegenüber stehen die zu erarbeitenden Gegenmaßnahmen zur Lösung des Problems. 
 
 \begin{itemize}
-    \item
+    \item Das Problem besteht in der \emph{Transformationsfähigkeit} eines Unternehmens. 
+    \item Um diese zu steigern müssen Maßnahmen ermittelt werden, welche die Amplitude der Adaptionskurve \cite[Abb. 2.1]{Alt2017} \emph{kontinuierlich \cite{Bussmann2006}} aufrecht erhalten. 
 \end{itemize}
 
-\subsection{Innovation und Transformation}
+\paragraph{Innovationsverlauf}
+Die Einflüsse im Zusammenhang mit Innovation könnten folgendermaßen klassifiziert werden:
+\begin{enumerate}
+    \item \textbf{Impulse} für einen bevorstehenden Transformationsprozess. Für Veränderung werden Impulsgeber benötigt wie zum Beispiel Technologien \cite{Bussmann2006, Gupta:2017}. Der Impuls kann als die Innovation selbst gesehen werden. Aus der Ableitung der Adaptionskurve \cite[Abb. 2.1]{Alt2017} wird deutlich, dass der Hochpunkt der Adaption mit der Auswirkung oder Effektivität der Innovation korreliert.
+    \item \textbf{Auslöser} für die Klassifizierung der Innovation. Sie ist für die Entscheidung über die Maßnahmen gegenüber den Impulsen wichtig.
+    \item \textbf{Parameter} für die Antizipation der \emph{bevorstehenden} Transformation. \emph{Bevorstehend} impliziert auch eine Unvermeidbarkeit, die sich aus disruptiven Eigenschaften einer Innovation ergibt \cite{Fernandez:2020, Gupta:2017}
+    \item \textbf{Antriebe} als Faktoren, die die \emph{bevorstehende} Transformation begünstigen. Sie drücken möglicherweise die Innovationskraft oder Effektivität der Organisation aus.
+\end{enumerate}
+Die höchstmögliche Transformationsfähigkeit wäre mit der geringsten Differenz zwischen der \emph{angestrebten} Adaptionskurve \cite[Abb. 2.1]{Alt2017} und der Transformationsfähigkeit möglich.
 
-
+\paragraph{Regelung der Transformation}
+Veränderungen unterliegen kreativen Prozessen \cite[S.14]{Alt2017}, weswegen eine kreative Methode sich für ihr Verständnis eignen könnte. Gerade der \emph{Design-Thinking} Prozess sieht die iterative Gestaltung und Evaluierung von Prototypen vor. Dadurch können Zusammenhönge untersucht werden und der Lösungsansatz kann ständig angepasst werden.
+\medskip
+\\
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=1.0\textwidth]{gfx/digital-transformation-lifecycle-by-selim3.PNG}
  \caption{Innovationsverlauf und Regelung der Transformation (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})\label{fig:digit-trans}
  }
 \end{figure}
-
-\paragraph{Innovationsverlauf}
-
-
-\paragraph{Regelung der Transformation}
-Veränderungen unterliegen kreativen Prozessen \cite[S.14]{Alt2017}, weswegen eine kreative Methode sich für ihre Darstellung eignen könnte. Gerade der \emph{Design-Thinking} Prozess sieht die iterative Gestaltung und Evaluierung von Prototypen vor. Dadurch können Zusammenhönge überprüft werden und der Lösungsansatz kann justiert werden.
-
-Abb, \ref{fig:digit-trans} ist aus der Zusammenfassung von antreibenden und einschränkenden Faktoren entstanden. Der Begriff der antreibenden und einschränkenden Faktoren generierte in Zusammenhang mit dem Transformationsziel der heutigen IT-Architekturen hin zu einer Cloud-Architektur die Idee von einem Heißluftballon als Metapher für die sich transformierende Organisation.
+\medskip
+\\
+Abb. \ref{fig:digit-trans} ist aus der Zusammenfassung von antreibenden und einschränkenden Faktoren entstanden. Der Begriff der antreibenden und einschränkenden Faktoren generierte in Zusammenhang mit dem Transformationsziel der heutigen IT-Architekturen hin zu einer Cloud-Architektur die Idee von einem Heißluftballon als Metapher für die sich transformierende Organisation.
 
 Zu antreibenden Faktoren für Veränderungen wurden weitere Kategorien aus den Ergebnissen dieses Kapitels ergänzt. Die Antriebe sind hierbei ein Soll-Zustand, der eine 
 
@@ -347,6 +388,7 @@ Nach einer solchen zukünftigen Entwicklung wäre die Idee von \emph{Development
 Verallgemeinert könnte der Ansatz aus \cite[S.5]{Gupta:2017}\footnote{Vgl. Kap. \ref{par:effizienzsteig}} auch für die Effizienzsteigerung in anderen Bereichen genutzt werden. Zuerst werden Gemeinsamkeiten identifiziert. Als nächstes werden sie ausgelagert. Das ermöglicht die Einrichtung von gemeinsamen Plattformen, die Synergie erzeugen. Die Einheiten oder Komponenten können sich so auf ihre eigentliche Kernaufgabe konzentrieren. Es könnte hierbei nach der konstruktiven Frage \enquote{Welche Gemeinsamkeiten haben wir?} statt nach der Frage \enquote{Was unterscheidet uns?} aufgebaut werden. Ersteres impliziert schon die Identifizierung von Gemeinsamkeiten, wodurch Redundanzen nicht unentdeckt bleiben und Synergie erzeugt wird. Die zweite Frage impliziert eine Abgrenzung der Einheiten voneinander, wodurch die \enquote{Silos} immer höher werden. Unterschiedliche Bedürfnisse müssen nicht zu unterschiedlichen Technologien führen. 
 %
 \paragraph{Grundlegendes Re-Design}
+\label{ansatz:modularisieren}
 \citet{Bussmann2006} nennt zwei Wege für den Ersatz und grundlegenden Re-Design von Kernsystemen:
 \begin{itemize}
     \item Anwendungen schrittweise entkernen, erneuern und modularisieren und funktionale Anforderungen konsolidieren
