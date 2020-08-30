@@ -152,6 +152,7 @@ Basierend auf der \ac{DLT} erschafft ein Konsortium aus deutschen Kreditinstitut
 In Abb. \ref{fig:blockchain}, die Korschinowski et al. \cite{Korschinowski2018} übernommen haben wird ein Überblick der Anwendungsgebiete der \ac{DLT} gezeigt. In einigen Anwendungsbereichen hieraus könnten Ideen für zukünftige Plattformen nach der Vision von Goldman Sachs \ref{quote:goldman-vision} entstehen. Besonders in bankfachlichen Anwendungsgebieten müssen neue Technologien mit der Regulatorik abgewägt werden.
 
 \paragraph{Software Development \enquote{as a Service}}
+\label{Disruption:DaaS}
 Eine künftige Disruption würde möglicherweise als Folge auf die Auslagerung und Dematerialisierung fast aller Komponenten in der IT entstehen.
 Es stellt sich die Frage ob der Entwickler oder die Entwicklungsarbeit selbst als eine vollautomatisierte Dienstleistung bereitgestellt werden kann. Dieses zukünftige Konzept könnte als Trend \enquote{Software Development as Code} oder sogar \enquote{Software Development as a Service} genannt werden, als Folge auf die neuen Rahmenbedingungen durch Cloud-Architekturen. Gemeint ist hierbei eine mögliche Abstraktion und Vollautomatisierung der Entwicklungsarbeit.
 Der Begriff \enquote{Software Development as a Service} existiert bereits im Rahmen einer Serviceorientierung der Entwicklung durch agile Methoden \cite{Lehman:2011}.
@@ -266,7 +267,7 @@ Bedeutende Institute werden zusätzlich von der \ac{EBA} beaufsichtigt \cite{rec
 %
 %
 %
-\section{Faktoren der Veränderung und Umgang}
+\section{Paradigmenwechsel für Veränderung}
 Die Entwicklung von skalierbaren und flexiblen Systemen für die \ac{SEU} von Banken setzt wesentliche Veränderungen in der IT-Architektur, Prozesse und Organisation eines Instituts voraus. Erfolgen diese nicht werden umfangreiche Anpassungen der verwendeter Standardsoftware und Abänderungen von gängigen Lösungen bedingt.
 
 In folge dessen sind die Veränderungsprozesse selbst zu optimieren und die Einschränkungen hierfür zu eliminieren. Kontinuierliche Veränderungen setzen kontinuierliche Prozesse voraus. Standards in der Softwareentwicklung sind agil und verändern sich ständig. Eine flexible IT-Architektur ist erforderlich, um sich diesen Veränderungen anzupassen. Die Umsetzung einer flexiblen IT-Architektur setzt widerum ein flexibles Risikomanagement voraus.
@@ -287,7 +288,7 @@ Die Einschränkungen können bezüglich ihrer Lokalität zusammengefasst werden:
     \item
 \end{itemize}
 
-\subsection{Innovationsverlauf und Regelung der Transformation}
+\subsection{Innovation und Transformation}
 
 
 \begin{figure}[htbp]
@@ -301,8 +302,6 @@ Die Einschränkungen können bezüglich ihrer Lokalität zusammengefasst werden:
 
 
 \paragraph{Regelung der Transformation}
-
-
 Veränderungen unterliegen kreativen Prozessen \cite[S.14]{Alt2017}, weswegen eine kreative Methode sich für ihre Darstellung eignen könnte. Gerade der \emph{Design-Thinking} Prozess sieht die iterative Gestaltung und Evaluierung von Prototypen vor. Dadurch können Zusammenhönge überprüft werden und der Lösungsansatz kann justiert werden.
 
 Abb, \ref{fig:digit-trans} ist aus der Zusammenfassung von antreibenden und einschränkenden Faktoren entstanden. Der Begriff der antreibenden und einschränkenden Faktoren generierte in Zusammenhang mit dem Transformationsziel der heutigen IT-Architekturen hin zu einer Cloud-Architektur die Idee von einem Heißluftballon als Metapher für die sich transformierende Organisation.
@@ -317,14 +316,19 @@ Die Analogie eines Heißluftballon für die Regelung der Transformation kann fol
 Die Veränderungsprozesse im Ballon sind dynamisch und bewegen mit genug Antrieb ein statisches Abbild der Organisation, welcher im Korb des Heißluftballon liegt und einen Zustand der Organisation beschreibt. Der Korb ist in sich geschlossen und beinhaltet den Ablauf und Aufbau des Kerngeschäfts. Dieser trägt zu ihrer Unterstützung viele weitere Funktionen mit, die jeweils die Bewegung der Organisation durch ihre Last exponentiell einschränken. Die Bewegung kann auf zwei Arten beschleunigt werden. Der Antrieb wird erhöht oder ein Teil der Einschränkungen abgeworfen. Sie kann nicht gesteuert werden, wodurch externe Einflüsse sie stark beeinflussen können. Das Objekt gleitet in diesem hierbei im Strom einfach mit. Beim Fliegen das Gewicht des Heißluftballon (Abb. \ref{fig:digit-trans}) eine größere Rolle wie ihr Antrieb. Mit zunehmendem Gewicht steigt der Aufwand exponentiell.
 \medskip
 \\
-Ein statisches Abbild mit Prozessbeschreibungen und Ausführung als eine in sich geschlossene Einheit ist aus der Containervirtualisierung von Systemen bekannt. Mit zunehmender Automatisierung der Geschäftsprozesse finden sich auch zunehmende Gemeinsamkeiten zwischen Organisationen und IT-Systemen.
-\medskip
-\\
+\paragraph{Lehren aus Docker}
+Ein statisches Abbild mit Prozessbeschreibungen und Ausführung als eine in sich geschlossene Einheit ist aus der Virtualisierung von Systemen bekannt. Mit zunehmender Automatisierung der Geschäftsprozesse finden sich auch zunehmende Gemeinsamkeiten zwischen Organisationen und IT-Systemen. 
 
+Best-Practices zur Beschreibung von Images mit Docker könnten als Inspiration für Organisationen dienen. Besonders das Minimalisieren von Images und Konzepte wie Kubernetes zur flexiblen Skalierung und Orchestrierung von ganzen System könnten als Idee für eine flexible und skalierbare Orchestrierung von Veränderungen für die Organisation dienen, um ihre Transformation zu automatisieren. Der schmerzvolle Rollout bei wesentlichen Veränderungen in großen Organisationen könnte in eine vollautomatisierte Orchestrierung umgewandelt werden.
+Agile Prinzipien in der Kultur wären das Docker und ein neues effektives Change-Management das Kubernetes des Managements.
 
-\section{Umgang mit kontinuierlichen Veränderungen}
+Nach einer solchen zukünftigen Entwicklung wäre die Idee von \emph{Development as a Service} \ref{Disruption:DaaS} mit entsprechenden eingespielten Abläufen durchaus realistisch. Andere disruptive Entwicklungen sind auch nicht ausgeschlossen. Umso wichtiger ist es einen Weg zu finden die Digitale Transformation zu beherrschen.
 
-\subsection{Ansätze für die Veränderung der Rahmenbedingungen}
+%
+%
+%
+%
+\subsection{Ansätze für ein Paradigmenwechsel}
 
 \paragraph{gemeinsame Funktionen zentralisieren}
 Verallgemeinert könnte der Ansatz aus \cite[S.5]{Gupta:2017}\footnote{Vgl. Kap. \ref{par:effizienzsteig}} auch für die Effizienzsteigerung in anderen Bereichen genutzt werden. Zuerst werden Gemeinsamkeiten identifiziert. Als nächstes werden sie ausgelagert. Das ermöglicht die Einrichtung von gemeinsamen Plattformen, die Synergie erzeugen. Die Einheiten oder Komponenten können sich so auf ihre eigentliche Kernaufgabe konzentrieren. Es könnte hierbei nach der konstruktiven Frage \enquote{Welche Gemeinsamkeiten haben wir?} statt nach der Frage \enquote{Was unterscheidet uns?} aufgebaut werden. Ersteres impliziert schon die Identifizierung von Gemeinsamkeiten, wodurch Redundanzen nicht unentdeckt bleiben und Synergie erzeugt wird. Die zweite Frage impliziert eine Abgrenzung der Einheiten voneinander, wodurch die \enquote{Silos} immer höher werden. Unterschiedliche Bedürfnisse müssen nicht zu unterschiedlichen Technologien führen. 
@@ -354,18 +358,28 @@ Die Change-Prozesse haben sich zuerst selbst zu optimieren, bevor sie den ohnehi
 \paragraph{Idee für ein innovatives Risikomanagement}
 Die von Disterer beschriebenen Probleme im Betrieb von Anwendungen durch die mangelnde Beachtung von nichtfunktionalen Anforderungen und die Einführung von Quality Gates \cite{mci/Disterer2011} kann hierbei auf Probleme für die internen Kontrollverfahren ausgeweitet werden. Eine Koordination zwischen Entwicklung und Betrieb sollte das IT-Risikomanagement miteinbeziehen. Dabei darf die Geschwindigkeit des Entwicklungs- oder Integrationsprozesses nicht beeinträchtigt werden. Die Schnelligkeit hat bei der Beantwortung von Compliancefragen eine wichtige Rolle. Entwickler könnten zuerst die Prozesse des IT-Risikomanagements optimieren und automatisieren, um sich Handlungsfreiheit für Innovation und wesentlichen Veränderungen innerhalb der Organisation zu schaffen. Sie sollten in das Risikomanagement integriert werden. Ein Entwickler aus einem anderen Projekt könnte als Compliance- und Risikoverantwortlicher parallel wichtige Compliancefragen auf technischer Ebene schnell überprüfen und vorab beantworten. Dadurch könnte unter Vorbehalt schon mit neuen Technologien und Methoden an Lösungen gearbeitet werden oder Veränderungen in Gang gesetzt werden. Um einer Disruption zu begegnen ist das Risiko von verschwendetem Aufwand in Kauf zu nehmen, um sich eine Anpassungs- und Reaktionsfähigkeit zu schaffen, die geschäftskritisch ist.
 
-\subsection{Transformationsfähigkeit durch Antizipation}
+\subsection{Transformationsfähigkeit als Prinzip}
  
 Abb. \ref{fig:digit-trans} stellt für den Umgang mit wesentlichen Veränderungen ein erstes Prototyp dar. Sie impliziert, dass antreibende und einschränkende Faktoren erhebliche Einflüsse für die bevorstehende Transformation haben. Die Abbildung beschreibt möglicherweise einen Zustand vor einer bevorstehenden Transformation.
 
-
-Daher dient sie als Grundlage, um Anforderungen für einen innovationsorientierten Soll-Zustand zu simulieren.
-
+Daher dient sie als Grundlage, um Anforderungen für einen innovativen Soll-Zustand zu simulieren. Ein innovativer Soll-Zustand der Organisation würde eine höchstmögliche Transformationsfähigkeit antreiben. 
+\medskip
+\\
 Gleichzeitig zeigt sie, dass mit Anforderungen und Kenntnissen über Einschränkungen eine bevorstehende Transformation nur geregelt werden kann und die Richtung nicht absehbar ist. Gas geben ohne zu lenken ist für FinTechs und Start-ups kein großes Problem, da aufgrund ihrer kleinen Größe die Auswirkungen von Veränderungen einfacher analysiert werden können.
 
-Für die größeren, etablierten Institute gilt ein erhöhter Schutzbedarf \cite{recht/Bornemann2018} und dadurch zusätzliche Maßnahmen für die Kontrolle von operationellen Risiken \cite{MaRisk:2017, BAIT:2018}. Diese müssen gezwungenermaßen ihre hohe Masse in Bewegung setzen und sich neu ausrichten \citet{Bussmann2006, Gupta:2017}.
+Für die größeren, etablierten Institute gilt ein erhöhter Schutzbedarf \cite{recht/Bornemann2018} und dadurch zusätzliche Maßnahmen für die Kontrolle von operationellen Risiken \cite{MaRisk:2017, BAIT:2018}. Diese müssen gezwungenermaßen sich neu ausrichten \citet{Bussmann2006, Gupta:2017}, indem sie ihre hohe Masse in Bewegung versetzen. Analog impliziert es eine Unkontrollierbarkeit von möglichen Problemen und Risiken.
 
-Im Umgang mit ständigen Veränderungen in der IT ist nach \citet[S.30]{Bussmann2006} eine kontinuierliche Justierung für den Unternehmenserfolg wichtig. Als eine der Schwierigkeiten nennt er ein effektives Management der Veränderungsprozesse.
+\paragraph{Forderung eines effektiven Veränderungsmanagements}
+Für die Vorhersehbarkeit von Auswirkungen ist ein kontrollierter Umgang mit Veränderungsprozessen erfordert. Um wesentliche Veränderungen kontinuierlich zu ermöglichen muss die Analyse ihrer Auswirkungen \cite{MaRisk:2017} ebenfalls effektiv sein. Die Vorhersehbarkeit der Auswirkungen von Veränderung sollte nicht nur aufgrund der Regulatorik erfüllt werden. Sie ist als eine Voraussetzung für eine klare Sicht und Zielorientierung für die Transformation anzustreben.
+\medskip
+\\
+Ein effektives Veränderungsmanagement hat das Ziel einen Zustand der höchstmöglichen Transformationsfähigkeit zu erreichen. Hierfür ist ein grundlegend innovatives Paradigma vonnöten. 
+
+\paragraph{Innovativer Soll-Zustand der Kultur}
+Der innovative Soll-Zustand (Abb. \ref{fig:digit-trans}, Antriebe) impliziert hierbei auch ein Qualitätsanspruch für die Ergebnisse.
+Sie dient als Grundlage, um nach einer Kultur zu streben, die sich Transformationsfähigkeit als Prinzip setzt.
+
+Nach \citet[S.30]{Bussmann2006} eine kontinuierliche Justierung für den Unternehmenserfolg wichtig. Als eine der Schwierigkeiten nennt er ein effektives Management der Veränderungsprozesse.
 \medskip
 \\
 Diese Schwierigkeit hat sich in Banken bis heute noch bewährt.
@@ -397,9 +411,9 @@ Die Kontinuitätsprinzip von Innovationsverläufen \cite{Bussmann2006}
  Während das DevOps Lebenszyklus \cite{Alt2017} sich auf einen kontinuierlichen Prozess für die Optimierung eines IT-Produkts oder IT-Service bezieht, soll diese Abbildung \ref{fig:digit-trans} sich auf einen kontinuierlichen Prozess für die Optimierung der IT-Organisation beziehen.
  
  \paragraph{Vom Innovationsverlauf zum Innovationsmotor}
-Der für Abb. \ref{fig:digit-trans} ausgearbeitete Innovationsverlauf\footnote{Begriff } stellt einen ersten Zusammenhang für die schwer zu überblickenden und zu beherrschenden und Abläufe, wodurch Innovationsprozesse in Gang gesetzt werden. Die Impulse, welche die Ausgaben der schwierig zu erkennenden fremden Abläufe sind konnten dadurch grob klassifiziert werden. Das Innovationsmanagement hat zu erkennen, dass der Innovationsprozess extern bereits gestartet wird und die Ausgaben der externen Abläufe die Organisation durchdringen. Für die Beherrschbarkeit der unvermeidbaren Innovationseinflüsse hat das Innovationsmanagement sich zur Aufgabe machen die externen Impulse wahrzunehmen und die Abläufe abzufangen und gegebenenfalls zu übernehmen. Ein sich aufbrauender Veränderungsprozess macht sich mit kleinen Impulsen bemerktbar, bevor es disruptiv in die Athmosphäre der Organisation eindringt. \
+Der für Abb. \ref{fig:digit-trans} ausgearbeitete Innovationsverlauf stellt einen ersten Zusammenhang für die schwer zu überblickenden und zu beherrschenden und Abläufe, wodurch Innovationsprozesse in Gang gesetzt werden. Die Impulse, welche die Ausgaben der schwierig zu erkennenden fremden Abläufe sind konnten dadurch grob klassifiziert werden. Das Innovationsmanagement hat zu erkennen, dass der Innovationsprozess extern bereits gestartet wird und die Ausgaben der externen Abläufe die Organisation durchdringen. Für die Beherrschbarkeit der unvermeidbaren Innovationseinflüsse hat das Innovationsmanagement sich zur Aufgabe machen die externen Impulse wahrzunehmen und die Abläufe abzufangen und gegebenenfalls zu übernehmen. Ein sich aufbrauender Veränderungsprozess macht sich mit kleinen Impulsen bemerktbar, bevor es disruptiv in die Athmosphäre der Organisation eindringt.
 
-citet{Fernandez:2020} sieht Disruption von Technologien ebenfalls als Angriff auf die Organisation.
+\citet{Fernandez:2020} sieht Disruption von Technologien ebenfalls als Angriff auf die Organisation.
 
 Daher hat die Gestaltung des Innovationsmanagements Implikationen auf das Risikomanagement. Die Aufsicht sieht den Begriff Innovation oder Disruption in \cite{MaRisk:2017} und \cite{BAIT:2018} nicht vor. Sie fordert in \cite{BAIT:2018} jedoch eine IT-Strategie, dass einige Ausgangsvariablen\footnote{In diesem Kapitel als Faktoren für Veränderung grob eingeführt} von Innovationsabläufen beinhaltet. 
 
