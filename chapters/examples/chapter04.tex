@@ -1,6 +1,6 @@
 \chapter{Finanzinstitute, Regulatorik und Innovation}
 \label{ch:background}
-Das nachfolgende Kapitel untersucht mithilfe einer Fallstudie die Auswirkungen von innovativen Technologien und Veränderungen auf das Finanzwesen. Sie enthält die wesentlichen Schritte aus \emph{Design-Thinking} für eine innovative Lösungsfindung, die mit dem Schritt \emph{emphatize} beginnt.
+Das nachfolgende Kapitel untersucht mithilfe einer Fallstudie die Auswirkungen von innovativen Technologien und Veränderungen auf das Finanzwesen. Sie enthält die wesentlichen Schritte aus \emph{Design-Thinking} für eine innovative Lösungsfindung, die mit dem Schritt \emph{emphatize} beginnt. Zudem betrachtet sie die Regulatorik und analysiert die Rahmenbedingungen.
 \medskip
 \\
 Dazu beschäftigt sie sich mit den Rahmenbedingungen für Veränderungen in Kreditinstituten aus verschiedenen Perspektiven und betrachtet dabei die möglichen Einschränkungen und antreibenden Faktoren für die an verschiedenen Stellen bekannten Probleme in der IT-Architektur von Banken. Hierin werden auch die Auswirkungen der Regulatorik des Finanzwesens bezüglich der Maßnahmen für die IT untersucht.
@@ -60,7 +60,7 @@ Der Ansatz neue Technologien anzunehmen hat weitreichende Auswirkungen für die 
 Wie \citet{Gupta:2017} erkennt, hat Goldman Sachs die Automatisierung von Geschäftsprozessen durch die Zentralisierung von Kernelementen vorangetrieben, wodurch Redundanzen entfernt wurden. 
 \medskip
 \\
-Ezra Nahum betont in \cite[zitiert, S.5]{Gupta:2017}, dass die unterschiedlichen Geschäfte von Goldman Sachs bisher in \enquote{Silos} als unabhängige und eigenverantwortliche Einheiten ausgeführt wurden. Es stellte sich die Frage, was ihre gemeinsamen Nenner sind. Ein Ansatz war in einer gemeinsamen technologischen Plattform zu arbeiten und in kleineren Teams sich darauf zu konzentrieren, was das jeweilige Geschäft ausmacht. Zu ihrer Unterstützung unterliegt ihnen ein größeres gemeinsamen Team.
+Ezra Nahum betont in \cite[Zitat, S.5]{Gupta:2017}, dass die unterschiedlichen Geschäfte von Goldman Sachs bisher in \enquote{Silos} als unabhängige und eigenverantwortliche Einheiten ausgeführt wurden. Es stellte sich die Frage, was ihre gemeinsamen Nenner sind. Ein Ansatz war in einer gemeinsamen technologischen Plattform zu arbeiten und in kleineren Teams sich darauf zu konzentrieren, was das jeweilige Geschäft ausmacht. Zu ihrer Unterstützung unterliegt ihnen ein größeres gemeinsamen Team.
 \medskip
 \\
 Übertragen auf die \ac{SEU} von Banken können diese \emph{Silos} \cite{Gupta:2017} auch als Metapher für die monolithischen Systeme \cite{Bussmann2006} aus dem Finanzwesen gesehen werden. Eine \ac{SOA} alleine reicht daher nicht aus, um mit kontinuierlichen Veränderungen der IT umzugehen. Unterstützende Funktionen könnten unter gemeinsamen Plattformen zusammengefasst werden. Ein Beispiel wäre eine gemeinsame Datenbank. Goldman Sachs konnte mit einem gemeinsamen \enquote{Data Lake} und Mashine-Learning die Marktdaten effektiver bewerten \cite{Gupta:2017}.
@@ -70,12 +70,13 @@ Die Anwendungen selbst müssten in kleinere funktionale Komponenten aufgeteilt w
 \\
 \citet{Gupta:2017} beschreibt, dass die Umsetzung dieser Strategie sich als schwierig gestaltet. Sie erfordert die Zusammenarbeit aller Beteiligten. Die verschiedenen Abteilungen müssen für die Umsetzung dieser Strategie kurzfristige Kompromisse eingehen und als finanziell eigenverantwortliche Einheiten die Kosten vorerst tragen. 
 
-Cohen\footnote{\citet{Gupta:2017} zitiert Darren Cohen, S.5, aus dem Englischen übersetzt} betont hierzu das wesentliche Problem:
+Cohen betont in \cite[Zitat, S.5]{Gupta:2017}
+betont hierzu das wesentliche Problem:
 \begin{quote}\label{quote:goldman-vision}
     Die Vision ist eine Sache, aber der wirkliche Fortschritt besteht darin, die Organisation dazu zu bringen, die Barrieren abzubauen, um in einer digitalen Welt zu agieren und die traditionell tiefen vertikalen Barrieren zu überwinden
 \end{quote}
 \medskip
-Ähnliche Probleme gibt es auch innerhalb der IT, insbesondere in der Zusammenarbeit zwischen Entwicklung und Betrieb \citet{Disterer2013}. Ansätze aus DevOps \cite{Alt2017} können hierbei die Zusammenarbeit innerhalb der IT verstärken. Im Finanzwesen wird für unvereinbare Verantwortungsbereiche eine strenge Funktionstrennng gefordert \cite{MaRisk:2017}.
+Innerhalb der IT sind diese Probleme bereits bekannt und werden in \citet{Disterer2013} beschrieben. Ansätze aus DevOps \cite{Alt2017} können hierbei erfolgreich die Zusammenarbeit innerhalb der IT verstärken. Im Finanzwesen wird für unvereinbare Verantwortungsbereiche eine strenge Funktionstrennng gefordert \cite{MaRisk:2017}.
 Dies wirkt sich auch auf eine strikte Trennung zwischen Test- und Produktivumgebung aus \citet{MaRisk:2017} und könnte die Zusammenarbeit erschweren. Die Umsetzung der Funktionstrennung auch auf personeller Ebene für die IT begünstigt möglicherweise die Vertiefung von Barrieren und erschwert die Umsetzung von DevOps. Möglicherweise ist dies ein einschränkender Faktor für die Softwareentwicklung.
 
 \paragraph{Technologieplattformen}
@@ -84,7 +85,6 @@ Die Anwendungen darin wurden self-contained entwickelt, sodass die Integration i
 \medskip
 \\
 Was als interne Plattform angefangen hat konnte schnell umfunktioniert werden. Dies war durch ein offenes Design und geringen Abhängigkeiten der Plattform von Goldman Sachs möglich. Sie ist dabei den Kompromiss eingegangen eine wertvolle Anwendung unentgeldlich verfügbar zu machen, was kontrovers war. Im Gegenzug dafür war Goldman Sachs auf den lokalen Rechnern der Händler ihrer Geschäftskunden allgegenwärtig \cite{Gupta:2017}.
-
 %
 \paragraph{Technologien und Plattformen von Goldman Sachs}
 \label{goldman:plattform}
@@ -97,9 +97,7 @@ Was als interne Plattform angefangen hat konnte schnell umfunktioniert werden. D
 \paragraph{neue Geschäftsmodelle}
 Mit der Entwicklung von SIMON, einem Onlinemarktplatz für \enquote{Structured Notes}, erhöhte Goldman Sachs ihre Reichweite zu einer neuen Nutzergruppe. Das Wachstumspotenzial von einer Plattform mit einem einzigen Anbieter wurde erreicht, sodass die eigene Plattform an weitere konkurrierenden Emittenten geöffnet wurde. Dies erhöhte die Kundenzufriedenheit, da eine größere Auswahl und Vielfalt an Angeboten hierdurch entstand \cite{Gupta:2017}.
 
-\subsection{Zusammenfassung und Ideen}
-Nachfolgend werden die Schritte \emph{Define} und \emph{Ideate} aus \ref{}
-
+\subsection{Zusammenfassung zu Goldman Sachs}
 \citet{Gupta:2017} fasst zusammen, dass die Realität nach 2008 Goldman Sachs und ihre Konkurrenz gezwungen hat sich neu auszurichten und wirft einige Fragen auf: \footnote{\citet{Gupta:2017}, S. 10, aus dem Englischen übersetzt}
 \begin{quote}
 \enquote{Einblicke in die Strategie von Goldman Sachs wurden durch Initiativen wie Marquee und Marcus deutlich, aber wie passten diese und andere Initiativen der letzten Zeit in das allgemeine Geschäftsmodell des Unternehmens? Hat sich das Kerngeschäft von Goldman Sachs verändert, oder waren Produkte wie SIMON und Marcus an der Peripherie angesiedelt? Was trieb das Unternehmen dazu, den Zugang zu internen Tools zu öffnen, die lange Zeit als proprietärer Wettbewerbsvorteil angesehen worden waren, und wie konnte es rechtfertigen, Wettbewerber zum Verkauf an seine Kunden einzuladen?
@@ -116,7 +114,7 @@ Vielen Banken scheint diese Idee jedoch fremd \cite{Eismann2015}.
 \citet{Eismann2015} begründet, dass Kernbankensysteme niemals dafür ausgelegt wurden externe Software zu integrieren, was aus Sicherheitsgründen vertretbar ist, jedoch eine starke Limitation für Innovation aufgrund kostspieligen Anpassungen darstellt.
 \medskip
 \\
-Alt et al. \cite{Alt2017} definieren, dass der aktuelle Innovationsverlauf auf \emph{Diskontinuitäten} beruht und disruptiv stattfindet und haben hierzu einen entscheidenden Vorschlag: \footnote{\citet{Alt2017}, S. 14}
+\citet[S. 14]{Alt2017} definieren, dass der aktuelle Innovationsverlauf auf \emph{Diskontinuitäten} beruht und disruptiv stattfindet und haben hierzu einen entscheidenden Vorschlag:
 \begin{quote}
 \enquote{Für die Vorwegnahme künftiger Innovationen ist die Gestaltung künftiger
 Zukunftszustände bzw. Verwendungszusammenhänge durch die zeitnahe Realisierung von Prototypen von besonderer Bedeutung.}
@@ -124,17 +122,17 @@ Zukunftszustände bzw. Verwendungszusammenhänge durch die zeitnahe Realisierung
 Besonders sollte hierbei die Gestaltung \emph{künftiger Zukunftszustände \cite{Alt2017}} hervorgehoben werden. Das IT-Management muss in der Lage sein Technologietrends zu verstehen und ihre Auswirkungen auf ihr Geschäft zu transferieren. Dabei gibt es Unterschiede zwischen Diskontinuität und Disruption von Technologien \cite{Fernandez:2020}.  Die \emph{künftigen Verwendungszusammenhänge} sind hierbei für die Wertschöpfung von neuen Opportunitäten wichtig. Opportunitäten können jedoch verpasst werden, wenn sie nur eine Erweiterung von Geschäftsmodellen darstellen. Um die Kontinuität des Kerngeschäfts aufrecht zu erhalten sind die \emph{künftigen Zukunftszustände \cite{Alt2017}} essenziell. Für die zeitnahe Realisierung von Prototypen erfordert es kreative \cite{Alt2017} und schnelle Ansätze, wie zum Beispiel der \emph{Design Thinking} Prozess.
 
 \section{Diskontinuität und Disruption}
-Die unflexible IT-Architektur in Banken ist keine neue Erkenntnis und wird seit langer Zeit gefordert \cite{Brockhoff2006}, \cite{Bussmann2006}. Mittlerweile sollte herbei nicht mehr von Bedarf oder Forderung gesprochen werden. Die Opportunität für eine flexible \ac{SOA} ist bereits durch Cloud-Plattformen vergangen. Die geforderte \ac{SOA} wurde zuletzt durch Mircroservice-Architekturen ersetzt. Diese Beobachtung ist Beispiel für eine \emph{Diskontinuität} durch die Cloud-Computing Technologie.
+Die unflexible IT-Architektur in Banken ist keine neue Erkenntnis und wird seit langer Zeit gefordert \cite{Brockhoff2006}, \cite{Bussmann2006}. Mittlerweile sollte herbei nicht mehr von Bedarf oder Forderung gesprochen werden. Die Opportunität für eine flexible \ac{SOA} oder ist bereits durch Cloud-Plattformen vergangen. Die geforderte \ac{SOA} wurde zuletzt durch Mircroservice-Architekturen ersetzt. Diese Beobachtung ist Beispiel für eine \emph{Diskontinuität} durch die Cloud-Computing Technologie.
 \medskip
 \\
-Veränderungen werden nicht nur durch ein Wertschöpfungspotenzial hervorgerufen. Viel mehr wird die IT in Betrieben mit alten Strukturen durch äußere Kräfte gezwungen sich anzupassen \cite{Alt2017}, \cite{Gupta:2017}. Grundlage hierfür sind neue Technologietrends \cite{Bussmann2006}, die mittlerweile in ihrer Auswirkung jedoch gravierender sind. Eine entsprechende Verdrängung im Wettbewerb kann viel schneller erfolgen als bisher. Neben Impulse für Innovation mit gefolgter Diskontinuität \cite{Alt2017} kann zunehmend eine Disruption durch neue Technologietrends beobachtet werden. Fernández et al. \cite{Fernandez:2020} definieren die voneinander schwierig zu unterscheidenden Konzepte der \enquote{diskontinuierlichen} und \enquote{disruptiven} Technologien.
+Veränderungen werden nicht nur durch ein Wertschöpfungspotenzial hervorgerufen. Viel mehr wird die IT in Betrieben mit alten Strukturen durch äußere Kräfte gezwungen sich anzupassen \cite{Alt2017}, \cite{Gupta:2017}. Grundlage hierfür sind neue Technologietrends \cite{Bussmann2006}, die mittlerweile in ihrer Auswirkung jedoch gravierender sind. Eine entsprechende Verdrängung im Wettbewerb kann viel schneller erfolgen als bisher. Neben Impulse für Innovation mit gefolgter Diskontinuität \cite{Alt2017} kann zunehmend eine Disruption durch neue Technologietrends beobachtet werden. \citet{Fernandez:2020} definieren die voneinander schwierig zu unterscheidenden Konzepte der \enquote{diskontinuierlichen} und \enquote{disruptiven} Technologien.
 \medskip
 \\
 Verdrängungen im Wettbewerb finden nicht mehr durch eine Konkurrenz auf gleicher Augenhöhe statt. Eine Verdrängung kann auch unerwartet von kleinen Betrieben mit effizienten Abläufen kommen, die durch Schnelligkeit, Verfügbarkeit, Skalierbarkeit und Qualität ihrer Leistungen überzeugen kann.  Gerade im Bankwesen könnten Verdrängungen stattfinden, die jenseits der bisherigen Rahmenbedingungen agieren. Der hierfürige Technologietrend könnte im Finanzwesen beispielsweise die Blockchain-Technologie sein. Analog zum genossenschaftlichen Prinzip der Selbsthilfe, Selbstverantwortung und Selbstverwaltung könnten unabhängige Organisationen entstehen, nach dem historischen Muster, aus denen die Genossenschaftsbanken entstanden sind.
 \medskip
 \\
 Die Vorwegnahme künftiger Innovation durch die Gestaltung von Zukunftszuständen \cite{Alt2017} ist ein Ansatz, um insbesondere Diskontinuitäten entgegen zu wirken. 
-Für Disruptivität kann hierzu ein zusätzlicher Fokus ergänzt werden. Während der Gestaltung von Zukunftszuständen könnten Risiken für das Kerngeschäft mit kreativen Ausblicken auf disruptive Technologien antizipiert werden. Eine realistische Bedrohung auf den künftigen Zustand des Unternehmens könnte den nötigen Katalysator für einen Paradigmenwechsel liefern.
+Für Disruptivität kann hierzu ein zusätzlicher Fokus ergänzt werden. Während der Gestaltung von Zukunftszuständen könnten Risiken für das Kerngeschäft mit kreativen Ausblicken auf disruptive Technologien antizipiert werden. Eine realistische Bedrohung auf den künftigen Zustand des Unternehmens könnte den nötigen Katalysator für einen Paradigmenwechsel liefern oder zumindest den Fokus der Risikomaßnahmen auf Innovation setzen.
 
 Nach einem erfolgreichen Paradigmenwechsel, durch die Erkennung der Bedrohungslage sollten disruptive Technologien mit den aktuellen Rahmenbedingungen abgeglichen werden. Dadurch könnten die Einschränkungen für Innovation identifiziert werden und es könnte definiert werden in welchen Bereichen ein Paradigmenwechsel erforderlich ist.
 
@@ -146,17 +144,22 @@ Aus den FinTechs entstehen mittlerweile volllizensierte Banken mit direktem Vert
 Darren Cohen\footnote{Vorsitzender von Goldman Sachs' PSI Group, vgl. \cite{Gupta:2017}} sieht im Bereich Wertpapierhandel von FinTechs keine Gefahr für Goldman Sachs \cite{Gupta:2017}.
 Hierzu wird in \cite{Gupta:2017} aufgeführt, dass laut Cohen die Anforderungen für neue Marktteilnehmer schwierig sind und für junge FinTechs unüberwindlich. In \cite{Gupta:2017} ist nach Cohen die Abwicklung im Bereich Wertpapierhandel hochreguliert und erfordert eine hohe Bilanzsumme, hohe Infrastrukturinvestitionen und einen erheblichen, globalen Einfluss.
 
-Cohens Begründung pauschalisiert jedoch die Rahmenbedingungen der FinTechs. Abwicklungen mit hohen Summen finden bereits über Plattformen von Blockchain FinTechs statt. Diese Unternehmen agieren jenseits der Rahmenbedingungen und Regulierungen von konventionellen Instituten \ref{Disruption:Blockchain}.
+Cohens Begründung pauschalisiert jedoch die Rahmenbedingungen der FinTechs. Abwicklungen mit hohen Summen finden bereits über Plattformen von Blockchain Plattformen statt. Diese Unternehmen agieren jenseits der Rahmenbedingungen und Regulierungen von konventionellen Instituten \ref{Disruption:Blockchain}.
 
 \paragraph{Blockchain}
 \label{Disruption:Blockchain}
 Im Gegenzug zu Cohens Anforderungen für neue Marktteilnehmer \ref{section:Goldman} gelten einige Blockchains als hochgesichert, enthalten hohe Bilanzsummen, besitzen einer der vermutlich leistungsstärksten Infrastrukturnetzwerke weltweit und sind dadurch global in jeder Hinsicht.
 
-An der \ac{DLT} können sich unter anderem FinTechs beteiligen und die Eintrittsbedingungen mit Leichtigkeit überwinden. Zu den bekanntesten Handelsplattformen, die aus der Blockchain-Technologie entstanden sind zählen Kraken, Poloniex, Bitfinex, Shapeshift und Coinbase. Abwicklungen in diesen Handelsplätzen finden nach \citet{Foundation2019Deconstructing} unter anderem dezentral mithilfe von Smart-Contracts und Reserven statt.
+An der \ac{DLT} können sich unter anderem FinTechs beteiligen und die Eintrittsbedingungen mit Leichtigkeit überwinden. Zu den bekanntesten Handelsplattformen, die aus der Blockchain-Technologie entstanden sind zählen, Kraken, Poloniex, Bitfinex, Shapeshift, Coinbase, um einige zu nennen.
 
-Die \ac{DLT} wird auch von etablierten Instituten im Finanzwesen genau verfolgt.
+Abwicklungen in diesen Handelsplätzen finden nach \citet{Foundation2019Deconstructing} unter anderem dezentral mithilfe von Smart-Contracts und Reserven statt.
+\medskip
+\\
+Die \ac{DLT} wird auch von etablierten Instituten im Finanzwesen genau verfolgt. Man könnte argumentieren, dass dies aus der Befürchtung vor dem nächsten Sprung einer Innovation und somit Disruption rührt \cite{Ganswindt2006, Alt2017}. Diese Disruption könnte weitaus stärker sein als der letzte Innovationssprung mit Cloud-Computing.
+\medskip
+\\
 Für die Abwicklung von Schuldscheindarlehen existiert jüngst das deutsche Pilotprojekt finledger \cite{finledger}. 
-Basierend auf der \ac{DLT} erschafft ein Konsortium aus deutschen Kreditinstituten die Plattform finledger, die zu einem Standard werden und nach der Pilotierung allen Instituten zugänglich sein soll \cite{finledger}.
+Basierend auf der \ac{DLT} erschafft ein Konsortium aus deutschen Kreditinstituten die Plattform \emph{finledger}, die zu einem Standard werden und nach der Pilotierung allen Instituten zugänglich werden soll \cite{finledger}. Dieses Pilotprojekt ist ein wesentlich wichtiger Schritt in die richtige Richtung. Innovationn erfordern Gestaltungsmethoden, die auf eine schnelle Generierung von Prototypen und somit Datenerhebung arbeiten. Selbst wenn die Plattform nicht den wirtschaftlichen Effekt erzielt, erzielt es den weitaus wichtigeren Innovationseffekt als eine Anlage, die Innovation antreibt\cite{Ganswindt2006}. \citet{Koch2016} bezeichnet solche antreibenden Anlagen als \enquote{capabilities}.
 
 \begin{figure}[htbp]
  \centering
@@ -166,29 +169,27 @@ Basierend auf der \ac{DLT} erschafft ein Konsortium aus deutschen Kreditinstitut
 
 In Abb. \ref{fig:blockchain}, die Korschinowski et al. \cite{Korschinowski2018} übernommen haben wird ein Überblick der Anwendungsgebiete der \ac{DLT} gezeigt. In einigen Anwendungsbereichen hieraus könnten Ideen für zukünftige Plattformen nach der Vision von Goldman Sachs \ref{quote:goldman-vision} entstehen. Besonders in bankfachlichen Anwendungsgebieten müssen neue Technologien mit der Regulatorik abgewägt werden.
 
-\paragraph{Software Development \enquote{as a Service}}
+\paragraph{Idee: Software Development \enquote{as Code}}
 \label{Disruption:DaaS}
-Eine künftige Disruption würde möglicherweise als Folge auf die Auslagerung und Dematerialisierung fast aller Komponenten in der IT entstehen.
-Es stellt sich die Frage ob der Entwickler oder die Entwicklungsarbeit selbst als eine vollautomatisierte Dienstleistung bereitgestellt werden kann. Dieses zukünftige Konzept könnte als Trend \enquote{Software Development as Code} oder sogar \enquote{Software Development as a Service} genannt werden, als Folge auf die neuen Rahmenbedingungen durch Cloud-Architekturen. Gemeint ist hierbei eine mögliche Abstraktion und Vollautomatisierung der Entwicklungsarbeit.
+Eine künftige Disruption würde möglicherweise als logische Folge auf die Auslagerung und Dematerialisierung fast aller Komponenten in der IT entstehen.
+Es stellt sich die Frage ob der Entwickler oder die Entwicklungsarbeit selbst als eine vollautomatisierte Dienstleistung bereitgestellt werden kann. Dieses zukünftige Konzept könnte als Trend \enquote{Software Development as Code}\footnote{Im Rahmen der vollautomatisierten Bereitstellung von Entwicklerteams und Beratern} genannt werden, als Folge auf die neuen Rahmenbedingungen durch Cloud-Architekturen. Weiter Abstrahiert wird hierbei auch eine mögliche Vollautomatisierung von IT-Projektmanagement impliziert durch Orchestrierung der Einheiten.
 Der Begriff \enquote{Software Development as a Service} existiert bereits im Rahmen einer Serviceorientierung der Entwicklung durch agile Methoden \cite{Lehman:2011}.
 
-\emph{Freelancing} und \emph{Consulting} ist verbreitet in der IT und kann insbesondere aufgrund der zunehmenden Möglichkeiten und Akzeptanz für Remote-Arbeit sich immer weiter entwickeln. Möglicherweise könnte nach einer Transformation der gesamten IT-Architektur hin zu einer Cloud-Architektur eine Disruption oder Diskontinuität entstehen mit unvorsehbaren Auswirkungen auf die IT. Cloud-Plattformen bieten eine Architektur, die allgegenwärtig und fortschrittlicher sein wird. Entwicklungs- und Produktivumgebungen werden weiterhin streng getrennt sein müssen \cite{MaRisk:2017}. Das ist jedoch kein Hindernis für neue Geschäftsmodelle in der Softwareentwicklung, so lange eine kontinuierliche Zusammenarbeit zwischen diesen Bereichen besteht.
+\emph{Freelancing} und \emph{Consulting} ist verbreitet in der IT und kann insbesondere aufgrund der zunehmenden Möglichkeiten und Akzeptanz für Remote-Arbeit sich immer weiter entwickeln. 
 
-Zukünftig könnten Plattformen entstehen, die Entwicklungsarbeit abstrahieren und durch sichere Zugänge auf die Cloud-Architektur dem Kunden zur Verfügung stellen. Ihre Bedingung ist die Rückverfolgbarkeit von Ergebnisartefakten im Softwareentwicklungsprozss, mithilfe von Automatisierung und Nachvollziehbarkeit der Delivery Pipeline. Durch den Zugang einer Instanz der Entwicklungsumgebung gegenüber diesen Plattformen könnten Dienstleistungen für Entwicklungsarbeit analog zum Cloud-Computing gebucht werden.
+Dieses Konzept wäre aus Sicht der Innovationsförderung nicht negativ behaftet. Denn dadurch würden Zusammenarbeitsmodelle gefördert, die auf Offenheit, Agilität, Modularisierung und Kontinuität basieren und sich effektiv in den Ergebnissen auch zeigen und die Softwareentwicklung als solche optimieren.
+
+Möglicherweise könnte nach einer Transformation der gesamten IT-Architektur hin zu einer Cloud-Architektur eine Disruption oder Diskontinuität entstehen mit unvorsehbaren Auswirkungen auf die IT. Cloud-Plattformen bieten eine Architektur, die allgegenwärtig und fortschrittlicher sein würde. Entwicklungs- und Produktivumgebungen werden weiterhin streng getrennt sein müssen \cite{MaRisk:2017}. Das ist jedoch kein Hindernis für neue Geschäftsmodelle in der Softwareentwicklung, so lange eine kontinuierliche Zusammenarbeit zwischen diesen Bereichen besteht.
+
+Die Voraussetzungen aus regulatorischer Sicht wären die Rückverfolgbarkeit von Ergebnisartefakten im Softwareentwicklungsprozss, mithilfe von Automatisierung und Nachvollziehbarkeit der Delivery Pipeline und Risikomaßnahmen. Durch den Zugang einer Instanz der Entwicklungsumgebung gegenüber diesen Plattformen könnten Dienstleistungen für Entwicklungsarbeit analog zum Cloud-Computing gebucht werden.
 
 Je nach Auslegung und Perspektive wäre diese beispielhafte Vorstellung eine Innovation oder Gefahr. Um ihr zu entgegnen sollte das Szenario durchgegangen werden. Für Entwickler entstehen möglicherweise Opportunitäten oder auch Risiken. 
 \medskip
 \\
-Solche Entwicklungen werden unvermeidbar sein und zeigen sich zuerst in Form von Impulsen \cite{Bussmann2006} und nehmen mit zunehmender Reife der Technologie eine disruptive Eigenschaft an. Die genannten Beispiele für disruptive und diskontinuierlichen Technologien zeigen, dass die Entwicklung keinen Halt macht und ständig fortgeführt werden kann.
+Solche Entwicklungen werden unvermeidbar sein und zeigen sich zuerst in Form von Impulsen \cite{Bussmann2006} und nehmen mit zunehmender Reife der Technologie eine disruptive Eigenschaft an \cite{Ganswindt2006,Alt2017}. Die genannten Beispiele für disruptive und diskontinuierlichen Technologien zeigen, dass die Entwicklung keinen Halt macht und ständig gestalterisch fortgeführt werden kann und sich früher oder später materialisieren wird.
 
 \section{Regulatorischer Rahmen für die IT im Finanzwesen}
-Die \emph{Finanzkrise 2008} war mit einem enormen Vertrauensverlust gegenüber Banken verbunden und die Empörung der Gesellschaft war durch das Internet und der daraus folgenden Transparenz viel größer als zuvor \cite{Eismann2015}. Eine Welle von regulatorischen Veränderungen wurde durch die Auswirkungen dieser Krise herbeigeführt, um zukünftige systemische Krisen zu vermeiden \cite{Gupta:2017}. Das Ergebnis daraus ist die Steigung der regulatorischen Anforderungen mit gleichzeitiger Zunahme der technischen Anforderungen\footnote{insbesondere der \enquote{kontinuierliche Anstieg der Anforderungen an die IT-Architektur} \cite{Disterer2013}} in der IT. 
-Daraus resultiert ein zunehmender Druck auf das Finanzwesen (Abb. \ref{fig:bankdruck}), der aus zusätzlichen Kosten und wirtschaftlichem Druck besteht \cite{Smolinski2017}.
-
-\paragraph{BaFin Anforderungen}
-Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen \cite{MaRisk:2017} an Kredit- und Finanzdienstleistungsinstitute, die sich auch auf die IT der Banken auswirken. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert \cite{recht/Bornemann2018}. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
-
-Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Bereich Risikomanagement und Auslagerung. In \cite{BAIT:2018} werden diese Anforderungen für den Bereich der IT nochmals konkretisiert. Hierdurch sollen operationelle Risiken auch in der IT angemessen gesteuert werden. \citet{mci/Knittl2013} beschreibt die Umsetzung dieser Anforderungen anhand einer Fallstudie zu einem internationalen Finanzkonzern.
+Die \emph{Finanzkrise 2008} war mit einem enormen Vertrauensverlust gegenüber Banken verbunden und die Empörung der Gesellschaft ist durch das Internet und der daraus folgenden Transparenz viel größer als zuvor gewesen \cite{Eismann2015}. Eine Welle von regulatorischen Veränderungen als Folge auf die Auswirkungen dieser Krise herbeigeführt, um zukünftige systemische Krisen zu vermeiden \cite{Gupta:2017}. Das Ergebnis daraus ist ein Anstieg der regulatorischen Anforderungen mit gleichzeitiger Zunahme der technischen Anforderungen\footnote{insbesondere der \enquote{kontinuierliche Anstieg der Anforderungen an die IT-Architektur} \cite{Disterer2013}} in der IT. 
 
 \begin{figure}[htbp]
  \centering
@@ -196,14 +197,24 @@ Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Be
  \caption{\citet{Smolinski2017}, S. 44, Finanzbranche unter Druck}\label{fig:bankdruck}
 \end{figure}
 
+Daraus resultiert ein zunehmender Druck auf das Finanzwesen (Abb. \ref{fig:bankdruck}), der sich in wirtschaftlichem Druck und zusätzlichen Kosten zeigt \cite{Smolinski2017}.
+
+\paragraph{BaFin Anforderungen}
+Aus dem \ac{KWG} der Bundesrepublik Deutschland entstehen Anforderungen \cite{MaRisk:2017} an Kredit- und Finanzdienstleistungsinstitute, die sich auch auf die IT der Banken auswirken \cite{recht/Bornemann2018}. Im \ac{KWG} wird die BaFin für die Aufsicht der Institute nominiert \cite{recht/Bornemann2018}. Sie veröffentlicht Vorgaben an die von ihr beaufsichtigten Institute, um eine einheitliche Verwaltungspraxis sicherzustellen, mit der sich die Institute auf die Prüfungen der BaFin einstellen \cite{BaFin:Verwaltungspraxis}. 
+
+Die BaFin präzisiert in \cite{MaRisk:2017} die Anforderungen des \ac{KWG} im Bereich Risikomanagement und Auslagerung. In \cite{BAIT:2018} werden diese Anforderungen für den Bereich der IT nochmals konkretisiert. Hierdurch sollen operationelle Risiken auch in der IT angemessen gesteuert werden. \citet{mci/Knittl2013} beschreibt die Umsetzung dieser Anforderungen anhand einer Fallstudie zu einem internationalen Finanzkonzern.
 \medskip
-Abb. \ref{fig:bankdruck} verbildlicht, wie Banken von allen Seiten unter Druck stehen. Die Darstellung könnte fortgeführt werden mit der Annahme, dass die äußeren Kräfte sich auch gegenseitig beeinflussen. Die Technologien und Trends aus den \enquote{GAFAs} können mit Sicherheit als ein Antreiber für die FinTechs gesehen werden. Die Antreiber von Veränderung auf der vertikalen Achse der Abbildung werden von Einschränkenden Instituten auf der horizontalen Achse durchkreuzt. Die Aufsichten evaluieren ebenfalls neue Technologien und berücksichtigen sie jeweils bei der Novellierung ihrer Rahmenwerke. Bis diese angepasst werden vergeht Zeit und bis sich die etablierten Institute hierauf auch anpassen vergeht ebenfalls wertvolle Zeit. In FinTechs ist dieses Problem aufgrund ihrer Agilität und Effizienz geringer. Etablierte Institute müssen daher einen Weg finden das Zusammenspiel zwischen neuen Technologien und regulatorischen Anforderungen zu antizipieren und eigene Initiativen als Pilotprojekte schon zu starten. Hierzu passt ebenfalls der Ansatz der Vorwegnahme durch die Gestaltung von Zukunftszuständen \cite{Alt2017}.
+\\
+\paragraph{Finanzwesen unter Druck}
+Abb. \ref{fig:bankdruck} verbildlicht, wie Banken von allen Seiten unter Druck stehen. Die Darstellung könnte fortgeführt werden mit der Annahme, dass die äußeren Kräfte sich auch gegenseitig beeinflussen. Die Technologien und Trends aus den \enquote{GAFAs} können mit Sicherheit als ein Antreiber für die FinTechs gesehen werden. Die Antreiber von Veränderung auf der vertikalen Achse der Abbildung werden von Einschränkenden Instituten auf der horizontalen Achse durchkreuzt. Die Aufsichten evaluieren ebenfalls neue Technologien und berücksichtigen sie jeweils bei der Novellierung ihrer Rahmenwerke \cite{BaFin:marisk-novelle}. Bis diese angepasst werden vergeht Zeit und bis sich die etablierten Institute hierauf auch anpassen vergeht ebenfalls wertvolle Zeit. In FinTechs ist dieses Problem aufgrund ihrer Agilität und Effizienz geringer. Etablierte Institute müssen daher einen Weg finden das Zusammenspiel zwischen neuen Technologien und regulatorischen Anforderungen zu antizipieren und eigene Initiativen als Pilotprojekte schon zu starten. Hierzu passt ebenfalls der Ansatz der Vorwegnahme durch die Gestaltung von Zukunftszuständen \cite{Alt2017}.
 
 
 \paragraph{Ermessen der Institute}
 \label{ermessensfreiheit}
-In \cite{MaRisk:2017, BAIT:2018} fällt auf, dass viele Vorgaben durch entsprechende Wörter in ihrem Gewicht relativiert werden. Die Maßnahmen zu ihrer Umsetzung liegen hierbei im Ermessen der jeweiligen Institute. Im Interesse der Institute ist in erster Linie das Bestehen von Prüfungen der Aufsicht. Die Ermessensfreiheit könnte in einigen Bereichen für Unklarheit sorgen, da die \ac{MaRisk} sehr abstrakt formuliert ist.
-Eine bürokratisierte Kultur innerhalb der internen Kontrollverfahren in Kredit- und Finanzdienstleistungsinstituten zum bestehen von Prüfungen sollte als Folge vermieden werden. Die Flexibilität, die die BaFin in ihren Rahmenwerken vorsieht \cite{MaRisk:2017} sollte als stärke wahrgenommen werden und auf die interne Kultur übertragen werden. Die internen Kontrollverfahren und das Risikomanagement müssen in erster Linie praxisnah und flexibel bezüglich der IT vorgehen und ihren Ermessensspielraum zu Nutze machen, um mit neuen Technologien umgehen zu können.
+In \cite{MaRisk:2017, BAIT:2018} fällt auf, dass viele Vorgaben durch entsprechende Wörter in ihrem Gewicht relativiert werden. Die Maßnahmen zu ihrer Umsetzung liegen hierbei im Ermessen der jeweiligen Institute. Im Interesse der Institute ist in erster Linie das Bestehen von Prüfungen der Aufsicht. Die Ermessensfreiheit könnte in einigen Bereichen für Unklarheit sorgen, da die \ac{MaRisk} sehr abstrakt formuliert ist \cite{DSGV:2019}.
+Eine Kultur innerhalb der internen Kontrollverfahren die sich nur auf Umsetzung beschränkt zum bestehen von Prüfungen sollte als Folge vermieden werden. Eine Mitgestaltung ist hierbei wichtig um eine gemeinsame Wissensplattform aufzubauen. \citet{DSGV:2019} hat einen gemeinsamen Leitfaden gestaltet, dass selbst in Papierform eine Plattform darstellt. Selbst gemeinsame Wissensplattformen könnten einen ersten Beitrag zur Innovationskraft sein und somit als Anlage gesehen werden. Der antreibende Faktor dahiner wäre die Kommunikation und Schnittstellen. Die Voraussetzung hierfür wäre Offenheit.s
+
+Die Flexibilität, die die \ac{BaFin} in ihren Rahmenwerken vorsieht \cite{MaRisk:2017} sollte als stärke wahrgenommen werden und auf die interne Kultur übertragen werden. Die internen Kontrollverfahren und das Risikomanagement müssen in erster Linie praxisnah und flexibel bezüglich der IT vorgehen und ihren Ermessensspielraum zu Nutze machen, um mit neuen Technologien umgehen zu können. Die Ermessensfreiheit, die die \ac{BaFin} beschreibt erzeugt nur Druck und Unsicherheit in Instituten, denen es an Gestaltungsfähigkeit fehlt. Die \ac{BaFin} verlangt mit der IT-Strategie \cite{BAIT:2018} ein aktives Mitgestalten seitens Management. Ebenso sieht sie genug Gestaltungsfreiheit für das Risikomanagement vor. Daher sollte das Risikomanagement und das \ac{ITM} diesen Ansatz sich aneignen. Banken sind zugegebenermaßen auf Profitmaximierung angewiesen. 
 
 Für die \ac{MaRisk} gibt es auch zusätzliche Erläuterungen der BaFin \cite{MaRiskErläuterungen:2017}. Speziell für die IT hat die BaFin in \cite{BAIT:2018} die \ac{MaRisk} noch einmal konkretisiert. Daneben gibt es institutspezifische Interpretationen und Werke \cite{DSGV:2019}.
 
@@ -310,7 +321,7 @@ Es könnte hierbei nach der konstruktiven Frage \enquote{Welche Gemeinsamkeiten 
 \paragraph{Frage an das Management: Change oder Run?}
 Aus Sicht der Entwicklung und Beteiligten an Change-Prozessen könnte bezüglich der Einschränkungen auf die Regulatorik oder Betrieb verwiesen werden.
 
-Dagegen spricht aus Sicht des Betriebs, dass Change-Prozesse zuerst sich selbst zu optimieren haben und dadurch die richtigen Prioritäten setzen, bevor sie den ohnehin konservativen Betrieb optimieren. Die Skalierbarkeit und Flexibilität der IT-Architektur sollte nicht aufgrund ihrer Symptome gefordert werden, sondern als eine Anlage, um weitere Innovationen zu fördern.
+Dagegen spricht aus Sicht des Betriebs, dass Change-Prozesse zuerst sich selbst zu optimieren haben und dadurch die richtigen Prioritäten setzen, bevor sie den ohnehin konservativen Betrieb optimieren. Die Skalierbarkeit und Flexibilität der IT-Architektur sollte nicht aufgrund ihrer Symptome gefordert werden, sondern als eine Anlage\footnote{vgl. \enquote{capabilities} in \cite{Koch2016}}, um weitere Innovationen zu fördern.
 \medskip
 \\
 Möglich wäre eine Strategie, in der Entwickler und Geschäftsleitung eng zusammenarbeiten.
@@ -368,6 +379,15 @@ sollte auch die Ausrichtung der IKT-Strategie\footnote{\ac{IKT} -Strategie über
 \end{quote}
 
 \paragraph{Voraussetzungen}
+\citet[11.4.1]{Koch2016} fordern für ein Management der Transformation:
+\begin{quote}
+    \enquote{Erstens ist zu akzeptieren, dass der
+Transformationsprozess nicht im Kontext eines einmaligen begrenzten Projektes vollzogen
+werden kann. Vielmehr bedarf es einer langfristigen Initiative, damit die notwendigen
+Fähigkeiten entwickelt werden können. Zweitens darf die Transformation nicht als rein
+technologische Initiative interpretiert werden.}
+\end{quote}
+
 Die Entwicklung von skalierbaren und flexiblen Systemen für die \ac{SEU} von Banken setzt wesentliche Veränderungen in der IT-Architektur, Prozesse und Organisation eines Instituts voraus. Erfolgen diese nicht werden umfangreiche Anpassungen der verwendeter Standardsoftware und Abänderungen von gängigen Lösungen bedingt \ref{grundlagen:ci-in-banken}.
 \medskip
 \\
@@ -470,12 +490,12 @@ Für die Vorhersehbarkeit von Auswirkungen ist ein kontrollierter Umgang mit Ver
 Ein effektives Veränderungsmanagement hat das Ziel einen Zustand der höchstmöglichen Transformationsfähigkeit zu erreichen. Hierfür ist ein grundlegend innovatives Paradigma vonnöten. 
 
 \paragraph{Innovativer Soll-Zustand der Kultur}
-Der innovative Soll-Zustand (Abb. \ref{fig:digit-trans}, Antriebe) impliziert hierbei Qualitätsansprüche für die Ergebnisse von Innovationsprozessen.
+Die innovative Soll-Kultur (Abb. \ref{fig:digit-trans}, Antriebe) impliziert hierbei Qualitätsansprüche für die Ergebnisse von Innovationsprozessen.
 
 Die Qualitätsansprüche sind Gegenmittel die einschränkenden Faktoren für Veränderung.
 Sie dienen daher als Grundlage, um nach einer Kultur zu streben, die sich Transformationsfähigkeit als Prinzip setzt.
 
-Nach \citet[S.30]{Bussmann2006} eine kontinuierliche Justierung für den Unternehmenserfolg wichtig. Als eine der Schwierigkeiten nennt er ein effektives Management der Veränderungsprozesse.
+Nach \citet[S.30]{Bussmann2006} ist eine kontinuierliche Justierung für den Unternehmenserfolg wichtig. Als eine der Schwierigkeiten nennt er ein effektives Management der Veränderungsprozesse.
 \medskip
 \\
 Diese Schwierigkeit hat sich in Banken bis heute noch bewährt.
