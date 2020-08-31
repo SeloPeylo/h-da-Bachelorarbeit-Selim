@@ -91,21 +91,18 @@ Die Arbeit beschäftigt sich daher mit einem Paradigmawechsel der regulierten Fi
 %
 \section{Aufbau der Arbeit}
 \label{sec:intro:structure}
+
+\paragraph{Aufbau der Methodik}
 Das Problem wird zuerst aus der Sicht der \ac{SEU} definiert und daraus die allgemeinen Ursachen verfolgt. Von den Hintergründen aus werden unterschiedliche Perspektiven durchleuchtet und wesentliche Punkte deduktiv ausgearbeitet und bewertet.
 
 Die Arbeit verwendet Schritte aus dem \emph{Design-Thinking} Prozess (Kap. \ref{def-design-thinking}). Daher werden Kap. \ref{ch:background} schon induktiv einfache Ansätze für erste Lösungen ad hoc vorgeschlagen und beschrieben. Dies bezweckt eine frühe Datenerhebung mit Gestaltungsprozessen, sodass Ansätze und Anforderungen von der angenommenen Perspektive heraus vorgeschlagen werden können. Diese können sich somit gegenseitig im Analyseteil ausschließen, zur Filterung vor der Bewertung in Kap. \ref{chapter:evaluation}. In diese fließen anschließend die festgehaltenen Ergebnisse.
-\medskip
+\bigskip
 \\
 Die Arbeit ist unter drei wesentlichen Bereichen gegliedert. 
-Im ersten Bereich ist ein umfangreicher Grundlagenkapitel. Diese fasst bekannte Probleme und Ansätze aus verwandten Werken zusammen und stellt den aktuellen Stand der Technik dar und daraus vorgeschlagenen Lösungsansätze. 
+Im Bereich Grundlagen (Kap. \ref{chapter:grundlagen}) werden bekannte Probleme und Ansätze aus verwandten Werken zusammengefasst und der aktuellen Stand der Technik dargestellt und daraus erste Ansätze mit gängigen Standards vorgeschlagen. 
 \medskip
 \\
-Im zweiten Bereich ist ein umfangreicher Theoriekapitel über die Rahmenbedingungen der Softwareentwicklungsumgebung in Banken. Hierin werden die Einschränkenden Faktoren ermittelt. Zusätzlich werden ihre negativen Auswirkungen und Risiken für das Geschäftsmodell untersucht. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung mit aktuellen Technologien und Methoden abgeleitet und erste Lösungsansätze. 
-
-Darüber hinaus wird auf das Innovationspotenzial der IT auf das Geschäftsmodell eingegangen. Die positive Auswirkung von einem Paradigmenwechsel der IT von Banken und Finanzdienstleistern wird anhand von Fallstudien und Beispielen unterstützt.
+Im nächsten Bereich (Kap. \ref{ch:background} findet die Untersuchung zu den Rahmenbedingungen der Softwareentwicklungsumgebung in Banken statt. Hierin werden die einschränkenden Faktoren ermittelt. Zusätzlich werden ihre Auswirkungen und Risiken für das Geschäftsmodell untersucht. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung mit aktuellen Technologien und Methoden abgeleitet und erste Lösungsansätze vorgeschlagen. Hierbei wird auf die Regulatorik eingegangen. Im letzten Abschnitt findet eine Synthese der Ergebnisse\footnote{aus dem Design-Thinking Prozess in (Kap. \ref{def-design-thinking})} statt, die anschließend analysiert und nach jeder Iteration kontinuierlich verbessert werden.
 \medskip
 \\
-Im dritten Kapitel wird die für die IT relevante Verwaltungspraxis der Bankaufsicht untersucht. Daraus werden wesentlichen regulatorischen Anforderungen für die Entwicklung von nachvollziehbaren Systemen für die \ac{SEU} abgeleitet. Anschließend wird überprüft inwiefern die Verwaltungspraxis die in Kapitel 2 genannten Methoden zulässt und worauf es dabei ankommt. Insbesondere wird der Umgang mit Ständigen Veränderungen in der IT hinterfragt. Zudem wird in diesem Kapitel eine innovationsfördernde Rolle der internen Kontrollverfahren in der IT von Banken gefordert.
-\medskip
-\\
-In vierten Kapitel wird mithilfe der Ergebnisse aus den vorigen Kapiteln ein Ansatz entwickelt, wie eine Continuous Integration Plattform in einer Bank skalierbarer und flexibler betrieben werden kann. Es wird zumindest ein kleinster gemeinsamer Nenner definiert, der die größtmögliche Flexibilität bezüglich der IT-Architektur beibehalten soll. Dazu werden Docker-Images für die Ausführung von Builds entwickelt und mit den nötigen Build-Tools ausgestattet. Die Docker-Images sollen eine sichere und nachvollziehbare Umgebung für einen flexiblen Einsatz in einer Bank bereitstellen. Insbesondere müssen die Softwareartefakte aus dem Erstellungsprozess über ein internes Repository gesichert werden. Zudem sollen die Artefakte, die für die Erstellung des Images verwendet werden aus diesem Repository bezogen werden. 
+Im anschließenden Bereich (Kap. \ref{chapter:evaluation}) findet die Bewertung und Zusammenfassung der Ergbenisse statt. Zu erst wird die Methodik und der Weg zur Lösung der Forschungsfragen rückblickend betrachtet und bewertet. Als nächstes werden die wesentlichen Ergebnisse aus dem vorigen Bereich mit einer letzten Analyse und Evaluation festgehalten und zusammengefasst.
