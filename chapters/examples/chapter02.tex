@@ -29,7 +29,7 @@ So entstehen gegenüber etablierten Unternehmen, Technologieunternehmen mit effi
 \\
 Zuletzt hat sich die IT vor allem durch einige Schlüsseltechnologien verändert. Für die IT-Architektur hat Cloud-Computing zusammen mit Cloud-Plattformen einen entscheidenden Impuls gegeben. Sie haben IT-Ressourcen abstrahiert. Diese können mit Befehlen aufgerufen werden und sind in kurzer Zeit bereitgestellt. Anwendungen können in kürzester Zeit und in großem Umfang skaliert werden. Software wird dadurch immer mehr als Dienstleistung bereitgestellt und findet sich immer weniger in den Festplatten von lokalen Systemen. Kurze Entwicklungszyklen durch neue und agile Methoden sorgen für eine kontinuierliche Weiterentwicklung der Anwendungen. Software wird dadurch in immer kürzeren Abständen integriert und ausgeliefert. Hierzu entstand der Bedarf einer erhöhten Zusammenarbeit zwischen Betrieb und Entwicklung, woraus der Trendbegriff DevOps entstand. Die Kontinuität wird immer relevanter, sodass Methoden wie \ac{CI} und \ac{CD} zum Standard und miteinander vereint werden. Gleichzeitig herrscht ein kontinuierlicher Anstieg der Anforderungen an die IT-Architektur \cite{Bussmann2006}, die in unflexiblen Architekturen in einem Engpass gemündet ist \cite{Brockhoff2006, Bussmann2006}. Diese Engpässe könnten aufgrund neuer Technologien und Architekturen, wie zum Beispiel Kubernetes, Docker und Microservices gelöst werden. Grundlage hierfür bieten unter anderem gemeinsame Plattformen, wie zum Beispiel eine Cloud.
 
-\paragraph{DevOps}
+\subsection{DevOps und weitere Methoden}
 DevOps ist eine Bezeichnung, die durch die Zusammensetzung der Wörter \enquote{Development} und \enquote{Operations} erzeugt wurde und entstand aus Problemen bei der Inbetriebnahme von Software \cite{mci/Disterer2011}. Aus einer schnellen, flexiblen und nutzerzentrierten Umsetzung von funktionalen Anforderungen resultieren Benutzerakzeptanz und Kundenzufriedenheit \cite{mci/Disterer2011, Alt2017}. Daher ist es ein Ziel von DevOps die Zusammenarbeit zwischen Entwicklung und Betrieb zu verbessern. Die Automatisierung von Routineaufgaben und Wandel in der Zusammenarbeitskultur hat darin eine zentrale Bedeutung \cite{Alt2017}. 
 
 In der Praxis werden Entwicklung und Betrieb durch die Delivery Pipeline verbunden.
@@ -71,13 +71,30 @@ Neben \ac{CD} existiert der hiervon schwierig unterscheidbare Begriff \emph{Cont
 Abb. \ref{fig:devops} stellt das DevOps Lebenszyklus mit ihren jeweiligen kontinuierlichen Verfahren dar, die das Produkt und die Beteiligten umfassen. Agile Entwicklung, \ac{CI} und \ac{CD} sind jeweils Verfahren, die vor DevOps existierten \cite{Alt2017}. Sie werden in diesem Zusammenhang jedoch als ein kontinuierliches Modell gesehen, die eine Schnittstelle zwischen den Beteiligten herstellt und das Produkt dadurch am Leben erhält und wachsen lässt. Im Gegensatz dazu stehen sequenzielle Modelle wie \emph{Plan-Build-Run \cite{Koch2016}}, in der ein Prozess am Ende als abgeschlossen gilt. Das Wesentliche an diesem Modell (Abb. \ref{fig:devops}) ist ein Kontinuitätsprinzip \cite{Alt2017} der Prozesse auf allen Ebenen.
 
 \paragraph{ITIL}
-\citet{Alt2017} beschreiben ITIL im Rahmen des Innovationsdrucks vom IT-Management.
+\citet{Alt2017} beschreiben ITIL im Rahmen des Innovationsdrucks vom IT-Management:
 Viele Organisationen haben ihre Leistungen nach dem ITIL-Service-Lebenszyklus strukturiert und den Ablauf an den ITIL-Prozessen ausgerichtet. ITIL bedingt die Kombination von Zweckmäßigkeit \enquote{Utility} und Einsatzfähigkeit \enquote{Warranty} für einen Wertbeitrag eines Services auf das Geschäft. Zweckmäßigkeit wird durch die Realisierung einer geforderten Funktion oder durch die Beseitigung einer Einschränkung erreicht. Als Qualitätsmerkmal gilt die Einsatzfähigkeit. Sie bezieht sich auf eine ausreichende Verfügbarkeit, Kapazität, Kontinuität und Sicherheit. Es ist Notwendig das bisherige Verständnis von IT-Services um das Kriterium \enquote{Innovationsbeitrag} zu ergänzen. Services müssen sich in einer Innovationskultur bezüglich ihres Beitrags zur Innovationsgenerierung messen lassen.
 
-\paragraph{Design Thinking}
-Design Thinking gehört zu den kreativen und innovativen Prozessen für die Gestaltung von Lösungen. Ihr wesentlicher Merkmal ist die agile und zeitnahe Bereitstellung von Prototypen \cite{Alt2017}.
+\paragraph{Design-Thinking Prozess}
+\label{def-design-thinking}
+\emph{Design-Thinking} gehört zu den kreativen und innovativen Prozessen für die Gestaltung von Lösungen. Ihr wesentlicher Merkmal ist die agile und zeitnahe Bereitstellung von Prototypen \cite{Alt2017}. Die Schritte aus Design-Thinking sind keine fest definierten Rahmen. Sie sind ein Werkzeug, das individualisiert werden kann.
+\medskip
+\\
+In \cite{yüksel:digit} wurden die Schritte des Prozesses erklärt: 
+\begin{itemize}
+    \item  \emph{Analyse} besteht aus \emph{Empathize} und \emph{Define} Hierin gilt es die Bedürfnisse und Probleme des Kunden zu verstehen und sich dabei auf die Ursachen zu fokussieren. Der Teilnehmer soll hierbei sich in den Kunden hinein versetzen und anfangen Probleme des Kunden mit einem selbst lösen. 
+    \item \emph{Synthese} besteht aus \emph{Ideate}, \emph{Prototype} und \emph{Testing}. Hierin werden Ideen gesammelt. Dabei spielt in der anfänglichen Iterationen zuerst die Quantität eine wesentliche Rolle.
+\end{itemize}
 
-\paragraph{IT4IT}
+\paragraph{Software Defined Business}
+\citet[S. 51]{Alt2017} definieren \ac{SdB} als das Erkennen von Software als zentrales Gestaltungselement. Software ergänzt und substituiert hierbei teilweilse die Hardware. Daher sind Kompetenzen zur Softwareentwicklung und ihr Management eine Grundlage für Innovationsfähigkeit.
+\medskip
+\\
+Softwareentwicklungskompetenzen sind daher sowohl in frühen Phasen des Innovationsmanagements als auch bei der kontinuierlichen Weiterentwicklung wichtig \cite{Alt2017}
+%
+%
+%
+
+\subsection{IT-Architektur}
 
 \paragraph{Infrastructure as Code}
 Eine wichtige Voraussetzung für DevOps ist die Automatisierung von Prozessen, die vor allem im Bereich von materiellen Ressourcen, wie Hardware bisher schwierig war. Das Prinzip der \emph{Dematerialisierung} ist auch ein wichtiger Bestandteil der digitalen Transformation.
@@ -123,17 +140,10 @@ So lange in einem Node genug Ressourcen frei sind können weitere Container in s
 \\
 Daraus resultiert eine hohe Flexibilität für die Skalierung der Anwendungen. Diese können sowohl vertikal anhand der Ressourcen von den Nodes, als auch Horizontal über die Aktivierung von weiteren Nodes oder Pods skaliert werden. Vor allem bestehen für die horizontale Skalierung mehrere Abstraktionsebenen.
 
-\paragraph{Minikube}
-%
-%
-%
-%
 \section{Ausgangssituation: CI in Banken}
 \label{grundlagen:ci-in-banken}
-\medskip
-\\
 In diesem Abschnitt wird die Ausgangssituation beschrieben, aus der die Problemstellung definiert wurde. Sie gibt einen kleinen Einblick wie die Rahmenbedingungen für Entwickler in der IT einer Bank mit modernen Methoden wie DevOps aussehen könnten und wo die Grenzen für Veränderungen liegen. Von diesem Standpunkt aus wird ein erster Lösungsweg vorgeschlagen gängigen Standards aus dem Stand der Technik. 
-
+%
 \paragraph{Softwareentwicklungsumgebung}
 Die \ac{SEU} bezeichnet in dieser Arbeit ein zentrales Netzwerk für die eigene Softwareentwicklung in einer Bank. Unter anderem müssen in Banken Test-, Integrations- und Produktionsumgebungen getrennt werden \cite{MaRisk:2017}.
 \medskip

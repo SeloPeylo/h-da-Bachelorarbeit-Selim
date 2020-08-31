@@ -97,7 +97,9 @@ Was als interne Plattform angefangen hat konnte schnell umfunktioniert werden. D
 \paragraph{neue Geschäftsmodelle}
 Mit der Entwicklung von SIMON, einem Onlinemarktplatz für \enquote{Structured Notes}, erhöhte Goldman Sachs ihre Reichweite zu einer neuen Nutzergruppe. Das Wachstumspotenzial von einer Plattform mit einem einzigen Anbieter wurde erreicht, sodass die eigene Plattform an weitere konkurrierenden Emittenten geöffnet wurde. Dies erhöhte die Kundenzufriedenheit, da eine größere Auswahl und Vielfalt an Angeboten hierdurch entstand \cite{Gupta:2017}.
 
-\paragraph{Ausblick}
+\subsection{Zusammenfassung und Ideen}
+Nachfolgend werden die Schritte \emph{Define} und \emph{Ideate} aus \ref{}
+
 \citet{Gupta:2017} fasst zusammen, dass die Realität nach 2008 Goldman Sachs und ihre Konkurrenz gezwungen hat sich neu auszurichten und wirft einige Fragen auf: \footnote{\citet{Gupta:2017}, S. 10, aus dem Englischen übersetzt}
 \begin{quote}
 \enquote{Einblicke in die Strategie von Goldman Sachs wurden durch Initiativen wie Marquee und Marcus deutlich, aber wie passten diese und andere Initiativen der letzten Zeit in das allgemeine Geschäftsmodell des Unternehmens? Hat sich das Kerngeschäft von Goldman Sachs verändert, oder waren Produkte wie SIMON und Marcus an der Peripherie angesiedelt? Was trieb das Unternehmen dazu, den Zugang zu internen Tools zu öffnen, die lange Zeit als proprietärer Wettbewerbsvorteil angesehen worden waren, und wie konnte es rechtfertigen, Wettbewerber zum Verkauf an seine Kunden einzuladen?
@@ -199,6 +201,7 @@ Abb. \ref{fig:bankdruck} verbildlicht, wie Banken von allen Seiten unter Druck s
 
 
 \paragraph{Ermessen der Institute}
+\label{ermessensfreiheit}
 In \cite{MaRisk:2017, BAIT:2018} fällt auf, dass viele Vorgaben durch entsprechende Wörter in ihrem Gewicht relativiert werden. Die Maßnahmen zu ihrer Umsetzung liegen hierbei im Ermessen der jeweiligen Institute. Im Interesse der Institute ist in erster Linie das Bestehen von Prüfungen der Aufsicht. Die Ermessensfreiheit könnte in einigen Bereichen für Unklarheit sorgen, da die \ac{MaRisk} sehr abstrakt formuliert ist.
 Eine bürokratisierte Kultur innerhalb der internen Kontrollverfahren in Kredit- und Finanzdienstleistungsinstituten zum bestehen von Prüfungen sollte als Folge vermieden werden. Die Flexibilität, die die BaFin in ihren Rahmenwerken vorsieht \cite{MaRisk:2017} sollte als stärke wahrgenommen werden und auf die interne Kultur übertragen werden. Die internen Kontrollverfahren und das Risikomanagement müssen in erster Linie praxisnah und flexibel bezüglich der IT vorgehen und ihren Ermessensspielraum zu Nutze machen, um mit neuen Technologien umgehen zu können.
 
@@ -280,9 +283,65 @@ Bedeutende Institute werden zusätzlich von der \ac{EBA} beaufsichtigt \cite{rec
 %
 %
 %
+\section{Erste Ansätze}
+
+\paragraph{Grundlegendes Re-Design}
+\label{ansatz:modularisieren}
+\citet{Bussmann2006} nennt zwei Wege für den Ersatz und grundlegenden Re-Design von Kernsystemen:
+\begin{itemize}
+    \item Anwendungen schrittweise entkernen, erneuern und modularisieren und funktionale Anforderungen konsolidieren
+    \item Kernsysteme durch völlig neue, selbst entwickelte Applikationen austauschen oder einsetzen von Standardsoftware
+\end{itemize}
+
+\paragraph{IT als Kernkompetenz} 
+\citet{Bussmann2006} sehen die IT als Kernkompetenz. Laut \citet{Bussmann2006} unterscheiden IT-Anwendungen sich in zwei Bereiche, in welcher Technologietrends zu innovativen Lösungen führen. Neben den Anwendungen für den Dialog mit Kunden sind es Anwendungen zur Steuerung und Unterstützung von internen Prozessen.
+\medskip
+\\
+Daraus wird klar, dass die IT eine wichtige Rolle für Innovationskraft hat. Ihr wesentlicher Einfluss für Innovation rührt aus ihren Aufgaben der Effizienzsteigerung \citet{Gupta:2017} und Automatisierung \cite{Alt2017}.
+
+\paragraph{gemeinsame Funktionen zentralisieren}
+Verallgemeinert könnte der Ansatz aus \cite[S.5]{Gupta:2017}, (Kap. \ref{par:effizienzsteig}) auch für die Effizienzsteigerung in anderen Bereichen genutzt werden. 
+
+Zuerst werden Gemeinsamkeiten identifiziert. Als nächstes werden effektive Plattformen als ein Antrieb für Effizienz errichtet. Die Einheiten oder Komponenten können sich so auf ihre eigentliche Kernaufgabe konzentrieren. 
+\medskip
+\\
+Es könnte hierbei nach der konstruktiven Frage \enquote{Welche Gemeinsamkeiten haben wir?} statt nach der Frage \enquote{Was unterscheidet uns?} aufgebaut werden. Ersteres impliziert schon die Identifizierung von Gemeinsamkeiten, wodurch Redundanzen nicht unentdeckt bleiben und Synergie erzeugt wird. Die zweite Frage setzt den Fokus auf die Abgrenzung der Einheiten voneinander, wodurch die kulturellen \enquote{Silos} immer höher werden. Unterschiedliche Bedürfnisse müssen nicht zu unterschiedlichen Technologien führen. 
+
+\paragraph{Frage an das Management: Change oder Run?}
+Aus Sicht der Entwicklung und Beteiligten an Change-Prozessen könnte bezüglich der Einschränkungen auf die Regulatorik oder Betrieb verwiesen werden.
+
+Dagegen spricht aus Sicht des Betriebs, dass Change-Prozesse zuerst sich selbst zu optimieren haben und dadurch die richtigen Prioritäten setzen, bevor sie den ohnehin konservativen Betrieb optimieren. Die Skalierbarkeit und Flexibilität der IT-Architektur sollte nicht aufgrund ihrer Symptome gefordert werden, sondern als eine Anlage, um weitere Innovationen zu fördern.
+\medskip
+\\
+Möglich wäre eine Strategie, in der Entwickler und Geschäftsleitung eng zusammenarbeiten.
+Beim Durchleuchten der Einschränkungen aus verschiedenen Perspektiven fällt auf, dass die konservative Haltung des IT-Betriebs und der Regulatorik eine valide Berechtigung, gerade im Finanzwesen hat. Die Anforderungen selbst sind trotzdem flexibel gestaltet und bieten einen Ermessensspielraum. 
+Neben externe Auslöser von Innovation, die Unternehmen aufgrund von Disruption und Diskontinuität zu Veränderungen zwingen \cite{Gupta:2017, Fernandez:2020} existiert die IT-Strategie als interner Auslöser \cite{BAIT:2018, Alt2017}, dessen Verantwortung in erster Linie der Geschäftsleitung unterliegt \cite{BAIT:2018}. Daher sollten zu erst die Veränderungsprozesse optimiert werden. Eine klare IT-Strategie optimiert sich selbst bevor Forderungen gestellt werden. Dies wird durch Gestaltungsmethoden wie \emph{Design-Thinking} hervorgehoben, indem sie die Quellen zu fremden Problemen zuerst auf sich selbst richten \cite{yüksel:digit}. Gestaltungsmethoden wie Design-Thinking werden gerade für Innovationsprozesse und für das \ac{ITM} empfohlen \cite{Alt2017, Koch2016}. Zudem sollte die in \citet[AT 8.2]{MaRisk:2017} geforderte Analyse und Beteiligung bei wesentlichen Veränderungen schon in den Gestaltungsprozessen stattfinden \cite{Dorschel2018}. Eine Mitgestaltung nach agilen Methoden (Abb. \ref{fig:devops}) ist auch im IT- und Risikomanagement erforderlich, um effiziente Abläufe und Maßnahmen zu schaffen.
+
+\paragraph{Relevanz der Regulatorik für Entwickler}
+Die BaFin Anforderungen \cite{MaRisk:2017, BAIT:2018}, Gängige Sicherheitsstandards \cite{IT-Grundschutz:2020, Disterer2013} und weitere Rahmen sind für Entwickler wichtig, um ihre Verantwortung über die IT-Risiken in Banken und anderen systemrelevanten Betrieben zu verstehen. Insbesondere sind sie für die nachvollziehbarer Entwicklung von Anwendungen und Systemen und für ihren nachhaltigen Betrieb, Überwachung und Überprüfung zu berücksichtigen. Um verwachsene und unflexible Architekturen zu vermeiden sollten Entwickler, im Bereich der Anwendungen, die interne Prozesse unterstützen \cite{Bussmann2006}, sich mit diesem Thema auseinandersetzen.
+\medskip
+\\
+Neben den Leistungsansprüchen sollten die Sicherheitsansprüche für Veränderungen im Vordergrund stehen. Die Implementierung von neuen Technologien wirft bei wesentlichen Veränderungen viele Compliancefragen auf \cite{MaRisk:2017}. Diese hängen mit den Sicherheitsansprüchen zusammen und sind unvermeidbar, können aber durch eine Effizienzsteigerung der Steuerungs- und Überwachungsprozesse zu einer Stärke werden und die Fähigkeit wesentliche Veränderungen durchzuführen erhöhen
+\medskip
+\\
+Aufgrund befürchteten aufwändigen Maßnahmen sollte die Durchführung von wesentlichen Veränderungen nicht entmutigt werden. Die Maßnahmen fokussieren sich den Schutzbedarf von kritischen Prozessen und Daten (Kap. \ref{ermessensfreiheit}). Es wäre daher eine Selbstbeschränkung die Maßnahmen aufgrund eines mangelnden Verständnisses der Regulatorik zu pauschalisieren, somit die Ermessensfreiheit aufzugeben und präzisere Vorgaben von der Aufsicht zu fordern.
+
+Ein \enquote{Schwarz-Weiß} Denken als Folge zum Bestehen von Prüfungen oder die Umsetzung des Trugschlusses \enquote{Security through Obscurity} sind zu vermeiden. Das Pauschalisieren der geforderten Maßnahmen des Risikomanagement könnte eine \enquote{Schatten-IT} \cite[S. 104]{Dorschel2018} erzeugen, aufgrund ihrer Befürchtungen. 
+\medskip
+\\
+Ein Beispiel wäre die Katalogisierung von \ac{IDV} Anwendungen \cite{BAIT:2018}, \cite[Kap. 6.8]{Dorschel2018}. Ein mangelndes Verständnis über die Hintergründe der Forderungen würde sich in einer mangelnden Selbsteinschätzung der Maßnahmen zeigen. Dies hätte zu Folge, dass Entwickler aufgrund ihrer Befürchtungen gegenüber den Maßnahmen die Kommunikation und somit Offenheit gegenüber des Risikomanagements und \ac{ITM} einschränken.
+
+\paragraph{Idee für ein innovatives Risikomanagement}
+Die von \citet{mci/Disterer2011} beschriebenen Probleme im Betrieb von Anwendungen durch die mangelnde Beachtung von nichtfunktionalen Anforderungen und die Einführung von Quality Gates könnten hierbei auf Probleme für die internen Kontrollverfahren ausgeweitet werden. 
+\medskip
+\\
+Eine Koordination zwischen Entwicklung und Betrieb sollte das IT-Risikomanagement miteinbeziehen. Dabei sollte die Geschwindigkeit des Entwicklungs- oder Integrationsprozesses nicht beeinträchtigt werden. Hierfür sollte das IT-Risikomanagement agile Methoden verwenden. Die Schnelligkeit hat bei der Beantwortung von Compliancefragen dabei eine wichtige Rolle. Entwickler könnten zuerst die Prozesse des IT-Risikomanagements optimieren und automatisieren, um sich Handlungsfreiheit für Innovation und wesentlichen Veränderungen innerhalb der Organisation zu schaffen. Sie sollten in das Risikomanagement integriert werden. Ein Entwickler aus einem anderen Projekt könnte als Compliance- und Risikoverantwortlicher parallel wichtige Compliancefragen auf technischer Ebene schnell überprüfen und vorab beantworten. Dadurch könnte unter Vorbehalt schon mit neuen Technologien und Methoden an Lösungen gearbeitet werden oder Veränderungen in Gang gesetzt werden. 
+
+Um einer Disruption zu begegnen ist das Risiko von verschwendetem Aufwand in Kauf zu nehmen, um sich eine Anpassungs- und Reaktionsfähigkeit zu schaffen, die geschäftskritisch ist \cite{Bussmann2006}.
+
 
 \section{Paradigmenwechsel für Veränderung}
-Dieser Abschnitt analysiert den Rahmen und trägt iterativ zur Findung der Ursache und Ansätze für ihre Lösung bei. Der \emph{Design-Thinking} Prozess wird hierbei als iterative und innovative Methode für Ideen, Prototypen und anschließender Evaluation verwendet. Daher bauen die nachfolgenden Unterabschnitte aufeinander auf und tragen somit zu einer kontinuierlichen Verbesserung bei.
+Dieser Abschnitt analysiert die Ergebnisse aus den Rahmenbedingungen für die IT im Finanzwesen trägt kontinuierlich zur Findung der Ursachen der genannten Probleme und Ansätze für ihre Lösung bei. Der \emph{Design-Thinking} Prozess wird hierbei als iterative Innovationsmethode für Ideen, Prototypen und anschließender Evaluation verwendet. Daher bauen die nachfolgenden Unterabschnitte aufeinander auf und tragen somit zu einer kontinuierlichen Verbesserung bei.
 \medskip
 \\
 Nachfolgend werden die Rahmenbedingungen für eine kontinuierliche Anpassung der IT-Architektur in Banken analysiert.
@@ -384,9 +443,6 @@ Nach einer solchen zukünftigen Entwicklung wäre die Idee von \emph{Development
 %
 \subsection{Ansätze für ein Paradigmenwechsel}
 
-\paragraph{gemeinsame Funktionen zentralisieren}
-Verallgemeinert könnte der Ansatz aus \cite[S.5]{Gupta:2017}\footnote{Vgl. Kap. \ref{par:effizienzsteig}} auch für die Effizienzsteigerung in anderen Bereichen genutzt werden. Zuerst werden Gemeinsamkeiten identifiziert. Als nächstes werden sie ausgelagert. Das ermöglicht die Einrichtung von gemeinsamen Plattformen, die Synergie erzeugen. Die Einheiten oder Komponenten können sich so auf ihre eigentliche Kernaufgabe konzentrieren. Es könnte hierbei nach der konstruktiven Frage \enquote{Welche Gemeinsamkeiten haben wir?} statt nach der Frage \enquote{Was unterscheidet uns?} aufgebaut werden. Ersteres impliziert schon die Identifizierung von Gemeinsamkeiten, wodurch Redundanzen nicht unentdeckt bleiben und Synergie erzeugt wird. Die zweite Frage impliziert eine Abgrenzung der Einheiten voneinander, wodurch die \enquote{Silos} immer höher werden. Unterschiedliche Bedürfnisse müssen nicht zu unterschiedlichen Technologien führen. 
-%
 \paragraph{Grundlegendes Re-Design}
 \label{ansatz:modularisieren}
 \citet{Bussmann2006} nennt zwei Wege für den Ersatz und grundlegenden Re-Design von Kernsystemen:
@@ -394,26 +450,7 @@ Verallgemeinert könnte der Ansatz aus \cite[S.5]{Gupta:2017}\footnote{Vgl. Kap.
     \item Anwendungen schrittweise entkernen, erneuern und modularisieren und funktionale Anforderungen konsolidieren
     \item Kernsysteme durch völlig neue, selbst entwickelte Applikationen austauschen oder einsetzen von Standardsoftware
 \end{itemize}
-%
-\paragraph{Relevanz der BaFin Anforderungen für Entwickler}
-Die BaFin Anforderungen \cite{MaRisk:2017, BAIT:2018}, Gängige Sicherheitsstandards \cite{IT-Grundschutz:2020, Disterer2013} und weitere Rahmen sind für Entwickler wichtig, um ihre Verantwortung über die IT-Risiken in Banken und anderen systemrelevanten Betrieben zu verstehen. Insbesondere sind sie für die nachvollziehbarer Entwicklung von Anwendungen und Systemen und für ihren nachhaltigen Betrieb, Überwachung und Überprüfung zu berücksichtigen. Um verwachsene und unflexible Architekturen zu vermeiden sollten Entwickler, im Bereich der Anwendungen, die interne Prozesse unterstützen \cite{Bussmann2006}, sich mit diesem Thema auseinandersetzen.
 
-Aus Sicht der Entwicklung im Bereich der Change-Prozesse wird bezüglich der Einschränkungen gerne der Finger auf die regulatorischen Anforderungen und Betrieb gezeigt und die größtmögliche Freiheit beansprucht. Beim Durchleuchten der Einschränkungen für Veränderungen aus verschiedenen Perspektiven fällt auf, dass die konservative Haltung des IT-Betriebs und der Regulatorik eine valide Berechtigung, gerade im Finanzwesen hat. Die Anforderungen selbst sind trotzdem flexibel gestaltet und bieten einen Ermessensspielraum. Neben den externen Auslöser, die Unternehmen aufgrund von Disruption und Diskontinuität zu Veränderungen zwingen \cite{Gupta:2017, Fernandez:2020} existiert die IT-Strategie als interner Auslöser \cite{BAIT:2018, Alt2017}, dessen Verantwortung in erster Linie die Geschäftsleitung unterliegt \cite{BAIT:2018}.
-
-Neben den Leistungsansprüchen sollten die Sicherheitsansprüche für Veränderungen im Vordergrund stehen. Die Implementierung von neuen Technologien wirft bei wesentlichen Veränderungen viele Compliancefragen auf \cite{MaRisk:2017}. Diese hängen mit den Sicherheitsansprüchen zusammen und sind unvermeidbar, können aber durch eine Effizienzsteigerung zu einer Stärke werden.
-
-Wegen befürchteten aufwändigen Maßnahmen sollte die Durchführung von wesentlichen Veränderungen nicht entmutigt werden. Die Maßnahmen haben sich dem Schutzbedarf von kritischen Prozessen und Daten zu richten \cite{MaRisk:2017, BAIT:2018}. Es wäre daher eine Selbstbeschränkung die Maßnahmen aufgrund eines mangelnden Verständnisses der Regulatorik zu pauschalisieren. Ein \enquote{Schwarz-Weiß} Denken als Folge zum Bestehen von Prüfungen oder die Umsetzung des Trugschlusses \enquote{Security through Obscurity} sind zu vermeiden. Eine Pauschalisierung der Maßnahmen des Risikomanagement könnte eine \enquote{Schatten-IT} \cite[S. 104]{Dorschel2018} erzeugen, weil beispielsweise die Katalogisierung der \ac{IDV} Anwendungen \cite{BAIT:2018} befürchtet und in Folge vermieden werden.
-
-Die Change-Prozesse haben sich zuerst selbst zu optimieren, bevor sie den ohnehin konservativen Betrieb optimieren. Möglich wäre eine zweigleisige Strategie, in der Entwickler und Geschäftsleitung eng zusammenarbeiten.
-
-\paragraph{Idee für ein innovatives Risikomanagement}
-Die von Disterer beschriebenen Probleme im Betrieb von Anwendungen durch die mangelnde Beachtung von nichtfunktionalen Anforderungen und die Einführung von Quality Gates \cite{mci/Disterer2011} kann hierbei auf Probleme für die internen Kontrollverfahren ausgeweitet werden. Eine Koordination zwischen Entwicklung und Betrieb sollte das IT-Risikomanagement miteinbeziehen. Dabei darf die Geschwindigkeit des Entwicklungs- oder Integrationsprozesses nicht beeinträchtigt werden. Die Schnelligkeit hat bei der Beantwortung von Compliancefragen eine wichtige Rolle. Entwickler könnten zuerst die Prozesse des IT-Risikomanagements optimieren und automatisieren, um sich Handlungsfreiheit für Innovation und wesentlichen Veränderungen innerhalb der Organisation zu schaffen. Sie sollten in das Risikomanagement integriert werden. Ein Entwickler aus einem anderen Projekt könnte als Compliance- und Risikoverantwortlicher parallel wichtige Compliancefragen auf technischer Ebene schnell überprüfen und vorab beantworten. Dadurch könnte unter Vorbehalt schon mit neuen Technologien und Methoden an Lösungen gearbeitet werden oder Veränderungen in Gang gesetzt werden. Um einer Disruption zu begegnen ist das Risiko von verschwendetem Aufwand in Kauf zu nehmen, um sich eine Anpassungs- und Reaktionsfähigkeit zu schaffen, die geschäftskritisch ist.
-
-\paragraph{IT als Kernkompetenz} 
-\citet{Bussmann2006} sehen die IT als Kernkompetenz. IT-Anwendungen unterscheiden sich in zwei Bereiche, in welcher Technologietrends zu innovativen Lösungen führen. 
-Neben den Anwendungen für den Dialog mit Kunden sind es Anwendungen zur Steuerung und Unterstützung von internen Prozessen.
-
-Daraus wird klar, dass die IT eine wichtige Rolle für Innovationskraft spielt. Ihre wesentliche Funktion rührt aus der Effizienzsteigerung \citet{Gupta:2017} und Automatisierung \cite{Alt2017}.
 
 \subsection{Transformationsfähigkeit als Prinzip}
  
