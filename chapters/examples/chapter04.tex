@@ -1,77 +1,68 @@
-\chapter{Veränderungsprozesse in Organisationen}
-Dieses Kapitel analysiert die Einflüsse aus den Rahmenbedingungen für Veränderungsprozesse der Institute und trägt kontinuierlich zur Findung der Ursachen der genannten Probleme und Ansätze für ihre Lösung bei. Der \emph{Design-Thinking} Prozess wird hierbei als iterative Innovationsmethode für Ideen, Prototypen und kontinuierlicher Evaluierung verwendet. Daher bauen die nachfolgenden Abschnitte aufeinander auf und sollen somit zu einer kontinuierlichen Verbesserung beitragen.
+\chapter{Innovations- und Transformationsprozesse}
+Dieses Kapitel analysiert die Einflüsse aus den Rahmenbedingungen für Veränderungsprozesse der Institute und trägt kontinuierlich zur Findung der Ursachen der genannten Probleme und Ansätze für ihre Lösung bei. Der \emph{Design-Thinking} Prozess wird hierbei als iterative Gestaltungsmethode für Ideen, Prototypen und kontinuierlicher Evaluierung verwendet. Daher bauen die nachfolgenden Abschnitte aufeinander auf und sollen somit zu einer kontinuierlichen Verbesserung beitragen und in ihrer letzten Ebene ausgeliefert werden.
 
-\section{Innovation und Transformation}
+\section{Einflüsse und Kräfte der Innovation}
+\citet{Ganswindt2006} und \citet{Koch2016} identifizieren bereits, dass das \ac{ITM} nicht in der Lage ist die Maßnahmen für eine Transformation zu priorisieren.
+Die gegenseitigen Einflüsse sind ineinander verwachsen und es werden häufig zu erst die Symptome bekämpft (Anh.\ref{appendix:docker}, Kap. \ref{jenkins:skalierung}).
 
-\cite{Ganswindt2006} und \cite{Koch2016} identifizieren bereits, dass das \ac{ITM} nicht in der Lage ist die Maßnahmen für eine Transformation zu priorisieren.
-Die gegenseitigen Einflüsse sind ineinander verwachsen und häufig werden zu erst die Symptome bekämpft (Anh.\ref{appendix:docker}, Kap. \ref{jenkins:skalierung}).
-
-\paragraph{einschränkende Faktoren zusammengefasst}
+\paragraph{Komponenten der Legacy-IT}
 \label{einschr:assets}
-Aufgrund dieser Verwachsungen wird in der folgenden Auflistung eine grobe Lokalisierung der Einschränkungen vorgenommen:
+Aufgrund dieser Verwachsungen wird in der folgenden Auflistung eine grobe Lokalisierung und Zusammenfassung vorgenommen:
 \begin{itemize}
-    \item \textbf{Organisation:} tiefe Silos \cite{Gupta:2017}, Schatten-IT \cite{recht/Bornemann2018}, Abhängigkeiten, Handlungsunfähigkeit, Redundanzen
-    \item \textbf{IT-Architektur:} Komplexität \cite{Brockhoff2006}, steigende Anforderungen \cite{Brockhoff2006}, Kosten für Eigenentwicklung \cite{Gupta:2017}, Proprietäre Anwendungen \cite{Bussmann2006}
-    \item \textbf{Regulatorik:} \ac{IDV} Katalogisierung\cite{recht/Bornemann2018}, fehlende Präzisierung, steigende Anforderungen,
+    \item \textbf{Organisation:} tiefe Silos \cite{Gupta:2017}, Schatten-IT \cite{recht/Bornemann2018}, Abhängigkeiten, Handlungsunfähigkeit, Redundanzen, mangelnde Priorisierung, langsame Prozesse
+    \item \textbf{IT-Architektur:} Komplexität \cite{Brockhoff2006}, steigende Anforderungen \cite{Brockhoff2006}, Kosten für Eigenentwicklung \cite{Gupta:2017}, Proprietäre Anwendungen \cite{Bussmann2006}, veraltete Systeme, mangelnde Skalierbarkeit, Legacy-IT
+    \item \textbf{Regulatorik:} \ac{IDV} Katalogisierung\cite{recht/Bornemann2018}, fehlende Präzisierung, steigende Anforderungen
 \end{itemize}
 
-\citet[Kap. 2.2]{Alt2017} erklären die Abläufe in Folge einer Innovation. Die Abbildung \cite[Abb. 2.1]{Alt2017} beschreibt einen Innovationsverlauf als eine \emph{S-Kurve} \cite{Ganswindt2006}, die in Folge mehrerer Innovationen gesamtheitlich betrachtet einen disruptiven Verlauf zeigen. Darunter liegt die Adaptionskurve, die als die Ableitung der Innovationskurve erscheint. 
+Es fällt auf, dass es erheblich schwierig ist die Einschränkungen für eine Transformation zu faktorisieren. Es ist weitaus einfacher direkte Gegenmaßnahmen auf die beobachtete Einschränkung vorzuschlagen oder antreibende Eigenschaften wie Agilität zu fordern. Daher werden die antreibenden Faktoren nachfolgend betrachtet.
+
+\subsection{Innovationsverlauf als disruptive S-Kurven}
+\citet[Kap. 2.2]{Alt2017} erklären die Abläufe einer Innovation. Die Abbildung \cite[Abb. 2.1]{Alt2017} beschreibt einen Innovationsverlauf als eine \emph{S-Kurve} \cite{Ganswindt2006}, die in Folge mehrerer aneinander gereihte Innovationen gesamtheitlich betrachtet einen disruptiven Verlauf mit Sprüngen zeigen. Darunter liegt die Adaptionskurve, die als die Ableitung der Innovationskurve erscheint. 
+
+Einschränkenden Faktoren, die in Banken beobachtet werden, könnten auf dem ersten Blick als Faktor der Adaptionskurve in \cite[Abb. 2.1]{Alt2017} zugeordnet werden und die Adaption beschränken. Demgegenüber stehen die zu erarbeitenden Gegenmaßnahmen zur Lösung des Problems. Instinktiv können einige Einschränkungen, die eine Eigenschaft darstellen negiert werden. Komplexität wird beispielsweise zu Nachvollziehbarkeit. Die Meisten benannten Einschränkungen sind jedoch keine Effekte, die die Innovationskraft beeinflussen. Sie beeinflussen aber die bevorstehende Transformation. 
 \medskip
 \\
-Einschränkenden Faktoren, die in Banken beobachtet werden, könnten als Faktor der Adaptionskurve in \cite[Abb. 2.1]{Alt2017} zugeordnet werden. Demgegenüber stehen die zu erarbeitenden Gegenmaßnahmen zur Lösung des Problems.
+Innovationen unterliegen kreativen Prozessen \cite[S.14]{Alt2017}, weswegen eine kreative Methode sich für ihr Verständnis eignen könnte. Gerade der \emph{Design-Thinking} Prozess sieht die iterative Gestaltung und Evaluierung von Prototypen vor. Dadurch können Zusammenhönge untersucht werden und der Lösungsansatz kann ständig angepasst werden.
 \medskip
 \\
-Hierbei fällt auf, dass die als Faktor wahrgenommenen Einschränkungen aus den Rahmenbedingungen in diesem Kapitel zwischen Zuständen und ihren Eigenschaften unterschieden werden können. Daher sind einige Einschränkungen Rahmen, die einen Zustand enthalten. Ihre negativen Eigenschaften sind hierbei die Faktoren, welche die Adaptionskurve hemmen könnten. Es macht im ersten Blick durchaus Sinn, dass die Einführung einer innovativen Technologie 
-\medskip
-\\
-In einem ersten Rückblick, zwischen den untersuchten Maßnahmen und dem Innovationsverlauf in \cite{Ganswindt2006, Alt2017} kann folgendes festgestellt werden.
+In folge wurde Abbildung \ref{fig:digit-trans} in mehreren Iteration der Syntheseschritte \enquote{ideate-prototype-testing} aus dem Design-Thinking Prozess (Kap. \ref{def-design-thinking}) mithilfe von den Punkten aus \cite[S. 14]{Alt2017} und dem erarbeiteten Rahmen in Kap. \ref{ch:background} generiert.
+%
 
-
-\begin{itemize}
-    \item Das Problem besteht in der \emph{Transformationsfähigkeit} eines Unternehmens. 
-    \item Um diese zu steigern müssen Maßnahmen ermittelt werden, welche die Amplitude der Adaptionskurve \cite[Abb. 2.1]{Alt2017} \emph{kontinuierlich \cite{Bussmann2006}} aufrecht erhalten. 
-\end{itemize}
-
-\subsection{Prototyp zur Regelung von Innovation}
-
-\paragraph{Innovationsverlauf}
-Die Einflüsse im Zusammenhang mit Innovation könnten folgendermaßen klassifiziert werden:
-\begin{enumerate}
-    \item \textbf{Impulse} für einen bevorstehenden Transformationsprozess. Für Veränderung werden Impulsgeber benötigt wie zum Beispiel Technologien \cite{Bussmann2006, Gupta:2017}. Der Impuls kann als die Innovation selbst gesehen werden. Aus der Ableitung der Adaptionskurve \cite[Abb. 2.1]{Alt2017} wird deutlich, dass der Hochpunkt der Adaption mit der Auswirkung oder Effektivität der Innovation korreliert.
-    \item \textbf{Auslöser} für die Klassifizierung der Innovation. Sie ist für die Entscheidung über die Maßnahmen gegenüber den Impulsen wichtig.
-    \item \textbf{Parameter} für die Antizipation der \emph{bevorstehenden} Transformation. \emph{Bevorstehend} impliziert auch eine Unvermeidbarkeit, die sich aus disruptiven Eigenschaften einer Innovation ergibt \cite{Fernandez:2020, Gupta:2017}
-    \item \textbf{Antriebe} als Faktoren, die die \emph{bevorstehende} Transformation begünstigen. Sie drücken möglicherweise die Innovationskraft oder Effektivität der Organisation aus.
-\end{enumerate}
-Die höchstmögliche Transformationsfähigkeit wäre mit der geringsten Differenz zwischen der \emph{angestrebten} Adaptionskurve \cite[Abb. 2.1]{Alt2017} und der Transformationsfähigkeit möglich.
-
-\paragraph{Regelung der Transformation}
-Veränderungen unterliegen kreativen Prozessen \cite[S.14]{Alt2017}, weswegen eine kreative Methode sich für ihr Verständnis eignen könnte. Gerade der \emph{Design-Thinking} Prozess sieht die iterative Gestaltung und Evaluierung von Prototypen vor. Dadurch können Zusammenhönge untersucht werden und der Lösungsansatz kann ständig angepasst werden.
-\medskip
-\\
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=1.0\textwidth]{gfx/digital-transformation-lifecycle-by-selim3.PNG}
- \caption{Innovationsverlauf und Regelung der Transformation (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})\label{fig:digit-trans}
+ \caption{Innovationsverlauf und Regelung einer Transformation (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})\label{fig:digit-trans}
  }
 \end{figure}
+%
+\paragraph{Beschreibung Innovationsverlauf}
+Ein Innovationsprozess setzt auch einen Auslöser voraus. Dieser kann kontrolliert anhand einer Strategie gesetzt werden oder durch äußere Einflüsse unkontrolliert in Form einer Disruption oder Diskontinuität. \cite{Fernandez:2020} des aktuellen Zustands eindringen. Sie Zeigen sich als Impuls, die Bewegungen anstoßen.
+Weitergeführt werden in (Abb. \ref{fig:digit-trans}) die Antriebe der Innovation beschrieben. Diese steigern die Innovationskraft und wirken gegen die Widerstände, genannt Einschränkungen. Die Antriebe sind hierbei in Form von Anforderungen nur ein Soll-Zustand der Organisation. Sie ermitteln sich aus der Last der Legacy-IT. 
+
+\paragraph{Ursprung der Idee}
+Der Begriff der antreibenden und einschränkenden Faktoren generierte in Zusammenhang mit dem Transformationsziel der heutigen IT-Architekturen hin zu einer Cloud-Architektur die Idee von einem Heißluftballon als Metapher für die sich transformierende Organisation.
+
+\paragraph{Auswirkung auf die Transformation}
+
+Wird das ganze mit einem entsprechenden physikalischen Zusammenhang betrachtet scheint es sofort ersichtlich, dass geplante Transformationen mit Gegengewichte belastet werden. Der Arbeitsaufwand für die Transformation steigt exponentiell, je schwergewichtiger die Organisation ist. Veränderungsprozesse oder Transformationen können nicht mit linearen Metriken geplant werden. Daher entsteht auch das Problem von exponierenden Budgets in Anpassungsprojekten.
 \medskip
 \\
-Abb. \ref{fig:digit-trans} ist aus der Zusammenfassung von antreibenden und einschränkenden Faktoren entstanden. Der Begriff der antreibenden und einschränkenden Faktoren generierte in Zusammenhang mit dem Transformationsziel der heutigen IT-Architekturen hin zu einer Cloud-Architektur die Idee von einem Heißluftballon als Metapher für die sich transformierende Organisation.
-
-Zu antreibenden Faktoren für Veränderungen wurden weitere Kategorien aus den Ergebnissen dieses Kapitels ergänzt. Die Antriebe sind hierbei ein Soll-Zustand, der eine 
-
-Ein Veränderungsprozesse oder Transformation beginnt nicht allein mit dem Treibstoff. Der Prozess setzt einen Funken als Auslöser voraus, um ihn zu beginnen. Dieser kann kontrolliert anhand einer Strategie gesetzt werden oder durch äußere Einflüsse unkontrolliert in Form einer Disruption oder Diskontinuität \cite{Fernandez:2020} des aktuellen Zustands.
+Um eine Transformation zu planen reichen Aufwände und Zeitrahmen nicht aus. Die Transformation bedingt eine Innovationskraft, die sich aus der Wechselwirkung zwischen vorhandenem Antrieb und Einschränkungen ergibt. Sind genügend Antriebe vorhanden und wenig Last kann auch Traktion entstehen.
 \medskip
 \\
+Die Maßnahmen der Legacy-IT in Banken richten sich nach den falschen Metriken und Zielen. Ziel ist es nicht eine Arbeit hinter sich zu bringen. Technologiesprünge werden frequentierter und Strecke immer länger.
+Die aktuellen Maßnahmen richten sich nur nach den Einschränkungen. Diese sind erstmal nicht relevant, da sie sich nicht selbst überwinden können. Für die Innovationskraft spielt der materielle Zusammenhang keine Rolle.
+
+\paragraph{Bildlich weitergeführt}
 Die Analogie eines Heißluftballon für die Regelung der Transformation kann folgendermaßen fortgeführt werden:
 
-Die Veränderungsprozesse im Ballon sind dynamisch und bewegen mit genug Antrieb ein statisches Abbild der Organisation, welcher im Korb des Heißluftballon liegt und einen Zustand der Organisation beschreibt. Der Korb ist in sich geschlossen und beinhaltet den Ablauf und Aufbau des Kerngeschäfts. Dieser trägt zu ihrer Unterstützung viele weitere Funktionen mit, die jeweils die Bewegung der Organisation durch ihre Last exponentiell einschränken. Die Bewegung kann auf zwei Arten beschleunigt werden. Der Antrieb wird erhöht oder ein Teil der Einschränkungen abgeworfen. Sie kann nicht gesteuert werden, wodurch externe Einflüsse sie stark beeinflussen können. Das Objekt gleitet in diesem hierbei im Strom einfach mit. Beim Fliegen das Gewicht des Heißluftballon (Abb. \ref{fig:digit-trans}) eine größere Rolle wie ihr Antrieb. Mit zunehmendem Gewicht steigt der Aufwand exponentiell.
+Die Kräfte im Ballon sind dynamisch und bewegen mit genug Antrieb ein statisches Abbild der Organisation, welcher im Korb des Heißluftballon liegt und einen Zustand der Organisation beschreibt. Der Korb ist in sich geschlossen und beinhaltet den Ablauf und Aufbau des Kerngeschäfts. Dieser trägt zu ihrer Unterstützung viele weitere Funktionen mit, die jeweils die Bewegung der Organisation durch ihre Last exponentiell einschränken. Die Bewegung kann auf zwei Arten beschleunigt werden. Der Antrieb wird erhöht oder ein Teil der Einschränkungen abgeworfen. Sie kann nicht gesteuert werden, wodurch externe Einflüsse sie stark beeinflussen können. Das Objekt gleitet hierbei im Strom einfach mit.
 \medskip
 \\
 \paragraph{Lehren aus Docker}
 Ein statisches Abbild mit Prozessbeschreibungen und Ausführung als eine in sich geschlossene Einheit ist aus der Virtualisierung von Systemen bekannt. Mit zunehmender Automatisierung der Geschäftsprozesse finden sich auch zunehmende Gemeinsamkeiten zwischen Organisationen und IT-Systemen. 
 
-Best-Practices zur Beschreibung von Images mit Docker könnten als Inspiration für Organisationen dienen. Besonders das Minimalisieren von Images und Konzepte wie Kubernetes zur flexiblen Skalierung und Orchestrierung von ganzen System könnten als Idee für eine flexible und skalierbare Orchestrierung von Veränderungen für die Organisation dienen, um ihre Transformation zu automatisieren. Der schmerzvolle Rollout bei wesentlichen Veränderungen in großen Organisationen könnte in eine vollautomatisierte Orchestrierung umgewandelt werden.
+Best-Practices zur Beschreibung von Images mit Docker könnten als Inspiration für Organisationen dienen. Besonders das Minimalisieren von Images durch schlanke und funktionale Ebenen sowie Kubernetes zur flexiblen Skalierung und Orchestrierung von ganzen System könnten als Idee für eine flexible und skalierbare Orchestrierung von Veränderungen für die Organisation dienen, um ihre Transformationsfähigkeit zu erhöhen. Der schmerzvolle Rollout bei wesentlichen Veränderungen in großen Organisationen könnte in eine vollautomatisierte Orchestrierung umgewandelt werden.
 Agile Prinzipien in der Kultur wären das Docker und ein neues effektives Change-Management das Kubernetes des Managements.
 
 Nach einer solchen zukünftigen Entwicklung wäre die Idee von \emph{Development as a Service} \ref{Disruption:DaaS} mit entsprechenden eingespielten Abläufen durchaus realistisch. Andere disruptive Entwicklungen sind auch nicht ausgeschlossen. Umso wichtiger ist es einen Weg zu finden die Digitale Transformation zu beherrschen.
@@ -82,17 +73,18 @@ Nach einer solchen zukünftigen Entwicklung wäre die Idee von \emph{Development
 %
 
 
+\section{Frage an das Management: Change oder Run?}
 \paragraph{Transformationsfähigkeit als Prinzip}
-Abb. \ref{fig:digit-trans} stellt für den Umgang mit wesentlichen Veränderungen ein erstes Prototyp dar. Sie impliziert, dass antreibende und einschränkende Faktoren erhebliche Einflüsse für die bevorstehende Transformation haben. Die Abbildung beschreibt möglicherweise einen Zustand vor einer bevorstehenden Transformation.
+Abb. \ref{fig:digit-trans} stellt für den Umgang mit wesentlichen Veränderungen ein erstes Prototyp dar. Die Abbildung beschreibt möglicherweise einen Zustand vor einer bevorstehenden Transformation.
 
-Daher dient sie als Grundlage, um Anforderungen für einen innovativen Soll-Zustand zu simulieren. Ein innovativer Soll-Zustand der Organisation würde eine höchstmögliche Transformationsfähigkeit antreiben. 
+Daher dient sie als Grundlage, um Anforderungen für einen innovativen Soll-Zustand zu simulieren. Ein innovativer Soll-Zustand der Organisation würde eine höchstmögliche Transformationsfähigkeit bedeuten.
 \medskip
 \\
 Gleichzeitig zeigt sie, dass mit Anforderungen und Kenntnissen über Einschränkungen eine bevorstehende Transformation nur geregelt werden kann und die Richtung nicht absehbar ist. Gas geben ohne zu lenken ist für FinTechs und Start-ups kein großes Problem, da aufgrund ihrer kleinen Größe die Auswirkungen von Veränderungen einfacher analysiert werden können.
 
 Für die größeren, etablierten Institute gilt ein erhöhter Schutzbedarf \cite{recht/Bornemann2018} und dadurch zusätzliche Maßnahmen für die Kontrolle von operationellen Risiken \cite{MaRisk:2017, BAIT:2018}. Diese müssen gezwungenermaßen sich neu ausrichten \citet{Bussmann2006, Gupta:2017}, indem sie ihre hohe Masse in Bewegung versetzen. Analog impliziert es eine Unkontrollierbarkeit von möglichen Problemen und Risiken.
-
-\subsection{Frage an das Management: Change oder Run?}
+\medskip
+\\
 \citet[11.4.1]{Koch2016} fordern für ein Management der Transformation:
 \begin{quote}
     \enquote{Erstens ist zu akzeptieren, dass der
@@ -120,7 +112,7 @@ Beim Durchleuchten der Einschränkungen aus verschiedenen Perspektiven fällt au
 \paragraph{Gestaltungsmethoden für IT-Management}
 Neben externe Auslöser von Innovation, die Unternehmen aufgrund von Disruption und Diskontinuität zu Veränderungen zwingen \cite{Gupta:2017, Fernandez:2020} existiert die IT-Strategie als interner Auslöser \cite{BAIT:2018, Alt2017}, dessen Verantwortung in erster Linie der Geschäftsleitung unterliegt \cite{BAIT:2018}. Daher sollten zu erst die Veränderungsprozesse optimiert werden. Eine klare IT-Strategie optimiert sich selbst bevor Forderungen gestellt werden. Dies wird durch Gestaltungsmethoden wie \emph{Design-Thinking} hervorgehoben, indem sie die Quellen zu fremden Problemen zuerst auf sich selbst richten \cite{yüksel:digit}. Gestaltungsmethoden wie Design-Thinking werden gerade für Innovationsprozesse und für das \ac{ITM} empfohlen \cite{Alt2017, Koch2016}. Zudem sollte die in \citet[AT 8.2]{MaRisk:2017} geforderte Analyse und Beteiligung bei wesentlichen Veränderungen schon in den Gestaltungsprozessen stattfinden \cite{Dorschel2018}. Eine Mitgestaltung nach agilen Methoden (Abb. \ref{fig:devops}) ist auch im IT- und Risikomanagement erforderlich, um effiziente Abläufe und Maßnahmen zu schaffen.
 
-\paragraph{Forderung eines effektiven Veränderungsmanagements}
+\section{Forderung eines effektiven Veränderungsmanagements}
 Für die Vorhersehbarkeit von Auswirkungen ist ein kontrollierter Umgang mit Veränderungsprozessen erfordert. Um wesentliche Veränderungen kontinuierlich zu ermöglichen muss die Analyse ihrer Auswirkungen \cite{MaRisk:2017} ebenfalls effektiv sein. Die Vorhersehbarkeit der Auswirkungen von Veränderung sollte nicht nur aufgrund der Regulatorik erfüllt werden. Sie ist als eine Voraussetzung für eine klare Sicht und Zielorientierung für die Transformation anzustreben.
 \medskip
 \\
@@ -145,19 +137,16 @@ Die Frage zu einem Umgang mit kontinuierlichen Veränderungen betrifft das Verä
 \medskip
 \\
 Daher wird klar warum das Modell aus Abb. \ref{fig:digit-trans} nicht zufriedenstellend genug ist. Sie identifiziert anhand der Antreiber und Einschränkungen viele Anforderungen aus \cite[Tab. 11.1]{Koch2016} aus den Bereichen Innovations- und Gestaltungsfähigkeit. Für ein Paradigmenwechsel großer Organisationen spielt die Transformationsfähigkeit die entschiedenste Rolle.
- \paragraph{Ökologisches Veränderungsmodell: IDTA-Modell}
- \begin{figure}[htbp]
- \centering
- \includegraphics[width=1.0\textwidth]{gfx/digital-transformation-lifecycle-by-selim4.PNG}
- \caption{Transformations-Lebenszyklus: Kontinuierlicher Veränderungsprozess nach Innovate-Design-Transform inklusive Accumulate (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})\label{fig:digit-trans-idt}
- }
- \end{figure}
 
-In Anlehnung am DevOps Lebenszyklus \ref{fig:devops} \cite{Alt2017} wurde ein kontinuierliches Konzept für die gezielte Steuerung von Innovationsabläufen ausgearbeitet \cite{Ganswindt2006}.
+\section{Ökologisches Veränderungsmodell der IT}
+\label{idta-modell-chap}
+In Anlehnung an das  \emph{innovate-design-transform} Paradigma von \citet{Koch2016}, und an DevOps wurde ein kontinuierliches Konzept für die gezielte Steuerung von Innovationsabläufen \cite{Ganswindt2006} ausgearbeitet.
 
-Während das DevOps Lebenszyklus \cite{Alt2017} sich auf einen kontinuierlichen Prozess für die Optimierung eines IT-Produkts oder IT-Service bezieht, soll diese Abbildung \ref{fig:digit-trans} sich auf einen kontinuierlichen Prozess für die Optimierung der IT-Organisation beziehen, indem die Verbesserungsprozesse selbst in einem kontinuierlichen Prozess ihr Ergebnis ständig verbessern können.
+Während das DevOps Lebenszyklus \cite{Alt2017} sich auf einen kontinuierlichen Prozess für die Optimierung eines IT-Produkts oder IT-Service bezieht, soll diese Abbildung \ref{fig:digit-trans} sich auf einen kontinuierlichen Prozess für die Optimierung der IT-Organisation beziehen, indem die Veränderungsprozesse selbst in einem kontinuierlichen Prozess ihr Ergebnis ständig verbessern können.
+\medskip
+\\
  
-\subsection{Vom Innovationsverlauf zum ökologischen Innovationsmotor}
+\subsection{Vom Innovationsverlauf zum Innovationsmotor}
 Der für Abb. \ref{fig:digit-trans} ausgearbeitete Innovationsverlauf stellt einen ersten Zusammenhang für die schwer zu überblickenden und zu beherrschenden und Abläufe, wodurch Innovationsprozesse in Gang gesetzt werden. Die Impulse, welche die Ausgaben der schwierig zu erkennenden fremden Abläufe sind konnten dadurch grob klassifiziert werden. Das Innovationsmanagement hat zu erkennen, dass der Innovationsprozess extern bereits gestartet wird und die Ausgaben der externen Abläufe die Organisation durchdringen. Für die Beherrschbarkeit der unvermeidbaren Innovationseinflüsse hat das Innovationsmanagement sich zur Aufgabe machen die externen Impulse wahrzunehmen und die Abläufe abzufangen und gegebenenfalls zu übernehmen.
 Dabei ist es von besonderer Bedeutung das Risikomanagement in diesen Überwachungsprozess mit gestalterischen Tätigkeiten miteinzubeziehen. Ein sich aufbrauender Veränderungsprozess macht sich mit kleinen Impulsen bemerktbar, bevor es disruptiv in die Athmosphäre der Organisation eindringt. Die Gefahr der Disruption muss mitigiert werden, indem die Innovation gekapert wird. 
 \medskip
@@ -170,10 +159,47 @@ Daher hat die Gestaltung des Innovationsmanagements Implikationen auf das Risiko
 Disruptive Technologien greifen den Markt an \cite{Fernandez:2020} und somit auch das Geschäftsmodell der etablierten Institute (\ref{Disruption:Blockchain}) und sind daher ein operationelles Risiko. Diese Tatsache ist seit längerem bekannt \cite{Ganswindt2006} und wird nicht berücksichtigt.
 \medskip
 \\
+\subsection{Forderungen zu MaRisk}
 Aufgrund der Risikosituation in Zeiten der Digitalen Transformation wird zu den \ac{MaRisk} \cite{MaRisk:2017} im Rahmen der Ermessensfreiheit der Institute folgende Maßnahmen gefordert:
 \begin{enumerate}
-    \item Die Geschäftsleitung hat in der Gestaltung der Geschäftsstrategie die IT-Strategie als Kernkompetenz einzubeziehen
     \item Die IT-Strategie hat die Transformationsfähigkeit des Instituts sicherzustellen und Innovationsprozesse kontinuierlich zu verbessern
-    \item Das Risikomanagement ist in das Innovationsmanagement einzubeziehen
     \item Das Risikomanagement hat Impulse aus Innovationsverläufen zu überwachen und gegen Disruptionen ein Notfallkonzept für Transformationsprozesse auszuarbeiten. Insbesondere hat sie die Aufgabe eine Disruption zu erkennen und eine Transformation aktiv vorzubereiten.
+\end{enumerate}
+
+\subsection{Ökologie des IT-Betriebs}
+Das \emph{innovate-design-transform} Paradigma von \citet{Koch2016} wurde um den Punkt Accumulate erweitert, um die Errichtung von Anlagen \cite{Ganswindt2006} miteinzubeziehen. Gerade dieser Schritt erzeugt ein Kontinuitätsprinzip, dass eine Steigerung der Transformationsfähigkeit vorsieht. Accumulate steht hierbei für Wertschöpfung. Sie kann auch für das Sammeln von Daten und Erkenntnissen stehen. Dieser Schritt ist ein Beitrag für einen ständigen Verbesserungsanspruch. Die Bereiche Entwicklung und Produktion wurden hierbei umbenannt. Sprint steht für die Agile Entwicklung. Die Produktion wurde in Plant umbenannt, um eine Nachhaltigkeit der IT-Architektur vorauszusetzen. Produktion bezeichnet die industrialisierte Legacy-IT, die abgeschafft werden soll durch ein ökologisches System, dass ein Verbesserungsanspruch an sich selbst stellt und den Eintritt von Schadstoffen vermeidet. Schadstoffe sind hierbei operationelle Risiken, die besonders die Schwächen der 
+
+\subsection{Anforderungen für Veränderungsprozesse}
+Die nachfolgenden antreibenden Faktoren betreffen die Fähigkeit der IT zur Umsetzung ihrer Veränderungs- oder \enquote{Change-} Prozesse.
+
+\begin{enumerate}
+    \item \textbf{Offenheit \cite{Brockhoff2006}}
+    
+    \item \textbf{Zusammenarbeit}
+
+    \item \textbf{Standardisierung} 
+    Dieser Punkt umfasst Anwendungen, Systeme und Prozesse. Die Verwendung von gängigen sowie standardisierten Lösungen bringt eine Reihe von Vorteilen. Sie erhöht allen voran die Nachvollziehbarkeit der Systeme und sorgt für eine Effizienzsteigerung von Prozessen \cite{Strietzel2018, Bussmann2006, Alt2017}. 
+    
+    Beteiligte, insbesondere die Prüfer der Bankaufsicht und die interne Revision, können so mit einem Grundwissen über die IT die meisten Systeme auf Anhieb verstehen. Die Implementierung von \emph{Sicherheitstandards \cite{IT-Grundschutz:2020, Disterer2013}} ist hierbei besonders wichtig und bietet eine Grundlage für die Einhaltung der regulatorischen Vorgaben \cite{MaRisk:2017, BAIT:2018}.
+    
+    Der Einsatz von Standardsoftware führt zu einem effizienteren Ablauf in ihrer Wartung und Weiterentwicklung \cite{Bussmann2006}. Die Komplexität von operativen Systemen schränkt die Einführung von Standardsoftware jedoch ein \cite[S.27]{Bussmann2006}. Das Prinzip der \emph{Standardisierung} in Verbindung mit \emph{Offenheit} ergibt die Verwendung von \enquote{Open-Source} Software, die eine höhere Effizienzsteigerung aufgrund der Wiederverwendbarkeit der Komponenten bezweckt \cite{Brockhoff2006, Gupta:2017}. 
+    
+    Die Einführung von Standardsoftware hat ebenfalls Auswirkungen auf eingespielte Prozesse und die daraus folgenden Einzelentscheidungen beeinflussen in ihrer Summe die Entscheidung für oder gegen den Standard \cite[Tab.1]{Manz2018}.
+    
+    \item \textbf{Trennbarkeit}
+    Dieser Faktor leitet sich aus der Maßnahme der Modularisierung und Entkerung von Systemen \citet{Bussmann2006} ab und ist eine Anforderung aufgrund der Symptome der Abhängigkeit.
+    
+    \item \textbf{Nachvollziehbarkeit}
+    
+    
+    \item \textbf{Automatisierung}
+    Die Automatisierung ist besonders im Bereich der Unterstützungs- und Steuerungsprozesse \cite{Bussmann2006} von besonderer Bedeutung, sodass sich das \ac{ITM} an Innovationsprozessen beteiligen kann. 
+    
+    \item \textbf{Effizienzsteigerung}
+    Die Effizienzsteigerung wirkt sich auf die verwendeten Ressourcen und Zeitaufwand der Prozesse, Systeme oder Anwendungen aus. Dazu zählen auch Kosten- und Personalaufwand. Es stellt sich die Frage in welchen Bereichen eine Effizienzsteigerung am sinnvollsten ist.
+    
+    Die Effizienzsteigerung wird vor allem im Bereich der Veränderungsprozesse \enquote{Change} bezüglich ihres Zeitaufwands erforderlich. Im Bereich der betrieblichen Prozesse \enquote{Run} ist sie primär für den Aufwand der Ressourcen erforderlich.
+    
+    Eine Effizienzsteigerung im Betrieb ermöglicht mehr Mittel für die \enquote{Change} Prozesse \cite{Rausch2006}. Dagegen steht das Prinzip, dass Ressourcen im Gegensatz zu Zeit finanziert und eingekauft werden können. Bevor an Opportunitäten in Form einer strategischen Weiterentwicklung der Produkte \cite{Rausch2006} gedacht wird, sollte die Weiterentwicklung der hierfür vorausgesetzten Veränderungsprozesse berücksichtigt werden. Die Fähigkeit für eine kontinuierliche Anpassung \cite{Bussmann2006, Ganswindt2006} der Produkte wird mit aktuellen Methoden, wie in Abb. \ref{fig:devops} dargestellt, bereits vorausgesetzt \cite{Alt2017}.
+
 \end{enumerate}
