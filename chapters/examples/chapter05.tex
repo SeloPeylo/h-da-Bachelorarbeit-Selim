@@ -13,7 +13,7 @@ Der Design-Thinking Prozess könnte als ein \enquote{Quick-Search} für Innovati
 Sie hinterlässt jedoch viele Artefakte\footnote{Anhang: Docker Images für Jenkins Agenten\label{appendix:docker}} und es Besteht die Gefahr zu divergieren, da sie mit einer erheblichen Geschwindigkeit induktiv vorgeht und auf kontinuierliche Verbesserung der Prototypen beruht. Dadurch entstehen viele Artefakte.
 Für die Qualitätssicherung der Lösung verlangt es einen effizienten Vorgang der Integration der Komponenten und Implementierung einer Lösung mit entsprechenden Methoden. Für eine erste Lösungsrichtung bieten ihre Syntheseschritte durch ständige Iterationen eine schnelle Deduktion. Ergebnisse können entsprechend von einer Innovationsphase in die Entwicklungsphase übergehen, in welchem die Qualitätssicherung in einer separaten Umgebung sichergestellt wird. Agilität ist daher immer mit einer Nutzen-Risiko Analyse verbunden.
 
-\subsection{Von CI/CD zu Change-Management}
+\subsection{Aus CI/CD zu einer nachhaltigen IT}
 Die Anfangssituation aus der \ac{SEU} in Kap. \ref{grundlagen:ci-in-banken} wurde bis zu einer unzumutbaren Hindernissschwelle bearbeitet und erste Lösungsansätze mit gängigen Standards beschrieben. Die vorgeschlagenen Ansätze lösen jedoch nicht den Ursprung des Problems, da sie umfassende Auswirkungen und Anpassungen nach sich ziehen, die eine Transformation der ganzen Organisation fordern. 
 
 Für die Ursache des Problems fand ein Wechsel der Perspektive in Kap. \ref{section:Goldman} zu einem Wettbewerber statt, der eine Transformation bereits durchgemacht hat. Diese Transformation ist als Fallbeispiel von \citet{Gupta:2017} empirisch beschrieben und enthält wiederum verschiedene Stellungnahmen aus der Managementebene.
@@ -28,9 +28,11 @@ Hierfür sind Schritte in \emph{Synthese} eine Datenerhebung \cite[S. 61]{yükse
 Die Opportunitäten durch Goldman Sachs Plattform \cite{Gupta:2017} und der Hintergrund von disruptiven Technologien \cite{Fernandez:2020} wurde zum Anlass genommen Ideen zu formulieren. In Kap. \ref{section:Goldman} wurden weitere Zukunftszustände gestaltet.
 Wichtig ist hierbei, dass ungezwungen so viele Daten wie möglich generiert und erhoben werden. Mit dem richtigen Verständnis aus den vorigen immersiven Schritten kann eine Deduktion nach den Anforderungen des Kunden stattfinden. 
 
-Die vorgeschlagenen Ideen werden daher mit einer anderen Perspektive weiter gefilter. Im Rahmen des Finanzwesens standen den disruptiven Technologien und FinTechs die Regulatorik entgegen.
+Die vorgeschlagenen Ideen werden daher mit einer anderen Perspektive weiter gefiltert. Im Rahmen des Finanzwesens standen den disruptiven Technologien und FinTechs auf dem ersten Blick die Regulatorik entgegen.
 
-Die erhobenen Daten waren anfänglich neue Technologien zur Lösung des Problems und Einschränkungen im Rahmen der IT-Architektur und Regulatorik. Das Problem hierbei ist, dass ab einer gewissen Größe des Unternehmens sie sich gegenseitig voraussetzen. Die Optimierung der Überwachungs- und Steuerungsprozesse erfordert eine agile Architektur, die widerum durch sich selbst eingeschränkt ist. \citet{Ganswindt2006} benennt das Ganze als Henne-Ei Problem, dass an vielen Stellen in unterschiedlichen Formen auftaucht.
+Die erhobenen Daten waren anfänglich neue Technologien zur Lösung des Problems und Einschränkungen im Rahmen der IT-Architektur und Regulatorik. Die regulatorischen Forderungen an sich sind keine Einschränkung gegenüber Innovationsverläufen. Die Einschränkungen werden durch die Symptome der diskontinuierlichen Legacy-IT hervorgerufen, da Transformationen nicht durch immaterielle Zustände beschränkt werden können.
+
+Das Problem hierbei ist, dass ab einer gewissen Größe des Unternehmens sie sich gegenseitig voraussetzen. Die Optimierung der Überwachungs- und Steuerungsprozesse erfordert eine agile Architektur, die widerum durch sich selbst eingeschränkt ist. \citet{Ganswindt2006} benennt das Ganze als Henne-Ei Problem, dass an vielen Stellen in unterschiedlichen Formen auftaucht.
 \medskip
 \\
 Daher wurde früh erkannt, dass die Ursache in der Transformationsfähigkeit der Organisation liegen könnte. Aus einer gemeinsamen Betrachtung der Sicht der \ac{SEU} \ref{grundlagen:ci-in-banken} und Goldman Sachs \cite{Gupta:2017} spielten hierfür neben regulatorischen Anforderungen als Einschränkung auch die Kultur als Antrieb eine wichtige Rolle.
@@ -57,7 +59,7 @@ Aus diesem Hintergrund wurde ein weiteres Modell erzeugt mit Kontinuitätskonzep
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=1.0\textwidth]{gfx/digital-transformation-lifecycle-by-selim4.PNG}
- \caption{Ökologisches Veränderungsmodell der IT: IDTA-Modell, eine Erweiterung von Innovate-Design-Transform \cite{Koch2016} (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})\label{fig:digit-trans-idt}
+ \caption{Ökologisches Veränderungsmodell der IT: IDTA-Modell, eine Erweiterung von Innovate-Design-Transform \cite{Koch2016} mit Anhäufung von Innovation \cite{Ganswindt2006} (Quelle: eigene Darstellung, Heißluftballon von \citet{maidis_2006})\label{fig:digit-trans-idt}
  } vgl. (Kap. \ref{idta-modell-chap})
  \end{figure}
 
@@ -70,7 +72,11 @@ Es ergibt sich ein Gesamtbild, dass die aufgeführten Faktoren der Veränderungs
 
 Diese leiten sich aus dem gegenwärtigen Zustand ab und beschreiben \emph{Einflüsse} gegen Veränderungsprozesse und haben wesentliche Auswirkungen auf ihren Ablauf. Insbesondere die antreibenden Faktoren für Veränderungsprozesse können als ihre funktionalen Anforderungen gesehen werden.
 
-Kontinuierliche Ansätze wie \emph{DevOps} und \emph{Design-Thinking} helfen dabei die Veränderungsprozesse selbst agil und kontinuierlich zu gestalten. 
+Das IT-Risikomanagement sieht mit ihren Maßnahmen jedoch in Disruptionen die Gefahr. \citet{Fernandez:2020} unterscheiden dabei Disruption und Diskontinuität. Etablierte Organisationen sind gegenüber Disruption Handlungsunfähig. Dabei geht die eigentliche Gefahr aus der Manifestierung von Diskontinuitäten aus. Diskontinuierliche Technologien weisen einen erheblich höheren Widerstand gegenüber der dominanten Technologie auf \cite{Fernandez:2020}. 
+
+Die Diskontinuität ihrer Legacy-IT hat das Finanzwesen als Geisel genommen und das IT-Risikomanagement zu ihrem Helfer gemacht.
+
+Kontinuierliche Ansätze wie \emph{DevOps} und \emph{Design-Thinking} helfen dabei die Veränderungsprozesse selbst agil und kontinuierlich zu gestalten und zu verstehen. Daher hat das IT-Risikomanagement sich nach Innovationsprozessen zu richten, um sich entgegen der Legacy-IT zu bewegen.
 \medskip
 \\
 Darüber hinaus wird deutlich, dass die Informatik weitreichende Kompetenzen verfügt aus dem Zusammenhang heraus Probleme auch aus anderen Bereichen zu lösen. Beginnend von der Ausgangssituation eines vorwiegend technischen Problems haben innovationsorientiere Ansätze weitreichende Implikationen auf ihre nicht-technische Umgebung. Die Abkürzung IT sollte im Sinne einer Organisation künftig nicht für Informationstechnologie stehen sondern für \enquote{Innovation und Transformation}, wodurch es Bezug auf die Eingangs- und Ausgangsströme des Paradigmas \enquote{Innovate-Design-Transform} nimmt. Dazwischen liegt unser Ergebnis, das Akkumulieren als Wertschöpfung.
