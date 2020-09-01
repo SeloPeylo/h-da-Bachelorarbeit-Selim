@@ -36,7 +36,7 @@ Bevor die Opportunitäten in Angriff genommen werden können stellt sich die Fra
 \section{Motivation}
 \label{sec:intro:motivation}
 
-Die nachfolgende Arbeit ist aus der Frage entstanden, wie man die die CI Plattform Jenkins in einer Bank skalierbarer und flexibler gestalten könnte.
+Die nachfolgende Arbeit ist aus der Frage entstanden, wie man die CI Plattform Jenkins in einer Bank skalierbarer und flexibler gestalten könnte.
 
 Anfänglich wurde der Fokus auf CI/CD gerichtet und anschließend Themen wie Cloud-Computing, Container-Orchestrierung und Microservices vorgenommen. Dabei wurde sich mit der Entwicklung von Docker-Images für Jenkins Agenten\footnote{Slave innerhalb einer Master-Slave Konfiguration in Jenkins \cite{Google:GKEJenkins, Pathania2017}} der \ac{CI} Plattform Jenkins beschäftigt. Ziel war hierbei eine flexibel einsetzbare Umgebung zum Ausführen von verteilten Builds\footnote{In diesem Zusammenhang die Erstellung von Software mit dem Build-Tool Maven}.
 \medskip
@@ -98,11 +98,14 @@ Das Problem wird zuerst aus der Sicht der \ac{SEU} definiert und daraus die allg
 Die Arbeit verwendet Schritte aus dem \emph{Design-Thinking} Prozess (Kap. \ref{def-design-thinking}). Daher werden Kap. \ref{ch:background} schon induktiv einfache Ansätze für erste Lösungen ad hoc vorgeschlagen und beschrieben. Dies bezweckt eine frühe Datenerhebung mit Gestaltungsprozessen, sodass Ansätze und Anforderungen von der angenommenen Perspektive heraus vorgeschlagen werden können. Diese können sich somit gegenseitig im Analyseteil ausschließen, zur Filterung vor der Bewertung in Kap. \ref{chapter:evaluation}. In diese fließen anschließend die festgehaltenen Ergebnisse.
 \bigskip
 \\
-Die Arbeit ist unter drei wesentlichen Bereichen gegliedert. 
+Die Arbeit ist unter vier wesentlichen Bereichen gegliedert. 
 Im Bereich Grundlagen (Kap. \ref{chapter:grundlagen}) werden bekannte Probleme und Ansätze aus verwandten Werken zusammengefasst und der aktuellen Stand der Technik dargestellt und daraus erste Ansätze mit gängigen Standards vorgeschlagen. 
 \medskip
 \\
-Im nächsten Bereich (Kap. \ref{ch:background} findet die Untersuchung zu den Rahmenbedingungen der Softwareentwicklungsumgebung in Banken statt. Hierin werden die einschränkenden Faktoren ermittelt. Zusätzlich werden ihre Auswirkungen und Risiken für das Geschäftsmodell untersucht. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung mit aktuellen Technologien und Methoden abgeleitet und erste Lösungsansätze vorgeschlagen. Hierbei wird auf die Regulatorik eingegangen. Im letzten Abschnitt findet eine Synthese der Ergebnisse\footnote{aus dem Design-Thinking Prozess in (Kap. \ref{def-design-thinking})} statt, die anschließend analysiert und nach jeder Iteration kontinuierlich verbessert werden.
+Im nächsten Bereich (Kap. \ref{ch:background} findet die Untersuchung zu den Rahmenbedingungen der Softwareentwicklungsumgebung in Banken statt. Hierin werden die einschränkenden Faktoren ermittelt. Zusätzlich werden ihre Auswirkungen und Risiken für das Geschäftsmodell untersucht. Aus der Literaturrecherche werden mögliche Ansätze für eine angemessene Umgebung für die Softwareentwicklung mit aktuellen Technologien und Methoden abgeleitet und erste Lösungsansätze vorgeschlagen. Hierbei wird auf die Regulatorik eingegangen. 
+
+Im Bereich (Kap. \ref{chap:innovation}) werden Innovations- und Veränderungsprozesse als solche untersucht und analysiert. Dabei
+findet eine Synthese der Ergebnisse\footnote{aus dem Design-Thinking Prozess in (Kap. \ref{def-design-thinking})} statt, die anschließend analysiert und nach jeder Iteration kontinuierlich verbessert werden.
 \medskip
 \\
 Im anschließenden Bereich (Kap. \ref{chapter:evaluation}) findet die Bewertung und Zusammenfassung der Ergbenisse statt. Zuerst wird die Methodik und der Weg zur Lösung der Forschungsfragen rückblickend betrachtet und bewertet. Als nächstes werden die wesentlichen Ergebnisse aus dem vorigen Bereich bewertet, festgehalten und zusammengefasst.

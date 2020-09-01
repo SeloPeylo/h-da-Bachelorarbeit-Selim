@@ -8,6 +8,8 @@
 
 \citet{Ganswindt2006} erklärt die Hintergründe zu Innovation und ihre Bedingungen. Die eigene Innovationskraft wird hierbei als Spiegel der Wachstumschancen eines Unternehmens beschrieben. Ganswindt beschreibt disruptive Technologien als Pflicht für Trendsetter und fordert eine intelligente Produktfolgestrategie und nachhaltiges Portfoliomanagement. Große etablierte Unternehmen stehen dabei im Konflikt den Bestand zu schützen und Disruptionen selbst zu erzeugen. Disruptionen sind hierbei radikale Neuerungen die auch die eigenen Produktreihen angreifen. Das Vorantreiben von disruptiven Technologien setzt eine gewisse Risikobereitschaft, unternehmerischen Weitblick und sowohl technischen, als auch kreatives \enquote{Know-how} voraus. Nach der Entdeckerphase ist es wichtig in eine sorgfältige Nutzen-Risiko-Analyse überzugehen. Als Ziel fordert Ganswindt das immer-weiter Vorantreiben\footnote{vgl. Kontinuitätskonzept an vielen Stellen} der systematischen Suche nach neuen Lösungen und stellt die Frage an welcher Stelle zuerst optimiert werden soll. Zusammenfassend nennt Ganswindt als Mittel der ersten Wahl das Ausrichten unternehmerischen Handels auf die kontinuierliche Entwicklung und Platzierung von marktgerechter Innovation.
 
+\citet{Fernandez:2020} untersuchen die Wechselwirkungen von disruptiven und diskontinuierlichen Technologien gegenüber dominanten sowie entstehenden Technologien aus Sicht der Verhaltensökonomik. Hieraus wird auch das Problem von etablierten Organisationen klar, dass eine Handlungsunfähigkeit gegenüber disruptiven Technologien besteht, obwohl aus disruptiven Technologien eine geringere Gefahr ausgeht als von diskontinuierlichen Technologien. Dazu beschreiben sie, dass diskontinuierliche Technologien gegenüber dominanteren Technologien erheblichen Widerstand aufweisen. Hierbei ist von einem Angriff die Rede mit einem zehnfachen Faktor gegenüber der angegriffenen  dominanten Technologie.
+
 \citet{mci/Disterer2011} beschreibt eine problematische Inbetriebnahme von Anwendungen durch die mangelnde Beachtung von nicht-funktionalen Anforderungen bei der Entwicklung. Hierzu stellt er als Lösungsansatz eine Erweiterung eines ITILv3 Prozesses mit Quality Gates, die als Synchronisationspunkt für die Koordination zwischen Entwicklung und Betrieb dienen. Der Ansatz von Disterer gibt eine Referenz für eine bessere Koordination zwischen Entwicklung und Betrieb und dadurch eine bessere Integration von Komponenten.
 
 \citet{Alt2017} gehen auf die Relevanz von DevOps und weiteren Gestaltungsmethoden für das \ac{ITM} und einer innovationsorientierten IT-Strategie zur Steigerung der Innovationsfähigkeit ein, die sich aus den Kontinuitätskonzepten der Methoden ergeben. Zudem erklären sie den Innovationsverlauf und deuten auf Implikationen für das Innovationsmanagement. Bezüglich DevOps geben sie eine ausführliche Beschreibung der Hintergründe und Übersicht der Methoden.
@@ -31,7 +33,7 @@ Software hat eine Schlüsselrolle für digitale Innovation in allen Bereichen \c
 Die Studie von Gupta und Simonds stellt viele Ansätze vor, mit denen Goldman Sachs erfolgreich neue Geschäftsmodelle entwickelt hat und alte Modelle Strukturen abgeschafft hat. Diese Ansätze könnten als Positivbeispiel für das deutsche Finanzwesen dienen.
 \medskip
 \\
-So entstehen gegenüber etablierten Unternehmen, Technologieunternehmen mit effizienten Geschäftsmodellen. Sie integrieren mit unterstützenden Anwendungen IT und Geschäftsmodell \cite{Bussmann2006}. Im Finanzwesen sind es die sogenannten FinTechs \ref{Disruption:FinTechs}
+So entstehen gegenüber etablierten Unternehmen, Technologieunternehmen mit effizienten Geschäftsmodellen. Sie integrieren mit unterstützenden Anwendungen IT und Geschäftsmodell \cite{Bussmann2006}. Im Finanzwesen sind es die sogenannten FinTechs (Kap. \ref{Disruption:FinTechs})
 
 Zuletzt hat sich die IT vor allem durch einige Schlüsseltechnologien verändert. Für die IT-Architektur hat Cloud-Computing zusammen mit Cloud-Plattformen einen entscheidenden Impuls gegeben. Sie haben IT-Ressourcen abstrahiert. Anwendungen können in kürzester Zeit und in großem Umfang skaliert werden. Software wird dadurch immer mehr als Dienstleistung bereitgestellt und findet sich immer weniger in den Festplatten von lokalen Systemen. Kurze Entwicklungszyklen durch neue und agile Methoden sorgen für eine kontinuierliche Weiterentwicklung der Anwendungen und daher eine kontinuierlichen Implementierungsbedarf in die Produktion. Software wird dadurch in immer kürzeren Abständen und ausgeliefert. Hierzu entstand der Bedarf einer erhöhten Zusammenarbeit zwischen Betrieb und Entwicklung, woraus DevOps entstand. Kontinuitätskonzepte werden daher immer relevanter, sodass Methoden wie \ac{CI} und \ac{CD} zum Standard geworden sind. Gleichzeitig herrscht ein kontinuierlicher Anstieg der Anforderungen an die IT-Architektur \cite{Bussmann2006}, die in unflexiblen Architekturen in einem Engpass münden \cite{Brockhoff2006, Bussmann2006}. Diese Engpässe könnten aufgrund neuer Technologien und Architekturen, wie zum Beispiel Kubernetes, Docker und Microservices gelöst werden. Grundlage hierfür bieten unter anderem gemeinsame Plattformen, wie zum Beispiel eine Cloud. Voraussetzung ist jedoch gerade in großen Betrieben eine strategische Entscheidung zu treffen, da die Lücke zwischen Innovation und Adaption in der Legacy-IT immer größer wird. Diese Entscheidung beeinflusst das ganze Unternehmen als solches.
 
@@ -179,11 +181,6 @@ Hierfür gibt es in Kubernetes mehrere Abstraktionsebenen. Die größte Einheit,
 Ein sinnvoller Ansatz ist die ganze Anwendung innerhalb eines Knotens aufzubauen und sie durch Replikas der Knoten zu skalieren. Dabei sollte die Anwendung modularisiert werden und in unabhängig voneinander skalierbare Microservices aufgeteilt werden. Anwendungen können komplex sein und ein Engpass entsteht in wenigen Bereichen, sodass nicht die ganze Anwendung repliziert werden muss. In der Praxis werden die Funktionen der Anwendung in mehreren Containern aufgeteilt, die miteinander kommunizieren. Die Replikation von Containern bewirkt, dass Anwendungen nur in den Komponenten skaliert werden, in der es erforderlich ist. Diese Praxis schafft Redundanzen ab und und sorgt für einen Wirkungsgrad in der Nutzung von IT-Ressourcen.
 
 \paragraph{Anlegen eines Kubernetes Clusters für Jenkins mit GKE}
-\begin{figure}[htbp]
- \centering
- \includegraphics[width=1.0\textwidth]{gfx/jenkins-kubernetes-architecture.png}
- \caption{Deployment von Jenkins in einem Kubernetes Cluster mit mehreren Knoten \cite{Google:GKEJenkins}\label{fig:gkejenkins}}
-\end{figure}
 
 Google beschreibt in \cite{Google:GKEJenkins} einen Ansatz für eine skalierbare Architektur von Jenkins mit der \ac{GKE}.
 
@@ -195,3 +192,9 @@ So lange in einem Node genug Ressourcen frei sind können weitere Container in s
 \medskip
 \\
 Daraus resultiert eine hohe Flexibilität für die Skalierung der Anwendungen. Diese können sowohl vertikal anhand der Ressourcen von den Nodes, als auch Horizontal über die Aktivierung von weiteren Nodes oder Pods skaliert werden. Vor allem bestehen für die horizontale Skalierung mehrere Abstraktionsebenen.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=1.0\textwidth]{gfx/jenkins-kubernetes-architecture.png}
+ \caption{Deployment von Jenkins in einem Kubernetes Cluster mit mehreren Knoten \cite{Google:GKEJenkins}\label{fig:gkejenkins}}
+\end{figure}
